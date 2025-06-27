@@ -1,0 +1,14 @@
+<!-- 
+    *  This is the External links component
+    *
+    * CHANGE HISTORY 
+    *================================================================ 
+    * Dated             Name                    Description 
+    * 01/30/2014        Vinayak Sharma          Created 
+    *================================================================ 
+    -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component layout="block" controller="ExternalLinksCtrl" access="global">
+    <apex:attribute name="phaseName" assignTo="{!phaseNameObj}" description="This is the name of the Phase" type="String" required="true" access="global"/> 
+    
+</apex:component>

@@ -1,0 +1,17 @@
+<!--
+* Class shows Approval History Information for a specific Record ID
+*
+* CHANGE HISTORY
+* =============================================================================
+* Date          Name            Description
+* 02/05/2014    Vineeth Shetty      Created
+* 01/13/2015    Vineeth Shetty      Modified(Added Asynchronous Nature to load history)
+* 08/19/2015    Shrawan Raina       Added Approval Process Chevron
+* 04/12/2018    Tomy Pallissery     Converted to angular
+* =============================================================================
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ApprovalHistoryCtrl" access="global">
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false" access="global"/>
+    
+</apex:component>

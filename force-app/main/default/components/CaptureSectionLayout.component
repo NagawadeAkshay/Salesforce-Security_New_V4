@@ -1,0 +1,17 @@
+<!--
+ - Created by MCPL-L72 on 21-11-2019.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component id="CaptureSectionLayout" controller="CaptureSectionController" allowDML="true" access="global">
+    <apex:attribute name="sectionId" assignTo="{!pbSectionId}" type="String" description=""/>
+    <apex:attribute name="recordId" description="record Id value" type="string" assignTo="{!recordIdVal}" />
+    <apex:attribute name="sectionHelpText" description="display of Help Text within capture form" type="String" />
+    <apex:attribute name="sectionHeaderInstruction" description="display of section header instruction" type="String" />
+    <apex:attribute name="sectionName" type="String" description=""/>
+
+    <!-- <apex:attribute name="score" type="Integer" description=""/> -->
+    <apex:attribute name="order" type="Integer" description=""/>
+    <apex:attribute name="layoutType" type="String" description="Rendering layout Edit/View"/>
+    <apex:attribute name="colSpan" type="String" description="col span for section item" default="Horizontal"/>
+    
+</apex:component>

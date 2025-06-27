@@ -1,0 +1,23 @@
+.THIS .slds-form-element__control .slds-file-selector_files {
+    display: block;
+}
+.THIS .slds-form-element__label {
+    font-size: 14px;
+    font-weight: bold;
+}
+.THIS .file-help-text{
+    font-size: .75rem;
+    font-weight: normal;
+}
+.THIS .input-file-error {
+    color: #c23934;
+}
+.THIS .slds-file-selector__dropzone {
+    border: 3px dashed rgb(217, 219, 221);
+}
+.THIS .slds-file-selector__dropzone.slds-has-drag-over {
+    border-style: dashed;
+}
+.THIS .slds-file-selector__dropzone.has-error {
+    border: 3px dashed rgb(194, 57, 52);
+}

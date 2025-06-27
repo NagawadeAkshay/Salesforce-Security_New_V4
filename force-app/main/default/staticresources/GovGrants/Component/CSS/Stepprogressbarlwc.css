@@ -1,0 +1,19 @@
+.errorStep .slds-path__link {
+    background-color:#E60000 !important;
+    }
+    
+    .slds-path__nav .errorStep:before, .slds-path__nav .errorStep:after{
+     background-color:#E60000 !important;
+     background-image: none !important;
+    } 
+    
+    .slds-path__nav .errorStep {
+        background-color: #E60000 !important;
+    }
+    
+    .errorStep .slds-path__title{
+    color:#fff !important;
+    }
+    .progressBarWrap .slds-path__link {
+		z-index: 3!important;
+    }

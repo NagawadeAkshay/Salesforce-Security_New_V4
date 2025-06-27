@@ -1,0 +1,13 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexTableCtrl"  access="global" >
+    
+    <!-- List of attributes -->
+    <apex:attribute name="FlexTableFields" assignTo="{!FlexTableFieldAPIs}" description="This is the comma separated fields to be displayed in the Table" type="String" access="global"/>    
+    <apex:attribute name="TableId" description="Dynamic ID for the table. It is same string as the flexTableName." type="String" default="LookupSkinnyTableId" required="true" access="global"/>               
+    <apex:attribute name="flexTableLookupfilter" description="Lookup filter associated with the Flex Table" type="String" access="global" required="false"/>
+    <apex:attribute name="sobjectName" description="Lookup filter associated with the Flex Table" type="String" access="global" required="false"/>
+    <apex:attribute name="phaseName" description="Phase under which search is to be performed" type="String" assignTo="{!phase}" access="global" />           
+    <apex:attribute name="sortField" description="sort field name" type="String" access="global" />
+    <apex:attribute name="sortDirection" description="Direction to sort field" type="String" access="global" />
+    
+</apex:component>

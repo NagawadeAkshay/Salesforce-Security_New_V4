@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ChartBoxCtrl" access="global">
+<apex:attribute name="chartName"  description="Box chart Name" type="String" access="global"/>
+<apex:attribute name="chartHTMLId"  description="Box chart html Id" type="String" required="true" access="global"/>
+<apex:attribute name="contextRecordId" assignTo="{!recordId}" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+
+
+
+</apex:component>

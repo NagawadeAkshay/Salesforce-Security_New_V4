@@ -1,0 +1,67 @@
+.header{
+  background: rgb(243, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.headerTitle{
+    display: flex;    
+    align-items: center;
+}
+
+/*.slds-table_bordered{
+  border-collapse: collapse !important;
+}*/
+
+.slds-table tbody tr td,th{
+  /* border: 1px solid #ddd; */
+  padding:5px;
+ }
+
+.slds-table thead th{
+  border: 1px solid #ddd;
+  background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important;
+  padding: 10px!important;
+color:#000 !important;
+}
+
+.slds-text-heading_medium{
+  font-weight: 700;
+  color:#00396b;
+  font-size:15px !important;
+  cursor:pointer;
+}
+ .totalRecords {
+  font-size:12px!important;
+  color: #333!important;
+  margin-top: 10px;
+}
+.slds-table thead tr th{
+  border-bottom: none !important;
+  border-left: 1px solid #c9c9c9 !important;
+  padding: 7px 8px!important; 
+  background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important;
+  color:#000 !important;
+  border-top: none!important;
+}
+
+.slds-table tbody tr td{
+  border: 0.5px solid #ededed!important;
+   padding:5px!important;
+    color: #333;
+}
+
+.slds-box {
+  padding: 0px !important;
+  margin-bottom: 10px;
+  margin-left:15px;
+  margin-right:15px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+  border: 1px solid rgb(221, 219, 218);
+  
+}
+.slds-table thead tr{
+  border-top: 0.1px solid #ededed!important;
+}

@@ -1,0 +1,55 @@
+<template>
+    <div class="slds-box slds-theme--default slds-is-relative">
+        <div class="slds-text-color_inverse slds-p-around_xx-small header">  
+            <div class="headerTitle">
+                <a>
+                    <lightning-icon icon-name={collapsedicon}  tabindex="0" alternative-text="Expanded" variant="bare"  onclick={handleCollapsed} class="toggleAction slds-m-right_xx-small slds-p-left_x-small toggleIcon" ></lightning-icon>
+                </a> 
+            <span class="slds-text-heading_medium" tabindex="0" title={title}>{title}</span>
+            </div>
+        </div>
+        <template if:true={showLoadingIcon} >           
+            <c-spinner  gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>            
+        </template> 
+        <template if:true={isLoading}>
+            <span>Loading....</span>
+        </template>
+        <template if:false={isLoading}>        
+        <template if:false={isCollapsed}>
+            <div class="table-responsive slds-scrollable slds-p-left_medium slds-p-right_medium slds-p-top_medium">          
+            <table class="slds-table slds-table_cell-buffer tableClass slds-border_left slds-border_right">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <span title="File Name" tabindex="0">File Name</span>
+                    </th>
+                    <th class="" scope="col">
+                        <span title="Created Date" tabindex="0">Created Date</span>
+                    </th>
+                    <th class="" scope="col">
+                        <span title="Created By" tabindex="0">Created By</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template iterator:it={records}>
+                    <tr class="slds-hint-parent" key = {it.value.Id}>
+                        <td data-label="Attachment Name">
+                            <div class="slds-cell-wrap"><a class="" href={it.value.AttachmentURL} target="_blank" tabindex="0"  name="Name"><span title={it.value.attachmentName}>{it.value.attachmentName}</span></a></div>
+                        </td>
+                        <td data-label="Attachment Date">
+                            <div class="slds-cell-wrap" tabindex="0"><span title= {it.value.formatedLastModified}>{it.value.formatedLastModified}</span></div>
+                        </td>
+                        <td data-label="Attachment Owner">
+                            <div class="slds-cell-wrap" tabindex="0"><span title= {it.value.attachmentOwner}>{it.value.attachmentOwner}</span></div>
+                        </td>                        
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        </div> 
+        <span class="slds-align_absolute-center slds-p-bottom_small totalRecords" tabindex="0">{totalRecords}</span>
+	    </template>    
+    </template>
+    </div>
+</template>

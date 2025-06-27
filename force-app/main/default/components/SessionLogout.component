@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component Controller="SessionLogoutCtrl" access="global">
+  
+</apex:component>

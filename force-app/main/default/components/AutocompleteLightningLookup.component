@@ -1,0 +1,24 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" controller="AutocompleteLightningLookupCtrl">
+    <apex:attribute name="sobjRecord" description="This is the record instance, on which the lookup is populated" access="global" type="SObject"/>
+    <apex:attribute name="fieldAPIName" description="This is the API name of the field" type="String" assignTo="{!fldAPIName}" access="global"/>
+    <apex:attribute name="PageBlockDetailid" description="This is the name of the field" type="String" access="global"/>
+    <apex:attribute name="fieldLabel" description="This is label of the field" type="String" />
+    <apex:attribute name="sobjectType" description="This type of parent sobject" type="String" assignTo="{!parentObjAPIName}" access="global"/>
+    <apex:attribute name="recordId" description="This is the salesforce Id of the value populated in the lookup" type="String" access="global"/>
+    <apex:attribute name="displayFields" description="Fields displayed in the lookup autocomplete dropdown" type="String" assignTo="{!fields}" access="global"/>
+    <apex:attribute name="lookupSortBy" description="This is LookupSortBy field" type="String" assignTo="{!lookupSortByField}" access="global"/>
+    <apex:attribute name="lookupSortDirection" description="This is LookupSortDirection field" type="String" assignTo="{!lookupSortDirectionField}" />
+    <apex:attribute name="lookupFilterCriteria" description="This is lookupFilterCriteria field" type="String"/>
+    
+    <apex:attribute name="isReadOnly" description="Indicates whether the field is readonly" type="Boolean"/>
+    <apex:attribute name="pageBlockId" description="This is PageBlockId" type="String" assignTo="{!pageblckId }" access="global"/> 
+
+    <apex:attribute name="flexTableParams" description="This is flexTableParameters" type="String" assignTo="{!flexTableParameters}" access="global"/> 
+
+    <apex:attribute name="listParameters" description="This is listParameters" type="String" assignTo="{!listParameter}" access="global"/> 
+
+    <apex:attribute name="dataType" description="The data type of lookup" type="String" /> 
+    <apex:attribute name="hideFieldsJSON" description="This is PageBlockId" type="String" /> 
+    <apex:attribute name="isDate" description="Indicates whether the field is date or not" type="String"/>
+</apex:component>

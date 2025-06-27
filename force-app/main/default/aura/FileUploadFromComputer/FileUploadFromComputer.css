@@ -1,0 +1,44 @@
+.THIS .slds-form-element__control .slds-file-selector_files {
+    display: block;
+}
+
+.THIS .slds-form-element__label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.THIS .file-help-text {
+    font-size: .75rem;
+}
+
+.THIS#WorkspaceFilesUpload form {
+    background: transparent;
+}
+
+.THIS .slds-medium-show {
+    display: inline-block;
+}
+
+.THIS .row {
+    margin-bottom: 10px;
+}
+
+.THIS#WorkspaceFilesUpload {
+    background: transparent;
+}
+
+.THIS .file-help-text {
+    font-weight: normal;
+}
+
+.THIS .slds-icon-text-default {
+    fill: #FFF;
+}
+
+.THIS .filesInput select.slds-select {
+    max-width: 100% !important;
+}
+
+.THIS .mr-top{
+    margin-top: 10px;
+}

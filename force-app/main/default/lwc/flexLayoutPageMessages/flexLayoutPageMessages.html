@@ -1,0 +1,20 @@
+<template>
+    <template if:true={showMessages}>
+        <div class="pmsg">
+            <div class={stickypagemsg} >
+        <template for:each={pageMessages} for:item="msg" for:index="index">
+            <div class={msg.classType} key={msg.classType}>
+                <button class="message-cancel-button" data-index={index} title="close" onclick={handleMessageCloseClick}>x</button>
+                <template for:each={msg.pageMessageList} for:item="msgList">
+                    <li key={msgList}>
+                        <span>
+                            <lightning-formatted-rich-text value={msgList} disable-linkify></lightning-formatted-rich-text>
+                        </span>
+                    </li>
+                </template>
+            </div>
+        </template>
+        </div>
+        </div>
+    </template>
+</template>

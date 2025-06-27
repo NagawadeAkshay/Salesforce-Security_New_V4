@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="PDFExportCtrl" access="global">
+	<apex:attribute name="mergeFields" description="Merge field Map" type="String" required="true" assignTo="{!mergeFieldsStr}" access="global"/>
+	
+</apex:component>

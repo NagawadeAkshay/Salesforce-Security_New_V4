@@ -1,0 +1,39 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="AutoCompleteDropDownCtrl" selfClosing="true" access="global">
+    <apex:attribute name="SObject" description="SObject Name to Query" 
+        type="String" assignTo="{!sObjVal}" required="true" access="global"/>
+        
+    <apex:attribute name="fieldAPI"
+        description="API Name of Field to display in the Select List" 
+        type="String" required="true" access="global"/>
+    <apex:attribute name="parentRecordId" assignTo="{!recordId}"
+        description="Id of the record to resolve the merge fields" 
+        type="String" required="false" access="global"/>
+        
+    <apex:attribute name="valueField"
+        description="API Name of Field to display for value that sets targetField"
+        type="String" required="true" access="global"/>
+        
+    <apex:attribute name="targetField"
+        description="value of selection"
+        type="String" assignTo="{!targetFieldVar}" access="global"/>
+        
+    <apex:attribute name="filterCriteria"
+        description="Filter Criteria in the WHERE Clause of the SOQL Eg- FirstName != 'John' "
+        type="String" assignTo="{!sqlWhereClause}" access="global"/>
+    
+    <apex:attribute name="inputFieldId"
+        description="Id of the field where the value will copied[Not generally required, used when you need to copy value to a field using js]"
+        type="String" access="global"/>
+        
+    <apex:attribute name="syncManualEntry"
+        description="Allow manual entry of data from autocomplete component."
+        type="Boolean" default="false" access="global"/>
+        
+    <apex:attribute name="allowClear" description="Set true to give user a option to clear existing value" type="Boolean" default="true" access="global"/>
+    
+    <apex:attribute name="Style" description="style for the slect list such as width" type="String" access="global"/>
+    
+    <apex:attribute name="randomJsIden" description="Id" type="String" access="global"/>
+    
+</apex:component>

@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="CustomCSSCtrl"  access="global">
+
+</apex:component>

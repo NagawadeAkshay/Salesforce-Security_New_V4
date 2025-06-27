@@ -1,0 +1,48 @@
+.THIS .slds-tree__item-label {
+    cursor: pointer;
+}
+
+.THIS .slds-form-element__label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.THIS .file-help-text {
+    font-size: .75rem;
+    font-weight: normal;
+}
+
+.THIS .slds-input-has-icon_left-right .slds-input__icon-group_right {
+    display: none;
+}
+
+.THIS .slds-welcome-mat__tile-body {
+    border-left: none;
+}
+
+.THIS .search-result {
+    margin-top: 0.50rem;
+}
+
+.THIS .slds-combobox-addon_start input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.THIS .slds-combobox-addon_end .filter-button {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.THIS.slds-scrollable_y {
+    min-height: 80vh;
+}
+
+.THIS .search-element {
+    max-width: 600px;
+}
+
+.THIS .refresh-button.slds-button_icon-brand,
+.THIS .refresh-button.slds-button_brand {
+    height: 30px;
+}

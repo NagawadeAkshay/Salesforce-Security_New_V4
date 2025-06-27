@@ -1,0 +1,28 @@
+.slds-table tbody tr{
+    border: 1px solid #ddd;
+
+   }
+   .slds-table tbody tr td {
+    border-left: 1px solid #ddd;
+}
+   .slds-form-element{
+    font-size: 13px; 
+    /* font-family: 'Helvetica'; */
+    color:#333; 
+    max-width:350px;
+   }
+
+   .slds-dropdown{
+    margin-top:0px;
+   }
+   .title{
+    border:1px solid #ddd; 
+    background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important;
+   }
+.customLookCls{
+    display:block;
+    max-height:120px;
+    overflow:auto;
+    position:absolute;
+    z-index: 10 !important;
+}

@@ -1,0 +1,10 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" controller="SearchResultCtrl" >
+    <apex:attribute name="searchObjects" type="String[]" required="true" description="Objects to be searched" access="global"/>
+    <apex:attribute name="searchText" type="String" required="true" description="Text to be searched" access="global"/>
+    <apex:attribute name="keyValueMap" type="String" required="true" description="Key value parameters" access="global"/>	
+    <apex:attribute name="FlexTableName" description="This is the value for the object name which decides the list to be displayed." type="String" access="global"/>
+    <apex:attribute name="tableTypeWithSobjectMap" type="map" required="false" description="Map of data table type with respective " access="global"/>
+    
+	
+</apex:component>

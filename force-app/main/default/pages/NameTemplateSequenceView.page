@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page standardController="NameTemplateSequence__c" extensions="NameTemplateSequenceViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+        
+</apex:page>

@@ -1,0 +1,20 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component Controller="SessionLogoutEnhancedCtrl" access="global">
+    <apex:attribute access="global" type="Boolean" required="false" name="enable" default="true" assignTo="{!enableSessionManagement}" description="Set to false for disabling functionality"/>
+    <apex:attribute access="global" type="Integer" required="false" name="timeoutValue" default="1200" assignTo="{!sessionTimeoutValue}" description="Time limit in seconds. 1200 = 20 Minutes"/>
+    
+    <apex:attribute access="global" type="Boolean" required="false" name="enableDialog" default="false" assignTo="{!enableSessionDialogBox}" description="Set to false for logout without warning dialog"/>
+    <apex:attribute access="global" type="Integer" required="false" name="timeoutLimit" default="600" assignTo="{!dialogTimeoutLimit}" description="Time in second for timeout. 600 = 10 Minutes" />
+    
+    <apex:attribute access="global" type="Boolean" required="false" name="enableReminder" default="false" assignTo="{!enableSessionReminder}" description="Set to false for skiping reminder" /> 
+    <apex:attribute access="global" type="Integer" required="false" name="reminderValue" default="600" assignTo="{!sessionTimeoutReminderValue}" description="Time in second for reminder 600 = 10 Minutes"/>
+    
+    <apex:attribute access="global" type="String" required="false" name="loginPage" default="/apex/Logout" assignTo="{!logoutPage}"  description="URL where want to redirect user after timeout"/>
+    <apex:attribute access="global" type="String" required="false" name="dialogTitle" default="Session Expiration Warning" description="Text to show on Dialog title"/>
+    <apex:attribute access="global" type="String" required="false" name="dialogText" default="Because you have been inactive, your session is about to expire." description="Text to show additional information in Dialog"/>
+    <apex:attribute access="global" type="String" required="false" name="dialogTimeRemaining" default="Time remaining" description="Text to show for time remaining"/>
+    <apex:attribute access="global" type="String" required="false" name="dialogStayLoggedInButton" default="Stay Logged In" description="Text to show on Stay Logged in Button"/>
+    <apex:attribute access="global" type="String" required="false" name="dialogLogOutNowButton" default="Log Out Now" description="Text to show on Logout Now Button"/>
+    
+    
+</apex:component>

@@ -1,0 +1,279 @@
+<!-- sldsValidatorIgnore -->
+<template>    
+    <div class="slds-box slds-theme--default slds-is-relative">
+        <template if:true={alertMessage1}>
+            <div class="slds-notify slds-notify_alert slds-alert-success" role="alert">
+                <span class="slds-assistive-text">info</span>
+                <lightning-icon icon-name="utility:success" size="x-small" class="successmessagenote"></lightning-icon>
+                <h2>{messageOnUID}</h2>
+                <!--Note deleted successfully. -->
+
+            </div>
+        </template>
+		<template if:true={showIcon}>
+                <c-spinner show-spinner="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+        </template>
+        <template if:true={isLoading}>
+            <span>Loading....</span>
+        </template>  
+        <template if:false={isLoading}> 
+        <div class="slds-text-color_inverse slds-p-around_xx-small header">        
+            <div class="headerTitle">
+                <a>
+                    <lightning-icon icon-name={collapsedicon}  alternative-text="Notes" variant="bare"  onclick={handleCollapsed} class="toggleAction slds-m-right_xx-small slds-p-left_x-small toggleIcon"> </lightning-icon>
+                </a>                
+                <span class="slds-text-heading_medium" title="Notes">Notes</span>
+            </div>            
+            <template if:false={hideCreateAction}>
+            	<lightning-button variant="brand" label="Add" onclick={openNewModal} title="Add"  class="slds-p-right_small button" ></lightning-button>                                        
+            </template> 
+        </div>
+        
+        <template if:false={isCollapsed}>
+        <div class="table-responsive slds-scrollable slds-p-left_medium slds-p-right_medium slds-p-top_medium notesHeight">    
+        <table class="slds-table slds-border_left slds-border_right slds-table_fixed-layout tableClass"> <!-- TD 1 slds-table_fixed-layout added this class to make Columns of same width and wrap extra text -->
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <a class="slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0"  name="Title"> <!-- TD 2 removing slds-th__action to remove extra space infront of each column-->
+                        Title
+                    </a>
+                </th>
+                <th class="" scope="col">
+                    <a class="slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0"  name="Description">
+                        Description
+                    </a>
+                </th>
+                <th class="" scope="col">
+                        <a class="slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="CreatedDate">
+                              Created Date
+                        </a>
+                </th>
+                <th class="" scope="col">
+                    <a class="slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="CreatedBy">
+                          Created By
+                    </a>
+                </th>
+                <th class="" scope="col">
+                    <a class="slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Action">
+                         Actions <!--Bug 193581 -->
+                    </a>
+                </th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <template iterator:it={records}>
+                <tr class="slds-hint-parent" key = {it.value.note.Id}>
+                    <td data-label="Title" title={it.value.note.Title}>
+                        <div class="slds-truncate dv-dynamic-width slds-cell-wrap">{it.value.note.Title}</div>
+                    </td> 
+                    <td data-label="Description">  <!--{it.value.strNotes} -->
+                        <div class="slds-truncate dv-dynamic-width slds-cell-wrap">
+                            <lightning-formatted-rich-text value={it.value.strNotes} ></lightning-formatted-rich-text>
+                        </div>
+                    </td>
+                    <td data-label="CreatedDate" title={it.value.formatedCreatedDate}>
+                        <div class="slds-cell-wrap">{it.value.formatedCreatedDate}</div> <!--note.CreatedDate -->
+                    </td>   
+                    <td data-label="CreatedBy" title={it.value.note.CreatedBy.Name}>
+                        <div class="slds-cell-wrap">{it.value.note.CreatedBy.Name}</div>
+                    </td>
+                    <td>
+                        <a tabindex="0" class="tableLinks actionIcons" title="View" >
+                            <i class="fa fa-eye slds-p-right_x-small" data-id ={it.value.note.Id} onclick={onView}></i>
+                        </a>  
+                      
+                        <template if:true={it.value.isOwner}>
+                            <template if:false={hideEditAction}>
+	                            <span class="separator" aria-hidden="true"> </span>                
+	                            <a tabindex="0" class="tableLinks actionIcons" title="Edit" >
+	                                <span class="fa fa-pencil slds-p-right_x-small" data-id ={it.value.note.Id} onclick={onEdit} ></span>
+	                            </a>
+                        	</template>
+                       </template>
+                       <template if:true={it.value.isOwner}>
+                        	<template if:false={hideDeleteAction}>
+                        		<span class="separator" aria-hidden="true"> </span>
+                            		<a tabindex="0" class="tableLinks actionIcons"  title="Delete" > 
+                                    	<span class="fa fa-trash"  data-id ={it.value.note.Id} onclick={confirmAndDelete}> </span> 
+                            		</a>   
+                        	</template>                     
+                       </template>                     
+                    
+                </td>  
+                </tr>
+            </template>
+        </tbody>
+        </table>
+		</div>
+        <span class="slds-align_absolute-center slds-p-bottom_small totalRecords">{recordCountMessage}</span>
+        </template> 
+
+        <template if:true={openmodel}>
+            <div class="demo-only spinnerHeight">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_small slds-fade-in-open">
+					<template if:true={isModalLoading} >
+                            <c-spinner show-spinner="true" is-modal="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+                    </template>
+                    <div class="slds-modal__container slds-modal_medium">
+                        <header class="slds-modal__header modal-header-ext">
+                            <lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={closeModal}></lightning-button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Confirm</h2>
+                        </header>
+                        
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                           <h2><b>Once it is deleted it cannot be restored. Do you want to delete?</b></h2><br/>
+                                <p></p>
+                        </div>
+                        
+                        <footer class="slds-modal__footer">
+                            <lightning-button label="No" variant="brand" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <lightning-button label="Yes" variant="brand" onclick={deleteRecord}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+            </template>
+
+            <template if:true={AddNew}>
+                    <div class="demo-only" >
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" 
+                        	aria-describedby="modal-content-id-1" class="slds-modal slds-modal_medium slds-fade-in-open">
+							<template if:true={isModalLoading} >
+                                <c-spinner show-spinner="true" is-modal="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+                            </template>
+                            <div class="slds-modal__container">
+                                <header class="slds-modal__header modal-header-ext">
+                                    <lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={closeModal}></lightning-button>
+                                    <template if:true={view}>
+                                            <h2 id="modal-heading-03" class="slds-text-heading_medium slds-hyphenate" title="View Notes">View Notes</h2>
+                                    </template>
+                                    <template if:true={add}>
+                                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate" title="Add Notes">Add Notes</h2>
+                                    </template>
+                                    <template if:true={edit}>
+                                        <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate" title="Edit Notes">Edit Notes</h2>
+                                    </template>
+                                </header>
+                                 <template if:true={alertMessage}>
+                                    <div class="notes-success">
+                            		<div class="slds-notify slds-notify_alert slds-alert-success" role="alert">
+                                		<span class="slds-assistive-text">info</span>
+                                            <lightning-icon icon-name="utility:success" size="x-small" class="successmessagenote"></lightning-icon>
+                                		<h2>{messageOnUI}</h2>
+                            		</div>
+                                    </div>
+                           		</template>
+                                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                                      <!-- Add new note START -->  
+                                    <template if:true={add}>
+                                                <h2>{message}</h2>
+                                    <div class="slds-form-element">
+                                   <div class="slds-grid slds-wrap">
+                                        <!-- BUG 193581 Class added to show Label on Left hand side and not on top of field -->
+                                        <div class="slds-col slds-size_2-of-12"> 
+                                            <label class="slds-form-element__label slds-label" for="title">
+                                                <abbr class="slds-required" title="required">*</abbr>Title
+                                            </label>
+                                        </div>
+                                             <div class="slds-col slds-size_10-of-12">
+                                            <lightning-input type="text" onchange={titleCH} variant="label-hidden" required max-length="80">
+                                            </lightning-input> <!-- TD 3 added max length-->
+                                        </div>
+                                        <br/>
+                                        <div class="slds-col slds-size_2-of-12 slds-p-top_small">
+                                            <label class="slds-form-element__label slds-label" for="body">
+                                                <abbr class="slds-required" title="required">*</abbr>Description
+                                            </label>
+                                            </div>
+                                             <div class="slds-col slds-size_10-of-12 slds-p-bottom_small slds-p-top_small">
+                                            <lightning-input-rich-text valid={validity} label-hidden
+                                                onchange={descriptionCH} message-when-bad-input={errorMessage}
+                                                required="true" share-with-entity-id={recordId} formats={formats}>
+                                            </lightning-input-rich-text> <!-- TD 4 added max length-->
+                                        </div>
+                                       <br/>
+                                        </div>
+                                        <div class = "slds-clearfix">
+                                            <lightning-button label="Save"  disabled={disabled} class="slds-float_right slds-m-bottom_small" onclick={handleCreateNote} variant="brand"></lightning-button>
+                                                <br/>
+                                        </div>
+                                    </div>
+                                    </template>
+                                        
+                                     <!-- Add new note END -->
+                                    <!-- View Record START -->
+                                    <template if:true={view}>
+                                        <template for:each={viewRecord} for:item="rec"> 
+                                            <div class="slds-grid slds-wrap" key={rec.Id}>  <!-- BUG 193581 Class added to show Label on Left hand side and not on top of field -->
+                                                        <div class="slds-col slds-size_2-of-12">
+                                                            <label class="slds-form-element__label slds-label" for="title">Title</label>
+                                                            </div>
+                                                            <div class="slds-col slds-size_10-of-12">
+                                                            <div class="slds-form-element__control">    
+                                                        {rec.note.Title}
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-12 slds-p-top_small">
+                                                            <label class="slds-form-element__label slds-label" for="body">Description</label></div>
+                                                            <div class="slds-col slds-size_10-of-12 slds-p-top_medium">
+                                                            <div class="slds-form-element__control">    
+                                                       <!--{rec.strNotes} --> 
+                                                        <lightning-formatted-rich-text value={rec.strNotes}></lightning-formatted-rich-text>
+                                                                <br/>  
+                                                            </div>
+                                                        </div>
+                                                    </div>                                             
+                                        </template>  
+                                    </template>
+                                    <!-- View Record END -->
+                                    <!-- Edit Record START -->
+                                    <template if:true={edit}>
+                                        <template for:each={editRecord} for:item="rec">  
+                                           <div class="slds-form-element" key={rec.Id}>
+                                                <div class="slds-grid slds-wrap"> 
+			                                <div class="slds-col slds-size_2-of-12">
+			                                 <label class="slds-form-element__label slds-label" for="title">
+				                                <abbr class="slds-required" title="required">*</abbr>Title
+				                            </label></div>
+                                            <div class="slds-col slds-size_10-of-12"> 
+				                            <lightning-input type="text" value={rec.note.Title} onchange={titleChangeInEdit}
+				                                variant="label-hidden" required max-length="80"></lightning-input>
+				                        </div>
+				                        <div class="slds-col slds-size_2-of-12  slds-p-top_small">
+				                            <label class="slds-form-element__label slds-label" for="body">
+				                                <abbr class="slds-required" title="required">*</abbr>Description
+				                            </label></div>
+				                            <div class="slds-col slds-size_10-of-12  slds-p-top_small slds-p-bottom_small">
+				                                <lightning-input-rich-text value={rec.strNotes} valid={validity} label-hidden
+				                                    onchange={descriptionChangeInEdit} required="true"
+				                                    message-when-bad-input={errorMessage} formats={formats}>
+				                                </lightning-input-rich-text>
+				                            </div>        
+	                             <br/>                                               
+                                                       
+                                                    </div>
+                                                    <div class = "slds-clearfix">
+                                                    <lightning-button label="Save"  type="submit" class="slds-float_right slds-m-bottom_small" onclick={handleUpdateNote} variant="brand"></lightning-button>
+                                                    <br/>
+                                                    </div>  
+                                            </div>    
+                                        </template>
+                                        </template>
+                                    <!-- Edit Record END -->      
+                                </div>
+                                <!-- 
+                                    after we make modal height fix save button behaviour changes so add that save button Footer instead of body
+                                    footer class="slds-modal__footer">
+                                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                                </footer -->
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </div>
+                </template>
+          </template>
+    </div> 
+</template>

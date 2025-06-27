@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page id="thePage" controller="CollabCtrl" sidebar="false" showHeader="false" standardStylesheets="false" language="en">
+     
+</apex:page>

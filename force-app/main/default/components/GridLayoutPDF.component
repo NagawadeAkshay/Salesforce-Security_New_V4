@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="GridLayoutPDFCtrl" access="global">
+    <apex:attribute name="gridId" assignTo="{!gridHeaderId}" required="false" type="String" description="RecordId of Grid Header" />
+    <apex:attribute name="recordId" assignTo="{!parentRecordId}" required="false" type="String" description="RecordId of Parent" />
+    <apex:attribute name="Title" assignTo="{!gridTitle}" required="false" type="String" description="RecordId of Parent" />
+
+    
+</apex:component>

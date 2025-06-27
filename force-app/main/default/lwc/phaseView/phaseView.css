@@ -1,0 +1,17 @@
+.flexipageHeader {
+    display:none !important;
+   }
+   .grouping2 .column2{
+    width:82.8%;
+    }
+    
+    .grouping2 .column1 .sidebar .custom-sidebar{
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    border-radius:0.25rem;
+    }
+    .utilitybar .slds-utility-bar__item .flexipageComponent[data-component-id="GNT__sideBarLwc"]{
+        display:none;
+    }
+    .custom-margin-class {
+        margin-bottom: 10px; /* Adjust the margin value according to your needs */
+    }

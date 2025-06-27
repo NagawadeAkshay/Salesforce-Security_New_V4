@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="BusinessLogoController" allowDML="true" access="global">
+    <apex:attribute name="recordId" type="string"   required="true"  description="For which record you want logo"  assignTo="{!recId}" access="global"/>
+    <apex:attribute name="pageLayoutConfigId" type="string" required="true" description="On which paage block you want to show" assignTo="{!pageLayConfigId}" access="global"/>
+
+    
+</apex:component>

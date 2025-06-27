@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ChartColumnDrilldownCtrl" access="global">
+
+	<apex:attribute name="chartName"  description="Drill Down chart Name" type="String" access="global"/>
+	<apex:attribute name="chartHTMLId"  description="Drill Down chart html Id" type="String" required="false" access="global"/>
+	<apex:attribute name="contextRecordId" assignTo="{!recordId}" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+	
+	
+</apex:component>

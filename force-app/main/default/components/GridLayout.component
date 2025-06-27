@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="GridLayoutCtrl" access="global">   
+    <apex:attribute name="layoutHolder" assignTo="{!parentLayoutHolder}" type="DynamicLayoutHolder" description="Controller object that holds the layout properties" access="global"/> 
+    <apex:attribute name="gridId" assignTo="{!gridHeaderId}" type="String" description="Id for the grid" access="global"/>
+    <apex:attribute name="isViewMode" type="Boolean" description="Id for the grid" access="global"/>
+    <apex:attribute name="headerLevelInstruction" type="String" description="Header level instruction" access="global"/>
+   
+</apex:component>

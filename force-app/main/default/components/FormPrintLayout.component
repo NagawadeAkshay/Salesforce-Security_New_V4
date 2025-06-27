@@ -1,0 +1,12 @@
+<!--
+ - Created by REI on 27-07-2020.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component id="FormPrintLayout" controller="FormLayoutPrintController" access="global">
+    <apex:attribute name="layoutType" description="Type can be Edit/View/Print" type="string" required="true" assignTo="{!type}" access="global"/>
+    <apex:attribute name="recordIdVal" description="record Id for the layout" type="string" required="true" assignTo="{!recordId}" access="global"/>
+    <apex:attribute name="formIdVal" description="formId which to render in layout" type="string" required="true" assignTo="{!formId}" access="global" />
+    <apex:attribute name="showHeaderDisplay" description="To display form header" type="boolean" required="false" assignTo="{!showHeader}" access="global" />
+
+    
+</apex:component>

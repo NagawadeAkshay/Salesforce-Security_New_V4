@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Lightning Event template" access="global">
+    <aura:attribute name="name" type="String" access="global"/>
+    <aura:attribute name="type" type="String" access="global"/>
+    <aura:attribute name="data" type="Object" access="global"/>
+</aura:event>

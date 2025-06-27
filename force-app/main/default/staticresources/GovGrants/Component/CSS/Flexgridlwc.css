@@ -1,0 +1,1541 @@
+.slds-table_bordered tbody td {
+  padding: 6px 8px !important;
+  /*capplied as per old GG, discusses with Varsha*/
+
+
+}
+
+.toggleAction .slds-icon[data-key="down"],
+.toggleAction .slds-icon[data-key="up"] {
+  width: 14px;
+  height: 14px;
+  fill: #00396B !important;
+}
+
+.toggleAction .slds-icon[data-key="chevronright"],
+.toggleAction .slds-icon[data-key="chevrondown"] {
+  width: 14px;
+  height: 14px;
+  fill: #00396B !important;
+}
+
+
+.inputRows .slds-icon[data-key="check"] {
+  width: 18px;
+  height: 18px;
+  fill: #2e844a !important;
+}
+
+.slds-icon[data-key="close"] {
+  width: 18px;
+  height: 18px;
+  fill: #ff0000 !important;
+}
+
+
+.slds-table_header-fixed_container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #f2f0f5;
+}
+
+.slds-table_header-fixed_container::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+}
+
+.slds-table_header-fixed_container .slds-scrollable_y::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #f2f0f5;
+}
+
+.slds-table_header-fixed_container .slds-scrollable_y::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+}
+
+.slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover>td:not(.slds-has-focus),
+.slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover>th:not(.slds-has-focus) {
+  box-shadow: none !important;
+}
+
+.slds-th__action {
+  background: transparent !important;
+  height: Auto;
+  min-height: 32px;
+}
+
+lightning-button-menu>button>lightning-primitive-icon:nth-child(even) {
+  display: none;
+}
+
+.inputRows .slds-button_icon-more,
+.inputRows .slds-button_icon-border-filled {
+  border: 0px;
+  border-color: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+.inputRows .slds-button_icon-more:hover,
+.inputRows .slds-button_icon-border-filled:focus {
+  border: 0px;
+  border-color: none;
+}
+
+.slds-dropdown_fluid {
+  min-width: auto;
+}
+
+lightning-datepicker .slds-form-element__label,
+lightning-timepicker .slds-form-element__label {
+  display: none;
+}
+
+.dv-dynamic-width .slds-form-element__label:empty {
+  margin: 0;
+  display: none;
+}
+
+.slds-truncate1 {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.slds-icon[data-key="check"] {
+  width: 18px;
+  height: 18px;
+  fill: #rgb(46, 132, 74);
+}
+
+.actionbtn .slds-dropdown__item>a {
+  padding: 5px 3px 5px 5px !important;
+}
+
+.actionbtn .slds-dropdown {
+  min-width: auto !important;
+  z-index: 8 !important;
+}
+
+.width-padd {
+  padding-right: 10px;
+}
+
+.slds-listbox_vertical .slds-listbox__option:focus,
+.slds-listbox_vertical .slds-listbox__option:hover,
+.slds-listbox_vertical .slds-listbox__option.slds-has-focus,
+.slds-listbox--vertical .slds-listbox__option:focus,
+.slds-listbox--vertical .slds-listbox__option:hover,
+.slds-listbox--vertical .slds-listbox__option.slds-has-focus {
+  background-color: #1e90ff !important;
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+/*====Freeze related css======*/
+/*.tableViewInnerDiv{
+overflow-x: auto;
+overflow-y: auto;
+width: 100%;
+margin-top:-33px;
+}
+.tableViewInnerDiv .slds-table{
+position:relative;
+}
+
+.tableViewInnerDiv .slds-table thead{
+position:sticky;
+top:0;
+z-index:5;
+}
+.tableViewInnerDiv .slds-table tbody tr td:first-child{
+position:sticky;
+left:0px;
+}
+
+.tableViewInnerDiv .slds-table tbody tr td:nth-child(2){
+position:sticky;
+left:80px;
+}*/
+
+.tableoverFlow {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: initial;
+  /* padding-top: 0px!important; */
+}
+
+.headerTitle .slds-grid .slds-col .slds-nubbin_top-left::before {
+
+  border-left: 1px solid black;
+  border-top-color: black !important;
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
+  border-left-width: 1px !important;
+  border-left-style: solid !important;
+  border-right-style: unset;
+  border-bottom-style: none;
+}
+
+.inputRows td .dv-dynamic-width .fields .slds-form-element div .slds-form-element__label {
+  display: none;
+}
+
+.actionbtn>.slds-dropdown>.slds-dropdown__list>slot>div>.slds-dropdown__item>a>lightning-primitive-icon>.slds-icon_x-small[data-key="edit"] {
+  fill: #4e77d8 !important;
+}
+
+.actionbtn>.slds-dropdown>.slds-dropdown__list>slot>div>.slds-dropdown__item>a>lightning-primitive-icon>.slds-icon_x-small[data-key="delete"] {
+  fill: #F23131 !important;
+}
+
+.actionbtn>.slds-dropdown>.slds-dropdown__list>slot>div>.slds-dropdown__item>a>lightning-primitive-icon>.slds-icon_x-small[data-key="preview"] {
+  fill: #00CC66 !important;
+}
+
+.tableoverFlow .tableViewInnerDiv .slds-table_header-fixed thead {
+  /* position:sticky;
+top:0;
+z-index: 3; */
+}
+
+.inputRows .slds-datepicker td {
+  border: none !important;
+}
+
+.inputRows .slds-datepicker thead tr th {
+  border-left: none;
+}
+
+.table-pager {
+  font-size: 12px !important;
+  /*width: 65% !important;*/
+  /*22-05*/
+}
+
+.select .slds-truncate .slds-form-element .slds-grow .slds-checkbox .slds-checkbox__label .slds-checkbox_faux {
+  margin-right: var(--lwc-spacingXSmall, 0.5rem) !important;
+  margin-left: 9px !important;
+  /*add 22/05 */
+  /*margin-top: 9px !important;add 22/05 */
+}
+
+.selectrow .slds-form-element .slds-grow .slds-checkbox .slds-checkbox__label .slds-checkbox_faux {
+  margin-right: var(--lwc-spacingXSmall, 0.5rem) !important;
+  margin-left: 10px !important;
+}
+
+.slds-nubbin_top-left:before,
+.slds-nubbin_top-left:after {
+
+  border-left: 1px solid black;
+  border-top-color: black !important;
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
+  border-left-width: 1px !important;
+  border-left-style: solid !important;
+  border-right-style: unset;
+  border-bottom-style: none;
+}
+
+.showEntries {
+  font-size: 12px !important;
+}
+
+.combobox .slds-listbox__option-icon {
+  display: none;
+}
+
+.dv-dynamic-width .fields lightning-formatted-number {
+  float: right;
+  padding-right: 8px;
+}
+
+.slds-dropdown {
+  border-radius: 0px !important;
+  background-color: #fff;
+  color: #333 !important;
+  padding: 0px !important;
+}
+
+.slds-input_faux {
+  /*border-radius: 0px !important;*/
+  /*change*/
+}
+
+.slds-listbox_vertical .slds-listbox__option_plain,
+.slds-listbox_vertical .slds-listbox__option--plain,
+.slds-listbox--vertical .slds-listbox__option_plain,
+.slds-listbox--vertical .slds-listbox__option--plain {
+  padding: 0px 0px 0px 5px !important;
+  color: #333;
+}
+
+.menu .slds-button_icon-more {
+  padding: 2px !important;
+  background-color: transparent !important;
+  color: navy !important;
+  border-color: transparent !important;
+  border: inherit;
+  height: auto;
+}
+
+.menu .slds-dropdown {
+
+  position: absolute !important;
+  left: -137px !important;
+  /* top: 34px !important; */
+  margin-left: 3px !important;
+  width: 175px !important;
+}
+
+.menu .slds-dropdown .slds-dropdown__list .slds-dropdown__item {
+  font-size: 14px;
+  /* font-family: Arial, Helvetica, sans-serif;*/
+}
+
+.grid-block,
+.slds-theme--default {
+  font-size: 13px;
+  /* font-family: 'Helvetica';*/
+  color: #333;
+  line-height: 19px;
+}
+
+.header {
+  background: rgb(243, 242, 242);
+}
+
+.slds-text-heading_small.header-title {
+  color: #00396B;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/*.slds-icon {
+    width: 14px !important;
+    height: 14px !important;
+    fill: #00396B!important;
+}*/
+.c-combobox .slds-icon {
+  width: 14px !important;
+  height: 14px !important;
+  fill: #00396B !important;
+}
+
+.slds-combobox .slds-combobox__form-element .slds-input__icon .slds-icon {
+  width: 14px !important;
+  height: 14px !important;
+  fill: #00396B !important;
+}
+
+.slds-button {
+  /*check if this css present in GGtheme, if present then remove*/
+  /*min-height: 22px;*/
+  font-size: 13px;
+  line-height: 1.2;
+
+}
+
+.slds-button_brand,
+.slds-button--brand,
+.slds-button_neutral {
+  min-height: 22px !important;
+  padding: 0 8px !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+}
+
+.slds-button_brand {
+  /*  background:#05599c;
+border:1px solid #05599c;
+color:#fff;*/
+}
+
+
+.header-search .slds-input {
+  min-height: 18px;
+  line-height: 1.9;
+}
+
+.dropdowntogglemenu {
+  /*width: 13px !important;
+height: 0px !important;
+float: inherit;*/
+  margin-top: 2px;
+}
+
+.menu .slds-button_icon-more .slds-button__icon {
+  height: 18px !important;
+  width: 28px !important;
+}
+
+.slds-button_icon-more {
+  /*check if this css present in GGtheme, if present then remove*/
+  background-color: transparent;
+  height: 14px;
+  color: #00396B;
+  Padding: 0px;
+  border: none;
+}
+
+.slds-titlebold {
+  /*check if this css present in GGtheme, if present then remove*/
+  font-weight: bold;
+}
+
+.slds-button_brand,
+.slds-button--brand {
+  /*check if this css present in GGtheme, if present then remove*/
+  --slds-c-button-spacing-inline-start: 8px !important;
+  --slds-c-button-spacing-inline-end: 8px !important;
+}
+
+.slds-button_brand:hover {
+  /*background: #005fb2 !important;
+border: 1px solid #005fb2 !important;
+color: #fff !important;*/
+}
+
+.listdropdown .slds-dropdown .slds-dropdown__list .slds-dropdown__item {
+
+  font-size: 15px;
+  color: #000000 !important;
+  font-weight: 400px;
+  border-radius: 0px;
+}
+
+.slds-dropdown__item>a {
+  color: #000 !important;
+  padding: 3px 10px !important;
+}
+
+.menu {
+  padding: 0px;
+}
+
+.slds-table_header-fixed_container {
+  /*check if this css present in GGtheme, if present then remove*/
+  border-top: 0.5px solid #ededed;
+  border-bottom: 0.5px solid #ededed;
+
+}
+
+.tableoverFlow .slds-table tbody tr td {
+  border-left: 0.5px solid #ededed;
+  border-top: 0.5px solid #ededed;
+}
+
+.tableViewInnerDiv table tr:nth-of-type(odd) {
+  /*check if this css present in GGtheme, if present then remove*/
+  background-color: #fff;
+}
+
+.tableViewInnerDiv table tr:nth-of-type(even) {
+  /*check if this css present in GGtheme, if present then remove*/
+  background-color: #f9f9f9;
+}
+
+.prevpageicon {
+  padding: 0px;
+}
+
+.blue-icon {
+  --lwc-colorTextIconDefault: #003bc6;
+}
+
+.nextpageicon {
+  background-color: #fff;
+}
+
+.slds-button_icon-border {
+  border: none;
+}
+
+.select .slds-cell-fixed {
+  background: linear-gradient(to bottom, #f5f5f5 0, #e8e8e8 100%);
+}
+
+.dv-dynamic-width .fields .slds-truncate a:hover {
+  text-decoration: none;
+  color: var(--lwc-brandTextLink, rgb(1, 118, 211));
+}
+
+.slds-dropdown .recordListBox .slds-listbox__item {
+  line-height: 13px;
+}
+
+.slds-dropdown .recordListBox .slds-listbox__item:hover {
+  background-color: #1e90ff !important;
+  color: #fff;
+}
+
+.dv-dynamic-width .slds-resizable__handle {
+  height: 0;
+}
+
+.innerFilter .slds-dropdown-custom,
+.c-combobox .slds-dropdown-custom,
+.custom-combo-container .slds-dropdown-custom,
+.fields .slds-dropdown-custom {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.custom-combo-container .slds-dropdown-custom,
+.innerFilter .slds-dropdown-custom {
+  transform: none;
+  left: 0;
+  border-bottom: 1px solid #c9c9c9 !important;
+  border-right: 1px solid #c9c9c9 !important;
+}
+
+.recordListBox .slds-listbox__item {
+  border-left: 1px solid #c9c9c9;
+  /*border-right:1px solid #c9c9c9;*/
+}
+
+/*.recordListBox .slds-listbox__item:nth-last-of-type(1) {
+border-bottom:1px solid #c9c9c9;
+}*/
+.recordListBox .slds-listbox__item:first-of-type {
+  border-top: 1px solid #c9c9c9;
+}
+
+.testaction .slds-truncate {
+  white-space: normal;
+}
+
+.my-pill .slds-pill {
+  /*check if this css present in GGtheme, if present then remove*/
+  padding: 2px 4px 4px 4px !important;
+  background: #f3f3f3 !important;
+  color: #3B4D6D;
+  font-weight: 600;
+}
+
+.my-pill .slds-pill__remove svg {
+  /*check if this css present in GGtheme, if present then remove*/
+  color: #3B4D6D;
+}
+
+.innerFilter .slds-button_neutral[aria-disabled="false"] {
+  background-color: #007400 !important;
+  padding: 4px !important;
+  font-size: 10px !important;
+  color: #ffffff;
+}
+
+.innerFilter .slds-button_neutral[aria-disabled="true"] {
+
+  padding: 4px !important;
+  font-size: 10px !important;
+  color: #333;
+  background-color: #dbdbdb;
+  border-color: #dbdbdb;
+}
+
+.innerFilter .slds-button_brand[title="Clear"] {
+  background-color: #E21308 !important;
+  padding: 4px !important;
+  border: 1px solid #E21308 !important;
+  font-size: 10px !important;
+}
+
+/*======22/-05/203=========*/
+.slds-button_icon-more:hover .slds-button__icon,
+.slds-button_icon-more:focus .slds-button__icon,
+.slds-button--icon-more:hover .slds-button__icon,
+.slds-button--icon-more:focus .slds-button__icon {
+  fill: #00396B;
+}
+
+.innerFilter {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd !important;
+  margin-bottom: 5px !important;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+}
+
+/*.dv-dynamic-width .fields .slds-form-element .slds-form-element__control .slds-input, .dv-dynamic-width .fields .slds-form-element .slds-form-element__control .slds-textarea{width:95%;}*/
+.childInputRow {}
+
+.childInputRow:nth-of-type(1) {
+  margin-top: 7px;
+}
+
+.childInputRow .header {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+  border: 1px solid rgb(221, 219, 218);
+  /*border-top: 3px solid #b0c4df;*/
+}
+
+.childInputRow .slds-box {
+  padding: 0px 0px 0px 10px !important;
+  border: 0px !important;
+  background: transparent;
+}
+
+.slds-table_header-fixed_container {
+  height: 350px;
+}
+
+.dv-dynamic-width .slds-truncate lightning-formatted-text br {
+  content: "";
+}
+
+.slds-resizable__divider:after {
+  background-color: transparent;
+}
+
+.slds-resizable__divider {
+  cursor: e-resize;
+}
+
+.tableViewInnerDiv .slds-table thead th {
+  background: linear-gradient(to bottom, #f5f5f5 0, #e8e8e8 100%) !important;
+  color: #000;
+  padding: 0px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.tableoverFlow::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #f2f0f5;
+}
+
+.tableoverFlow::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+}
+
+.c-combobox .inputBox {
+  width: 53px;
+}
+
+.c-combobox .slds-input-has-icon_right .slds-input__icon {
+  right: 7px;
+}
+
+.c-combobox .slds-input-has-icon_right .slds-input {
+  padding: 0px 5px 1px;
+}
+
+.slds-table--header-fixed_container[data-id="cnt-Div"] {
+  padding-top: 0px;
+  background-color: transparent;
+}
+
+.c-combobox ::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.thpadding {
+  padding: 0px !important;
+}
+
+.slds-table_bordered tbody td.thpadding {
+  padding: 0px !important;
+}
+
+.allSelect {
+  padding-left: 3px !important;
+}
+
+.selecteachrow {
+  padding-left: 3px !important;
+}
+
+.tablecolumn {
+  width: 20px !important;
+
+}
+
+.tablecolumndiv {
+  width: 40px !important;
+
+}
+
+.dropDwnWidth {
+  width: 42px !important;
+}
+
+/* .checkboxwidth {
+  width: 28px !important;
+} */
+
+.showArrow {
+  display:block;
+}
+
+.hideArrow {
+  display:none;
+}
+
+.tableoverFlow .slds-resizable__divider {
+  right: 8px;
+}
+
+
+.fields .slds-form-element lightning-datetimepicker .slds-form .slds-form-element .slds-form-element__control .slds-form-element__group .slds-form-element__row lightning-timepicker .slds-form-element__control .slds-combobox_container .slds-combobox .slds-listbox .slds-media .slds-media__figure {
+  display: none;
+}
+
+lightning-timepicker .slds-form-element__control .slds-combobox_container .slds-combobox .slds-listbox .slds-media.slds-listbox__option {
+  padding: 0px 0px 0px 5px !important;
+}
+
+/* Calender */
+.slds-datepicker tbody>tr>td {
+  padding: 1px !important;
+  overflow-y: auto;
+}
+
+.innerFilter .slds-titlebold,
+.innerFilter .slds-combobox_container,
+.innerFilter .slds-form-element,
+.innerFilter .slds-dropdown {
+  font-size: 10px;
+}
+
+.successMsg {
+
+  background-color: #dff0d8 !important;
+
+  background-image: none !important;
+
+  color: #2b502b;
+
+}
+
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default {
+  margin-left: 3px !important;
+}
+
+.warningMsg {
+  color: #654f2a;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  padding: 10px;
+  border-radius: 0.25rem;
+  margin-bottom: 10px;
+  padding-left: 15px;
+
+}
+
+.message-button {
+  float: right;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  background: none;
+  display: inline-flex;
+  margin-top: -3px;
+}
+
+.errorMsg {
+	display: flex;
+  color: #762f2e;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+
+  padding: 10px;
+
+  border-radius: 0.25rem;
+
+  margin-bottom: 10px;
+
+  padding-left: 15px;
+}
+
+.messageIcon {
+  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #a94442)) !important;
+  border-radius: 50%;
+  margin-right: 5px;
+  height: 16.5px;
+}
+
+.messageIcon .slds-icon {
+  fill: #f2e8e8 !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 2px;
+}
+
+.successmessageIcon {
+  margin-right: 5px;
+}
+
+.successMsg {
+  color: #2b502b;
+  background-color: #dff0d8;
+
+  padding: 10px;
+
+  border-radius: 0.25rem;
+
+  margin-bottom: 10px;
+
+  padding-left: 15px;
+
+}
+
+.messageIcon span[part="boundary"] {
+  padding: 1px;
+}
+
+.errorContent {
+  display: inline-flex;
+  position: relative;
+  margin-left: 5px;
+  margin-top: -3px;
+  width: 96%;
+}
+
+.warningMsg h2 {
+  display: inline-flex;
+  margin-left: 10px;
+  width: 94%;
+}
+
+.warningMessageIcon .slds-icon {
+  margin-bottom: 3px;
+  fill: #654f2a !important;
+}
+
+.successMsg h2 {
+  display: inline-flex;
+  margin-left: 10px;
+  width: 94%;
+}
+
+.successMsg .message-button {
+
+  color: green;
+}
+
+.successMsg .slds-icon {
+  fill: green !important;
+  margin-bottom: 3px;
+}
+
+.thclass div .slds-is-resizable .slds-th__action:focus,
+.thclass div .slds-is-resizable .slds-th__action:focus:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  ;
+}
+
+.thclass div .slds-th__action:focus,
+.thclass div .slds-th__action:hover {
+  outline: 0;
+  background-color: transparent !important;
+}
+
+.headerActionIcon .slds-icon {
+  width: 16px;
+  height: 16px;
+  fill: #000;
+}
+
+.thclass div a span[data-id="Sr__No"] {
+  font-size: 16px;
+}
+
+.thclass .slds-th__action .slds-truncate {
+  white-space: normal;
+  overflow: visible;
+}
+
+.ctable .slds-box .header {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.slds-box.grid-block {
+  padding: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+  border: 1px solid rgb(221, 219, 218);
+}
+
+.ctable .slds-box {
+  margin-left: 0px;
+  margin-right: 0px;
+
+}
+
+.actionbtn .slds-dropdown__item a {
+  color: #01579D !important;
+}
+
+.tableoverFlow:hover::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  visibility: visible;
+}
+
+.tableoverFlow:hover::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+  border-radius: 0.25rem;
+  visibility: visible;
+}
+
+.tableoverFlow::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  visibility: hidden;
+}
+
+.tableoverFlow::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+  border-radius: 0.25rem;
+  visibility: hidden;
+}
+
+.actionbtn .slds-button_icon-more,
+.actionbtn .slds-button_icon-border {
+  /*check if this css present in GGtheme, if present then remove*/
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.125rem;
+  border: 1px solid #c9c9c9;
+}
+
+.innerFilter .slds-input {
+  min-height: 24px;
+  line-height: 1.6;
+}
+.innerFilter .slds-button_brand[title="Clear"]:hover {
+  background-color: #d90e04 !important;
+  border: 1px solid #d90e04 !important;
+}
+.innerFilter .slds-button_neutral[aria-disabled="false"]:hover {
+  background-color: #006a00 !important;
+  border: 1px solid #006a00 !important;
+ }
+
+
+.modalSection .slds-modal__container .slds-modal__footer .modalbtn .slds-button.slds-button_neutral {
+  border-color: #c9c9c9 !important;
+}
+
+.modal-header-ext {
+  padding: 10px 15px 10px 15px !important;
+  background: rgb(243, 242, 242) !important;
+  color: #00396B;
+}
+
+.slds-modal__header {
+  /* background-color: #FAFAF9!important; */
+  color: #00396b !important;
+  font-weight: 600;
+  border-bottom-width: 1px !important;
+}
+
+.slds-modal__header .slds-modal__close {
+  position: absolute;
+  right: 5px;
+  margin-left: 0;
+  bottom: 0;
+}
+
+.slds-modal__close .slds-button {
+  font-size: 18px;
+  color: #00396B;
+}
+
+.slds-modal__close .slds-button:active {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.slds-text-heading_medium {
+  font-weight: 700;
+  color: #00396b;
+  font-size: 15px !important;
+}
+
+.slds-modal__close .slds-button:focus {
+  box-shadow: none;
+
+}
+
+.modalSection .slds-modal__container .slds-modal__footer {
+  border-top: 1px solid #c9c9c9 !important;
+  background: rgb(243, 243, 243) !important;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+
+.resetMsg {
+  color: #23527c !important;
+}
+
+.slds-modal__content.modalContent c-flex-gridlwc c-lwc-flex-table .slds-box {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.flexEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-wrapper .slds-button {
+  float: right;
+  margin-left: 2px;
+}
+
+.advance-custom-wrap>.slds-col>.slds-button {
+  float: right;
+  margin-right: 10px;
+}
+
+:focus {
+  outline: none;
+}
+
+/* below css for phase level FlexgridLWC padding*/
+c-phase-view c-lwc-flex-table .slds-box.grid-block {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.fields .slds-required {
+  display: none;
+}
+
+.togglebtn .slds-button,
+.resetIcon .slds-button {
+  width: 25px;
+  height: 25px;
+}
+
+.resetIcon .slds-button {
+  width: 25px;
+  height: 25px;
+}
+
+.recordsTxt {
+  font-size: 12px;
+}
+
+.resteIconWrap {
+  float: right;
+}
+
+.boldText {
+  font-weight: bold;
+
+}
+
+
+.tableViewInnerDiv .slds-table thead th .slds-th__action:focus,
+.tableViewInnerDiv .slds-table thead th .slds-th__action:hover {
+  background: linear-gradient(to bottom, #f5f5f5 0, #e8e8e8 100%) !important;
+}
+
+.fixed_headers {
+  border-collapse: separate;
+  width: 100%;
+}
+
+.fixed_headers thead tr {
+  position: relative;
+}
+
+
+/* .fixed_headers thead th {
+position: sticky;
+top: 0;  
+resize: horizontal;
+overflow: hidden;
+min-width: 28px;
+z-index: 2;
+} */
+.inputRows .fixed_headers thead th{
+z-index: 1;
+ }
+
+ .flexGrid_th{
+ resize: horizontal;
+  overflow: hidden;
+ }
+
+.flexGrid_div {
+  /* resize: horizontal;
+  overflow: hidden; */
+  margin: 0px;
+  padding: 0px;
+  /* border: 1px solid black; */
+  display:block;
+  min-width: 40px;
+}
+
+.inputRows .fixed_headers thead th {
+  z-index: 1;
+}
+
+.fixed_headers_truncate {
+  min-width: 40px !important;
+  text-overflow: ellipsis !important;
+  white-space: normal !important;
+  /* margin-top: 3px; */
+}
+
+.resizeNone {
+  resize: none !important;
+}
+
+.dropdown-bottom {
+  bottom: 100% !important;
+  top: auto !important;
+}
+
+.dropdown-top {
+  top: 100% !important;
+}
+
+/*phase view modal flexgrid table padding*/
+c-phase-view c-modal-flex-layout .slds-modal__content.modalContent c-flex-gridlwc c-lwc-flex-table .slds-box.grid-block {
+
+  margin-left: 15px !Important;
+  margin-right: 15px !Important;
+}
+
+c-phase-view c-modal-flex-layout .slds-modal__content.modalContent div c-flex-gridlwc c-lwc-flex-table .slds-box.grid-block {
+
+  margin-top: 5px !Important;
+  margin-bottom: 10px !Important;
+}
+
+/*calender resize iocn hide */
+.inputRows .slds-datepicker thead tr th {
+  resize: none;
+}
+
+/*list view and hamberger dropdown issue*/
+.headerTitle .slds-grid .listdropdown .slds-dropdown,
+.inputRows .slds-datepicker {
+  z-index: 4 !important;
+}
+
+.dropdowntogglemenu .menu .slds-dropdown {
+  z-index: 4 !important;
+}
+
+.fontBackgorund {
+  /*Bug 367150:*/
+  font-weight: normal;
+}
+
+.slds-nubbin--top-right:before,
+.slds-nubbin_top-right-corner:before,
+.slds-nubbin_top-right:before {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+/*Bug 372014*/
+.slds-size_9-of-12.totalRecords div .recordsTxt span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+  float: right;
+}
+
+/*grid header action menu*/
+.menu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="sync"] {
+  fill: rgb(255 0 0);
+}
+
+.menu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="refresh"] {
+  fill: rgb(0 0 0);
+}
+
+.menu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="pdf_ext"],
+.menu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="file"] {
+  fill: rgb(22 160 133);
+}
+
+/*grid record action*/
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="preview"] {
+  fill: rgb(0 204 102);
+}
+
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="edit"] {
+  fill: rgb(78 119 216);
+}
+
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="delete"] {
+  fill: rgb(242 49 49);
+}
+
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="screen"] {
+  fill: rgb(242 139 0);
+}
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="send"]{
+  fill: #EE96F3;
+   }
+   .actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="play"]{
+    fill:hsla(120, 91%, 30%, 0.78);
+     }
+.fields .lookupInputContainer .slds-dropdown_fluid,
+.fields .lookupInputContainer .slds-dropdown--fluid {
+  max-width: 100% !important;
+
+}
+
+/*=====left right border=======*/
+.custom-fixed-container:before {
+  border-bottom: none !important;
+}
+
+.tableClass {
+  border-top: 0.5px solid #ededed;
+  border-bottom: 0.5px solid #ededed;
+  border-left: 0.5px solid #ededed;
+  border-right: 0.5px solid #ededed;
+}
+
+.tableoverFlow {
+  border-top: 0.5px solid #ededed;
+}
+
+/*======for align required symbol======*/
+/* .tableClass .slds-th__action{
+  align-items: baseline;
+} */
+
+.slds-th__action .required-symbol {
+  align-self: stretch;
+  margin-top: -3px;
+}
+
+.asterisk-symbol {
+  display: inline-flex;
+}
+
+.required-symbol{
+  color: var(--slds-g-color-error-base-40, var(--lwc-colorTextError,rgb(234, 0, 30)));
+}
+
+.resetIcon .slds-button_icon-brand {
+  background-color: #e5e5e5;
+  color: rgb(255 0 0);
+  border-color: #ddd;
+}
+
+/*==========child table padding===============*/
+.inputRows .custom-fixed-container {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.inputRows .showEntries {
+  margin-left: -10px;
+}
+
+.inputRows .totalRecords .recordsTxt {
+  margin-right: -20px;
+}
+
+/*===grid advance filter date time==========*/
+.innerFilter lightning-input.slds-form-element lightning-datetimepicker .slds-form .slds-form-element_compound .slds-form-element__control .slds-form-element__group .slds-form-element__row .slds-form-element {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.innerFilter lightning-input.slds-form-element lightning-datetimepicker .slds-form .slds-form-element.slds-form-element_compound .slds-form-element__control .slds-form-element__group .slds-form-element__row lightning-timepicker .slds-form-element__control .slds-combobox_container {
+  padding-left: var(--lwc-spacingXxSmall, 0.25rem);
+  padding-right: var(--lwc-spacingXxSmall, 0.25rem);
+}
+
+.innerFilter lightning-icon.slds-icon-utility-clock {
+  right: 5px !important;
+  top: 10px !important;
+}
+
+.innerFilter .slds-p-around_small .slds-p-right_medium .slds-button.slds-button_icon[title="Select a date for Date"] {
+  line-height: var(--lwc-lineHeightReset, 1) !important;
+}
+
+.recordListBox .slds-listbox__item:hover .slds-icon[data-key="check"] {
+  fill: #fff !important;
+}
+
+/*downlad as zip folder*/
+.menu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="open_folder"] {
+  fill: rgb(22 160 133);
+}
+
+/*review form*/
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="document_preview"] {
+  fill: rgb(1, 68, 134);
+}
+
+/*add line item details*/
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="open"] {
+  fill: #f26979;
+}
+
+/*confirm modal UI */
+
+.fix-slds-modal.slds-modal_prompt .slds-modal__container .slds-modal__footer .slds-button.slds-button_neutral {
+  border-color: #c9c9c9 !important;
+  position: absolute;
+  right: 60px;
+}
+
+.fix-slds-modal.slds-modal_prompt .slds-modal__container .slds-modal__footer .slds-button_brand {
+  float: right;
+}
+
+.fix-slds-modal .slds-modal__container .slds-theme_alert-texture,
+.slds-theme--alert-texture {
+  padding: 10px 15px 10px 15px !important;
+  background: rgb(243, 243, 243) !important;
+  background-image: none !important;
+}
+
+
+.slds-text-heading_medium {
+  font-weight: 700;
+  color: #00396b;
+  font-size: 15px !important;
+
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__header {
+
+  border-bottom: 1px solid #c9c9c9 !important;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__footer {
+  border-top: 1px solid #c9c9c9 !important;
+  background: rgb(243, 243, 243) !important;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__footer .slds-button.slds-button_neutral {
+  background-color: var(--sds-c-button-neutral-color-background, white) !important;
+  border-color: var(--sds-c-button-neutral-color-border, #c9c9c9);
+
+}
+
+.slds-modal__footer .slds-button.slds-button_neutral:hover,
+.slds-modal__footer .slds-button.slds-button_neutral:focus {
+  border: 1px solid #c9c9c9 !important;
+
+}
+
+.btn-wrapper .slds-button:active {
+  border-color: transparent !important;
+}
+
+.innerFilter .slds-button_brand[title="Clear"]:hover {
+  transform: none !important;
+}
+
+.header-search .slds-input {
+  width: 100% !important;
+  max-width: 240px !important;
+}
+
+.fields lightning-timepicker .slds-combobox .slds-dropdown.slds-dropdown_length-with-icon-5 {
+  height: 120px !important;
+}
+
+.slds-text-heading_small.header-title {
+  display: inline-block;
+  /* max-width: 78%; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.modalSection .slds-modal__container .slds-modal__content .slds-box .slds-is-relative .header .headerTitle .slds-grid.slds-wrap .slds-col .slds-text-heading_small.header-title {
+  max-width: 80%;
+
+}
+
+
+
+.showEntries .combobox .inputBox .slds-input {
+  min-height: 25px;
+  line-height: 1.6;
+}
+
+.table-pager .blue-icon .slds-button_icon-border {
+  height: auto;
+  width: 1.5rem;
+}
+
+.listdropdown .slds-button_icon-more:focus {
+  box-shadow: none;
+}
+
+.listdropdown .slds-button_icon-more {
+  margin-bottom: 1px;
+}
+
+.lookupInputContainer .slds-dropdown .slds-table thead tr th {
+  resize: none;
+}
+
+.showEntries .multiPicklist .slds-dropdown-custom .recordListBox li.slds-listbox__item{
+	padding-bottom: 1px !important;
+	padding-top: 1px !important;
+	}
+
+  .actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="custom48"] {
+    fill: rgb(78 119 216);
+    width: var(--lwc-squareIconSmallBoundary, 1.5rem);
+    height: var(--lwc-squareIconSmallBoundary, 1.5rem);
+    line-height: var(--lwc-lineHeightReset, 1);
+  }
+  .actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="thunder"] {
+    fill: rgb(78 119 216);
+  }
+  .actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="new_direct_message"] {
+    fill: rgb(243, 140, 20);
+  }
+ .slds-icon-custom-custom48{
+      background-color: white;
+    }
+.slds-tabs_default__link .slds-icon[data-key="custom48"] {
+      width: 25px !important;
+      height: 25px !important;
+    }
+  /* css support for Security */
+.header{
+  background:rgb(243, 242, 242);
+} 
+.list-menu-item{
+  font-size:15px; color: #000000 !important; font-weight:400px; border-radius:0px;
+}
+.showhelptext{
+  position:relative;
+}
+.showhelptext-tooltip{
+  padding: 5px; top:40px; margin-left:-32px; position:absolute; background-color: rgb(245,245,245);border: 1px solid black;
+}
+.sort-reseticon{
+  display: inline-block;
+}
+.actionDwnWidth{
+  width:50px !important;
+}
+.checkboxwidth{
+  width:40px !important;
+}
+.required-symbol{
+  color: crimson;
+}
+.inputRows{
+  max-width:100%;
+}
+.tableViewInnerDiv{
+  height:100%;
+
+} 
+
+.actionbtn .slds-dropdown .slds-dropdown__list div lightning-menu-item a lightning-primitive-icon .slds-icon-text-default[data-key="close"] {
+  fill: rgb(242 49 49);
+}
+
+.tableClass tbody td, .tableClass tbody td .width-padd{
+  height:auto !important;
+}
+
+.flexGrid_div[title="#"]{
+  resize:none !important;
+}
+
+.col-showhelptext{
+  position: relative  !important; 
+  word-break:break-all !important;
+  white-space:normal !important;
+}
+.col-tooltip{
+    padding: 5px; 
+    top:40px; 
+    margin-left:-32px; 
+    position:absolute; 
+    background-color: rgb(245,245,245);
+    border: 1px solid black;
+}
+.fixed_headers thead {
+    position: sticky;
+    top: 0;  
+    z-index: 2;
+}
+.rowEnabledBoolean .slds-icon[data-key="check"]{
+  width:18px;
+  height:18px;
+  fill:#2e844a !important;
+  }
+  
+  .innerFilter .slds-dropdown {
+ z-index: 8 !important;
+}
+
+.innerFilter .slds-pill .slds-pill__label{
+  white-space:normal;
+  word-break: break-all;
+  }
+  .headertitle1{
+    display: flex;
+   }
+   .flexGrid_div a.slds-th__action .pointer{
+    margin-left: 4px;
+  }
+
+  .slds-button_neutral.btnCompact{
+    border-color:#c9c9c9 !important;
+  }
+/* css support for Mozila fireox browser */
+  @-moz-document url-prefix() { 
+    .tableViewInnerDiv {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      scrollbar-width: thin; 
+      scrollbar-color: transparent transparent; 
+      transition: scrollbar-color 0.3s;
+    }
+    
+    .tableViewInnerDiv:hover {
+      scrollbar-color: #c1c1bf #ffffff;
+    }  
+  }
+/*Bug 442814 */
+  .col-showhelptext table tbody tr td{
+    white-space:normal !important;
+    }
+    
+    .col-showhelptext table tbody tr {
+    background:transparent !important;
+    }

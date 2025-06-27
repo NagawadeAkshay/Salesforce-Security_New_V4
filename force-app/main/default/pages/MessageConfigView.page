@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page standardController="MessageConfig__c" extensions="MessageConfigViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+        
+</apex:page>

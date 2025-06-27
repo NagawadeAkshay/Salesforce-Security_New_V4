@@ -1,0 +1,88 @@
+<template>
+    <div class="slds-box slds-theme_default slds-is-relative">
+        
+        <div class="slds-text-color_inverse slds-var-p-around_xx-small header" onclick={handleToggle}>
+            <a>
+			<lightning-icon icon-name={getToggleIcon}  tabindex="0"  alternative-text="Expanded" variant="bare"  class="slds-var-m-right_xx-small slds-p-left_x-small toggleIcon">
+            </lightning-icon>
+			</a>
+            <span class="slds-text-heading_medium" tabindex="0" title="Approval History">Approval History</span>
+        </div>
+			<template if:true={showIcon}>
+                    <c-spinner show-spinner="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+            </template>  
+            <template if:true={isLoading}>
+            <span>Loading....</span>
+	        </template> 
+	        <template if:false={isLoading}>
+	        <template if:true={showApprovalHistory} >
+            <div class="table-scroll slds-scrollable slds-p-around_medium">        
+                <table class="slds-table slds-table_bordered slds-border_left slds-border_right" >
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Date">Date</span></div></th>
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Assigned To">Assigned To</span></div></th>
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Actual Approver">Actual Approver</span></div></th>
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Comments">Comments</span></div></th>
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Status">Status</span></div></th>
+                            <th class="title" scope="col" ><div class="slds-truncate" tabindex="0"><span title="Overall Status">Overall Status</span></div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                      <!--  <template if:true={errorMessage}>
+                            <tr >
+                                <td class="td-errormsg" colspan="6" tabindex="0">
+                                    {errorMessage}
+                                </td>
+                            </tr>
+                        </template>-->
+
+                        <template for:each={approvalHistory} for:item="approvalNode">
+                            <tr key={approvalNode.key} class="approvalNode-key">
+                                <td colspan="5" data-label="stepName" tabindex="0"><span title={approvalNode.stepName}>{approvalNode.stepName}</span></td>
+                                <td>
+                                    <div tabindex="0">
+                                    <span title={approvalNode.overAllStatus}>
+                                    <template if:true={approvalNode.isNotStarted} >
+                                        {approvalNode.overAllStatus}
+                                        </template>
+                                    </span>
+                                </div>
+                                </td>
+                            </tr>
+
+                            <template for:each={approvalNode.listOfSteps} for:item="step">
+                                <tr key={step.pIhId}>
+                                    <td data-label="Date"><div class="slds-truncate" tabindex="0"><span title={step.formattedCreatedDate}>{step.formattedCreatedDate}</span></div></td>
+                                    <td data-label="Assigned To"><div class="slds-truncate" tabindex="0"><span title={step.originalActorName}>{step.originalActorName}</span></div></td>
+                                    <template if:true={step.showActualApprover}>
+                                        <td data-label="Approver"><div class="slds-truncate" tabindex="0"><span title={step.actorName}>{step.actorName}</span></div></td>
+                                    </template>
+                                    <template if:false={step.showActualApprover}>
+                                        <td data-label="Approver"><div class="slds-truncate" tabindex="0"><span title={step.actorName}>{step.originalActorName}</span></div></td>
+                                    </template>
+                                    <td data-label="Comments"><div class="slds-truncate textwrap" tabindex="0"><span title={step.Comments}>{step.comments}</span></div></td>
+                                    <td data-label="Status"><div class="slds-truncate"  tabindex="0"><span title={step.stepStatus}>{step.stepStatus2}</span></div></td>
+                                    <!-- <template if:true={isSomething}></template> -->
+                                   
+                                    
+                                    <td></td>
+                                </tr>
+                            </template>
+                        </template>
+
+                    </tbody>
+                </table>
+				   <template if:true={errorMessage}>
+                           
+                                <span class="td-errormsg slds-align_absolute-center slds-p-top_x-small"  tabindex="0">
+                                    {errorMessage}
+                                </span>
+                          
+                        </template>
+            </div>
+        </template>
+	</template> 
+    </div>
+</template>

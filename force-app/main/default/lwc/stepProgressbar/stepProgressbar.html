@@ -1,0 +1,122 @@
+<template>
+    <div class="container">
+        <div class="progressBarWrap slds-p-left_small slds-p-right_small">
+            <template if:true={isData}>
+                <!--For show full path with all stages-->
+                <template if:true={showAllStages}>
+                    <lightning-progress-indicator current-step={currentStatus} type="path" variant="base"
+                        has-error={error} class="progressIndicator">
+                        <template for:each={resultList} for:item="step1">
+                            <template if:true={step1.hasError}>
+                                <lightning-progress-step label={step1.displayName} data-createddate={step1.CreatedDate}
+                                    data-createdby={step1.CreatedBy} class="errorStep" value={step1.picklistVal}
+                                    key={step1.displayName} data-id={step1.displayName}
+                                    title={step1.title}></lightning-progress-step>
+                            </template>
+                            <template if:false={step1.hasError}>
+                                <lightning-progress-step label={step1.displayName} data-createddate={step1.CreatedDate}
+                                    data-createdby={step1.CreatedBy} value={step1.picklistVal} key={step1.displayName}
+                                    data-id={step1.displayName} title={step1.title}></lightning-progress-step>
+                            </template>
+                        </template>
+                    </lightning-progress-indicator>
+                </template>
+
+                <!--For show path with 3 stages and with previous and next button-->
+                <template if:false={showAllStages}>
+                    <template if:true={showPreNxtButton}>
+                        <div class="buttonDiv previousButton">
+                            <lightning-button-icon icon-name="utility:left" class="blue-icon  button prevbtn"
+                                variant="brand" alternative-text="Previous Step" title="Previous Step" onclick={showPreviousStep}
+                                disabled={isDisablePreviousBtn}></lightning-button-icon>
+                        </div>
+                    </template>
+                    <div class="progressBarDiv">
+                        <div class="slds-path ">
+                            <div class="slds-grid slds-path__track">
+                                <div class="slds-grid slds-path__scroller-container">
+                                    <div class="slds-path__scroller">
+                                        <div class="slds-path__scroller_inner">
+                                            <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+
+                                                <template for:each={resultListForUI} for:item="step">
+                                                    <!-- if Completed -->
+                                                    <template if:true={step.isCompleted}>
+                                                        <li key={step.displayName} data-id="completedstage" title={step.title}
+                                                            class="slds-path__item slds-is-complete"
+                                                            role="presentation">
+                                                            <a aria-selected="false" class="slds-path__link"
+                                                                role="option">
+                                                                <span class="slds-path__stage">
+                                                                    <lightning-icon icon-name="utility:check"
+                                                                        variant="inverse" size="xx-small"
+                                                                        class="slds-icon slds-icon_x-small"></lightning-icon>
+                                                                </span>
+                                                                <span class="slds-path__title">{step.displayName}</span>
+                                                            </a>
+                                                        </li>
+                                                    </template>
+                                                    <!-- if Current -->
+                                                    <template if:true={step.isCurrent}>
+                                                        <template if:true={step.hasError}>                                 
+                                                            <li key={step.displayName}
+                                                                class="slds-path__item slds-is-current slds-is-active errorStep errorStepBackgrundColor" title={step.title}
+                                                                role="presentation">
+                                                                <a aria-selected="true" class="slds-path__link" role="option">
+                                                                    <span class="slds-path__stage">
+                                                                        <lightning-icon icon-name="utility:check" variant="inverse" size="xx-small"
+                                                                            class="slds-icon slds-icon_x-small"></lightning-icon>
+                                                                    </span>
+                                                                    <span class="slds-path__title">{step.displayName}</span>
+                                                                </a>
+                                                            </li>                                         
+                                                        </template>
+                                                        <template if:false={step.hasError}>
+                                                            <li key={step.displayName} class="slds-path__item slds-is-current slds-is-active" title={step.title}
+                                                                role="presentation">
+                                                                <a aria-selected="true" class="slds-path__link" role="option">
+                                                                    <span class="slds-path__stage">
+                                                                        <lightning-icon icon-name="utility:check" variant="inverse" size="xx-small"
+                                                                            class="slds-icon slds-icon_x-small"></lightning-icon>
+                                                                    </span>
+                                                                    <span class="slds-path__title">{step.displayName}</span>
+                                                                </a>
+                                                            </li>
+                                                        </template>
+                                                    </template>
+                                                    <!-- if Upcoming -->
+                                                    <template if:true={step.isUpcoming}>
+                                                        <li key={step.displayName}
+                                                            class="slds-path__item slds-is-incomplete"
+                                                            title={step.title} role="presentation">
+                                                            <a aria-selected="false" class="slds-path__link"
+                                                                role="option">
+                                                                <span class="slds-path__stage">
+                                                                    <lightning-icon icon-name="utility:check"
+                                                                        variant="inverse" size="xx-small"
+                                                                        class="slds-icon slds-icon_x-small"></lightning-icon>
+                                                                </span>
+                                                                <span class="slds-path__title">{step.displayName}</span>
+                                                            </a>
+                                                        </li>
+                                                    </template>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <template if:true={showPreNxtButton}>
+                        <div class="buttonDiv nextButton">
+                            <lightning-button-icon icon-name="utility:right" class="blue-icon button" variant="brand"
+                                alternative-text="Next Step" title="Next Step" onclick={showNextStep}
+                                disabled={isDisableNextBtn}></lightning-button-icon>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page cache="true" standardStyleSheets="false" controller="DynamicLayoutExportCtrl" contenttype="{!JSENCODE($CurrentPage.parameters.mode)}{!IF($CurrentPage.parameters.mode=='text/csv',SUBSTITUTE('#'+'GG__'+$CurrentPage.parameters.flexTableHeader+'__'+$CurrentPage.parameters.locale+'.csv',' ','_'),SUBSTITUTE('#'+'GG__'+$CurrentPage.parameters.flexTableHeader+'__'+$CurrentPage.parameters.locale+'.xls',' ','_'))}" renderAs="{!IF($CurrentPage.parameters.mode=='pdf','pdf','')}" readonly="true" showHeader="false" sidebar="false">
+	
+</apex:page>

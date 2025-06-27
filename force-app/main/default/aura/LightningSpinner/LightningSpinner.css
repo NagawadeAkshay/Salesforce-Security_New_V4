@@ -1,0 +1,52 @@
+.THIS .slds-spinner.spinner-container {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.THIS img#govGrantsPleaseWaitHolderId {
+    background: transparent;
+    animation-name: RotateHorizontal;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    max-height: 60px;
+}
+
+@-webkit-keyframes RotateHorizontal {
+    from {
+        -webkit-transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+@-moz-keyframes RotateHorizontal {
+    from {
+        -moz-transform: rotateY(0deg);
+    }
+    to {
+        -moz-transform: rotateY(360deg);
+    }
+}
+
+@-ms-keyframes RotateHorizontal {
+    from {
+        -ms-transform: rotateY(0deg);
+    }
+    to {
+        -ms-transform: rotateY(360deg);
+    }
+}
+
+@keyframes RotateHorizontal {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.THIS .spinner-opacity{
+    opacity: 0.6;
+}

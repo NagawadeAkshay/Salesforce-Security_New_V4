@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT" description="Event for ContentFolder features">
+    <aura:attribute name="expanded" type="Boolean" default="false" />
+    <aura:attribute name="level" type="Integer" />
+    <aura:attribute name="isLibrary" type="Boolean" default="false" />
+    <aura:attribute name="isFolder" type="Boolean" default="false" />
+    <aura:attribute name="isFile" type="Boolean" default="false" />
+    <aura:attribute name="level" type="Integer" />
+</aura:event>

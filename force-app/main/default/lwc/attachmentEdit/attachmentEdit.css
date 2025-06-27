@@ -1,0 +1,43 @@
+.row{
+  overflow: auto; 
+  font-size: 13px; 
+   /* font-family: 'Helvetica'; */
+  color:#333;
+  line-height: 19px;
+}
+.tablewidth{
+  width:100%;
+  border-collapse: collapse;
+
+}
+.td-width{
+  width:130px;
+}
+
+
+.textAreaBody {
+  --sds-c-textarea-sizing-min-height:80px;
+}
+.requiredField {
+  color: red;
+}
+.slds-alert-success{
+background-color: #dff0d8!important;
+background-image: none!important;
+color:#3c763d !important;
+justify-content: left!important;
+border-radius: 0.25rem;
+
+}
+.slds-alert-danger {
+color: #a94442;
+background-color: #f2dede;
+border-color: #ebccd1;
+background-image: none!important;
+  justify-content: left!important;
+border-radius: 0.25rem;
+}
+
+table tbody tr,table tbody tr:hover{
+background-color:transparent !important;
+}

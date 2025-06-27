@@ -1,0 +1,14 @@
+<!-- 13-10 2022 Tejashree D - U158S201 - Modified function removeErrorMessage - passed one more param here that is fieldapiname and 
+added that while adding error class -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="DynamicEditLayoutCtrl" access="global" >
+    <apex:attribute name="layoutHolder" description="Controller object that holds the layout properties" type="DynamicLayoutHolder" required="true" access="global"/>
+    <apex:attribute name="tabName" description="Which tab contents to display?" type="String" required="true" access="global"/>
+    <apex:attribute name="tabRecordId" description="Which tab Id contents to display?" type="String" access="global"/>
+    <apex:attribute name="flexTableParameters" description="Map of parameters to be fed to flexTable" assignTo="{!flexTableParametersLWC}" type="String" required="false" access="global"/>
+    <apex:attribute name="listParams" description="Map of parameters to be fed to flexTable" assignTo="{!listParamsLWC}" type="String" required="false" access="global"/>
+    <apex:attribute name="packageIdEditlayout" description="Id of the page package" type="string" required="false" access="global"/>
+    <apex:attribute name="requiredForSubmitIconCSS" description="Icon Css value for Required for Submit Field" type="String" access="global"/>
+    <apex:attribute name="skipUpdateAccessCheckForGuestUser" description="Skip Update Access Check For Guest User" type="Boolean" />
+    
+</apex:component>

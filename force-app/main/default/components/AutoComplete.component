@@ -1,0 +1,10 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component layout="block" controller="AutoCompleteCtrl"  access="global">
+    <apex:attribute name="Object" description="Object API Name" type="String" required="true"  access="global"/>
+    <apex:attribute name="LabelField" description="Object Field to be displayed" type="String" required="true"  access="global"/>
+    <apex:attribute name="ValueField" description="Object Field to be stored" type="String" required="true"  access="global"/>
+    <apex:attribute name="Criteria" description="SOQL search criteria" type="String" required="false" default=""  access="global"/>
+    <apex:attribute name="CurrentValue" description="" type="String" required="false" default="None"  access="global"/>
+    <apex:attribute name="UniqueIdentifier" description="Identifier if multiple components are included on one page" type="String" required="false"  access="global"/>
+    <apex:attribute name="InputFieldId" description="" type="String" required="false"  access="global"/>
+</apex:component>

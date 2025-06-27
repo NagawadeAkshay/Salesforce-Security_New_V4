@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page showHeader="false" standardStylesheets="false" title="Workspace File Upload">
+    
+</apex:page>

@@ -1,0 +1,82 @@
+<template>
+    <template if:true={isModalOpen}>
+        <template if:true={isLoading} >
+          <c-spinner gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+   </template>
+    <div class="container-fluid slds-p-bottom_small">
+         
+            <div if:true={editMode} >
+                <template if:true={isError}>
+                    <div class="errorMsg slds-align_absolute-center">
+                         <lightning-formatted-rich-text class="errorContent " value={errorMessage}></lightning-formatted-rich-text>
+                        <button class="message-button" title="close" onclick={handleErrorMessageCloseClick}>x</button>
+                    </div>
+                </template>
+           
+             <template if:true={isSuccess}>
+                    <div class="successMsg slds-align_absolute-center">
+                    
+                        <button class="message-button" title="close" onclick={handleSuccessMessageCloseClick}>x</button>
+                        <h2 tabindex="0">{SuccessMessage}</h2>
+                    </div>
+                </template>
+        <lightning-card >
+            <div class="slds-p-left_medium slds-p-right_medium slds-p-bottom_medium">
+                <div>
+                   <label class="fontWeight" for="outputField">To: </label> 
+                   <lightning-formatted-text  label="To" class="inputEmails custWidth" title="To" value={email} onchange={handleInputChange}></lightning-formatted-text>
+                </div>
+                <div class="slds-m-top_xx-small">
+                <label class="fontWeight"  for="CcField">Cc</label>
+                <lightning-input variant="label-hidden" title="Cc" value={cc} class="inputEmails custWidth" onchange={handleInputChange}></lightning-input>
+                </div>
+                <div class="slds-m-top_xx-small">
+                <label class="fontWeight"  for="subjectField">Subject</label>
+                <lightning-input  variant="label-hidden"   title="Subject" value={subject} class="inputEmails custWidth slds-m-bottom_xx-small" onchange={handleInputChange}></lightning-input>
+                </div>
+                <label class="fontWeight"  for="subjectField">Attachment </label>
+
+                <lightning-input  variant="label-hidden"  type="file" name="inputFile" class="inputFile slds-m-top_small" onchange={handleFileChange}></lightning-input>
+                  <template if:true={fileUplodaed}>{attachmentName} </template> 
+              
+                <lightning-input-rich-text class="inputrichtext slds-m-top_small" onchange={handleBodyChange} formats={formating} label="Body" value={emailBody} placeholder="Enter email template content"></lightning-input-rich-text>
+
+                <lightning-button if:true={showSend} class="sendButton " variant="brand" label="Send" onclick={handleSendEmail}></lightning-button>
+            </div>
+        </lightning-card>
+    </div>
+    <div if:false={editMode} class="slds-card"> 
+                
+        <template if:false={showSend}>
+            <div class="slds-notify slds-notify_alert slds-alert-success" role="alert">
+                <span class="slds-assistive-text">Success</span>               
+                <h2 tabindex="0">Email Sent Successfully.</h2>
+                <div class="slds-notify__close">
+                    <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close" onclick={closeMessage}>
+                        <svg class="slds-button__icon" aria-hidden="true"></svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </div>
+            </div>
+        </template> 
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-form email-view">
+      
+       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="To"></lightning-formatted-text></p>
+       <p class="slds-m-bottom_small slds-break-word" tabindex="0"><lightning-formatted-text class="" value={email} ></lightning-formatted-text></p>
+       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Cc"></lightning-formatted-text></p>
+       <p class="slds-m-bottom_small slds-break-word" tabindex="0"><lightning-formatted-text class="" value={cc}></lightning-formatted-text></p>
+       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold " value="Subject"></lightning-formatted-text></p>
+       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-text class="" value={subject}></lightning-formatted-text></p>
+       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Body Content"></lightning-formatted-text></p>
+       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-rich-text class="" value={emailBody}></lightning-formatted-rich-text></p>
+       <p if:true={fileUplodaed} class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Attachment"></lightning-formatted-text></p>
+       <template if:true={fileUplodaed}>{attachmentName} </template> 
+
+      
+    </div>
+    </div>
+    </div>
+    </div>
+</template>
+</template>

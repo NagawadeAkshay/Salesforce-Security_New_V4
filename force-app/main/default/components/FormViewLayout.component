@@ -1,0 +1,19 @@
+<!--
+ - Created by MCPL-L72 on 14-11-2019.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+ <apex:component id="FormViewLayout" controller="FormController"  allowDML="true" access="global">
+    <apex:attribute name="formId" description="Form Id for View" type="string" assignTo="{!formIdVal}" access="global"/>
+    <apex:attribute name="edit" description="Form Edit URL" type="PageReference"  access="global"/>
+    <apex:attribute name="packageId" description="Form Id for View" type="string" assignTo="{!packageIdVal}" />
+    <apex:attribute name="recordId" description="Form Id for View" type="string" assignTo="{!recordIdVal}" access="global"/>
+    <apex:attribute name="layoutType" description="Type can be Edit/View/Print" type="string"  assignTo="{!type}"
+     access="global" default="View"/>
+     <apex:attribute name="showEdit" description="Override default edit action" type="boolean" access="global" default="true"/>
+    <apex:attribute name="HideSidebar" description="This attribute is used to decide whether to show the sidebar on first login for Ext User "
+        type="boolean" required="false" access="global"/>
+    <apex:attribute name="showHeader" description="Whether to display title" type="boolean" required="false" default="true" access="global"/>
+    <apex:attribute name="hideMenuBar" type="boolean" required="false" default="false" description="Hide DynamicLayoutMenu bar"/>
+    <apex:attribute name="isModal" type="boolean" default="false" description="Render in Modal" access="global"/>
+    
+</apex:component>

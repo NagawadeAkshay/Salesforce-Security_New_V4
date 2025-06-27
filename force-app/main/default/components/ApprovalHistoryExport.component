@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ApprovalHistoryCtrl" access="global">
+	<apex:attribute name="isExportMode" assignTo="{!isPDF}" type="boolean" required="false" default="true" description="Indicates whether the Approcal History is opened in Print Mode"/> 
+	
+</apex:component>

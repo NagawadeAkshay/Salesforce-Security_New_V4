@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="recordId" type="String" description="Response from calls"  />
+    <aura:attribute name="recordName" type="String" description="Response from calls" />
+    <aura:attribute name="lookupIdentifier" type="String" description="Response from calls" />
+    <aura:attribute name="hideFieldIdentifier" type="String" description="Response from hide field json" /> 
+    <aura:attribute name="action" type="String" description="Response from calls" />
+    <aura:attribute name="isRecordChange" type="Boolean" description="To hide the field based on boolean value" default="true"/> 
+</aura:event>

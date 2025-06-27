@@ -1,0 +1,14 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="RelationshipFieldComponentCtrl" access="global">
+	<apex:attribute name="record" description="The base primary record object" type="SObject" assignTo="{!primaryRecord}" required="true"  access="global"/>
+	<apex:attribute name="fieldAPIName" description="The relationship field api name" type="String" assignTo="{!relationshipFieldApiName}" required="true"  access="global"/>
+	<apex:attribute name="fieldLabel" description="The relationship field label" type="String" required="true"  access="global"/>
+	<apex:attribute name="customStyle" description="Custom style override" type="String" default="''"  access="global"/>
+	<apex:attribute name="isCurrencyField" description="required if relationship field data type is currency" type="Boolean" default="false"  access="global"/>
+	<apex:attribute name="fieldDecimalScale" description="required if relationship field data type is currency" type="Integer"  access="global"/>
+	<apex:attribute name="isTextBased" description="Indicates if the field is text based" type="Boolean" default="false"  access="global"/>
+	<apex:attribute name="hideFieldsJSON" description="Hide Field Json" type="String" access="global"/>
+	<apex:attribute name="fieldDataType" description="Field Data Type" type="String" access="global"/> 
+    <apex:attribute name="isShowLinkasText" description="Show Link as Text" type="Boolean" default="false"  access="global"/>
+	
+</apex:component>

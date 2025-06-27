@@ -1,0 +1,16 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="CollabFilesCtrl" allowDML="true" access="global">
+    <apex:attribute name="isDialog"
+        description="Is this being used in a dialog or in a page" type="boolean"
+        required="true" access="global"/>
+    <apex:attribute name="attach"
+        description="Is this page being used to attach files" type="boolean" default="false" assignTo="{!publicFiles}" access="global"/>
+    <apex:attribute name="communityId"
+        description="The Network ID of the files to be displayed" type="String" default="" assignTo="{!networkId}" access="global"/>
+    <apex:attribute name="ownerId"
+        description="Sets the owner of the files to be shown, if none is entered this gets all files"
+        type="string" default="none" assignTo="{!fileOwnerId}" access="global"/>
+    <apex:attribute name="uniqueId"
+        description="Set this to prevent multiple instances of this file from interfering with one another"
+        type="string" default="0" assignTo="{!identifier}" access="global"/>
+</apex:component>

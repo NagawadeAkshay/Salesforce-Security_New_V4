@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page controller="DocumentViewCtrl" standardStylesheets="false" showHeader="false" sidebar="false" >
+    
+</apex:page>

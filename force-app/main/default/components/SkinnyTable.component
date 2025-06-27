@@ -1,0 +1,12 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="SkinnyTableCtrl" access="global">
+    <apex:attribute name="headerRow" description="Row that defines the header of the Skinny Table " type="SkinnyTableInfo" required="true" access="global" />
+    <apex:attribute name="dataRows" description="list of rows that define the data of the Skinny Table" type="SkinnyTableInfo[]" required="true" access="global"/>
+    
+    <!-- Currently the skinny table does not support the below options -->
+    <apex:attribute name="allowFilter" description="This value determines if the table is filterable" type="Boolean" required="false" access="global"/>
+    <apex:attribute name="allowSorting" description="This value detemines if the table is sortable" type="Boolean" required="false" access="global"/>
+    <apex:attribute name="allowPagination" description="This value detemines if the table can be paginated" type="Boolean" required="false" access="global"/>
+    
+    
+</apex:component>

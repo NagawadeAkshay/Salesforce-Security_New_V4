@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="MassEditableGridExportCtrl" access="global">
+	<apex:attribute name="gridName" assignTo="{!grid}"    type="String"  description="Name of budget grid flex table" />
+	<apex:attribute assignTo="{!mode}" name="ExportMode" required="false" type="string" description="PDF/CSV" access="global"/>
+	<apex:attribute name="RecordId" assignTo="{!recordLayoutId}" required="false" type="String" description="Provided with Form Layout" access="global"/>
+   
+ 
+</apex:component>

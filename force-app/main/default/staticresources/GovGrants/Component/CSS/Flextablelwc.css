@@ -1,0 +1,717 @@
+body {
+   /* font-family: var(--lwc-fontFamily, 'Helvetica');*/
+    font-size: 13px;
+   }
+
+
+table > tbody > tr > td.my-vertical-padding {
+    padding: 10px;
+  }
+
+/*table > tbody > tr > th.my-vertical-padding{
+    padding: 10px;
+  }
+
+/*table > tbody > tr > th.my-vertical-padding.row-grouping-color{
+           display:none !important;
+        }
+*/
+
+
+.slds-pill {
+	Padding: 10px !important;
+	background: #4c90b5 !important;
+	color:#ffffff;
+	
+}
+
+  .slds-pill__remove{
+	  color:#ffffff;
+  }
+  
+  .slds-table_header-fixed_container{
+	 /* border:1px solid #ededed;*/
+  border-top:0.5px solid #ededed;
+  border-bottom:0.5px solid #ededed;
+padding-top:30px !important;
+}
+
+.dt-outer-container{
+  border-left:0.5px solid #ededed;
+  border-right:0.5px solid #ededed;
+   margin-right: 2px;
+    margin-left: 1.6px;
+}
+
+.slds-scope .slds-table_header-fixed tbody tr:first-child td{
+border-top: 0.5px solid #ededed !important;
+}
+
+.slds-table_header-fixed tbody tr th{
+border-left: 0.5px solid #ededed;
+}
+.slds-has-button-menu .slds-th__action{
+border-left: 1px solid #ddd;
+}
+
+.slds-scope .slds-table_bordered tbody td, .slds-scope .slds-table_bordered tbody th, .slds-scope .slds-table--bordered tbody td, .slds-scope .slds-table--bordered tbody th {
+  border-top: 0.5px solid #ededed !important;
+    background-color: transparent !important;
+	word-break:break-word !important;
+}
+.slds-table_bordered tbody tr td{
+border-left: 0.5px solid #ededed;
+}
+
+.slds-scope .slds-table_header-fixed thead th, .slds-scope .slds-table--header-fixed thead th {
+  padding-top:0px !important;
+ }
+
+/*.table_border{
+padding:10px;
+border:1px solid #ededed;
+}*/
+
+.slds-modal__header{
+background-color:#FAFAF9!important;
+color:#00396b!important;
+font-weight: 600;
+}
+
+.row-grouping-color{
+font-weight: bold !important;
+   color:#00396b!important;
+}
+
+ .slds-table_header-fixed tbody tr .row-grouping-color{
+   background-color:#ecf1f7 !important;
+  }
+.subtotal-color {
+font-weight: bold !important;;
+color:#00396b!important;
+
+}
+
+.grandtotal-color{
+font-weight: bold !important;;
+background-color: #d7e3f2 !important;
+color:#00396b!important;
+}
+
+.myTable table>tbody> tr.subtotal-color {
+	background-color: #d7e3f2 !important;
+
+}
+/*Bug 265522: Internal - Flex table - When LWC is enabled, then footer of flex table not getting displayed in expected alignment on Modal- changesd on 29-09-2022*/
+ .flexTableModal .slds-modal__container{
+	max-width: 54rem !important;
+    width: 54% !important;
+}
+
+/* .slds-card__header {
+	padding:0px !important;
+}
+*//*table > tbody > tr.subtotal-color  {
+    padding: 10px;
+	background-color: #e8edf4 !important;
+  }*/
+  
+
+
+.slds-button_neutral{
+     padding:0px;
+    --slds-c-button-color-border: #fff !important;
+}
+.slds-button_neutral[disabled], .slds-button_neutral:disabled, .slds-button--neutral[disabled], .slds-button--neutral:disabled {
+	border-color: #fff !important;
+	padding:0px;
+	}
+	
+.slds-scope .slds-button_neutral{
+	background-color:transparent !important;
+}	
+	
+	
+.slds-table thead th{
+    
+    color:#000 !important;
+}
+
+ .slds-dropdown_fluid, .slds-dropdown--fluid{
+        min-width: 0px !important;
+       }
+
+ /* .THIS .slds-listbox__option.slds-is-selected .slds-listbox__icon-selected {
+    opacity: 0;
+}*/
+	
+.slds-listbox__option-icon{
+   display:none !important;
+  }
+
+.first_colwidth{
+width:100px !important;
+text-align:centre;
+}
+
+.text-button > button {
+    cursor: default;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #080707;
+}
+
+.text-button > button:hover {
+    color: #080707;
+}
+
+.slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover>td:not(.slds-has-focus),.slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover>th:not(.slds-has-focus){
+        box-shadow: none !important;
+    }
+	
+	/*
+.slds-has-button-menu .slds-th__action{
+ background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important;
+ border-bottom:1px solid #ddd !important;
+
+	
+}*/
+
+.slds-pill__remove svg {
+    color: #fff;
+}
+
+.red-icon{
+    --lwc-colorTextIconDefault: #F62217;
+}
+
+.green-icon{
+    --lwc-colorTextIconDefault: #007400;
+}
+
+
+ .my-round-button.slds-button[disabled],  .my-round-button .slds-button:disabled, .my-round-button .slds-button:disabled:hover{
+  background-color: transparent !important;
+    border-color: transparent !important;
+    color: #F62217 ;
+    cursor: default;
+    --slds-c-button-color-border-hover: #000; 
+  }
+   .my-round-button.slds-button:hover,  .my-round-button.slds-button:focus{
+  
+      color: #F62217 ;
+  }
+
+
+
+.slds-button[disabled], .slds-button:disabled{
+	background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--lwc-colorTextButtonDefaultDisabled,rgb(201, 201, 201));
+    cursor: default;
+}
+
+.slds-button.slds-button_neutral{
+	background-color: transparent !important;
+    border-color: transparent !important;
+    color: #337ab7;
+  
+	
+}
+	
+
+.slds-button.slds-button_neutral:hover, .slds-button_neutral:focus {
+    background: transparent !important;
+    color: #005fb2 !important;
+	border:none !important;
+}
+
+
+
+
+.slds-th__action {
+  background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important;
+  border-left: 1px solid #ddd;
+}
+
+/*
+.slds-form-element__control .slds-checkbox {
+   
+padding-left: 50%;
+}*/
+.slds-listbox_vertical .slds-listbox__option_plain, .slds-listbox_vertical .slds-listbox__option--plain, .slds-listbox--vertical .slds-listbox__option_plain, .slds-listbox--vertical .slds-listbox__option--plain {
+padding: 0px 0px 0px 15px !important;
+color:#333 ;
+}
+
+.slds-listbox_vertical .slds-listbox__option:focus, .slds-listbox_vertical .slds-listbox__option:hover, 
+.slds-listbox_vertical .slds-listbox__option.slds-has-focus, .slds-listbox--vertical .slds-listbox__option:focus, 
+.slds-listbox--vertical .slds-listbox__option:hover, 
+.slds-listbox--vertical .slds-listbox__option.slds-has-focus
+{
+background-color:#1e90ff !important; 
+text-decoration:none;
+color:#ffffff;
+}
+/*
+.slds-scope .slds-icon {
+  width: 14px !important;
+  height: 14px !important;
+  fill: #00396B !important;
+}*/
+
+.slds-dropdown{
+  border-radius: 0px !important;
+  background-color: #fff;
+  color:#333 !important;
+   padding:0px !important;
+}
+#myTabs input[type='text'].slds-input{
+  max-width:100%;
+}
+ 
+.slds-scope .slds-input-has-icon .slds-input__icon_right {
+  top: 25%;
+  padding-right: 5px;
+}
+.slds-scope .slds-input__icon-group_right {
+  right: 0px !important;
+  top: 55%;
+}
+ .slds-scope .slds-form-element_horizontal .slds-form-element__label{
+   max-width:200px;
+ }
+
+ .slds-scope .slds-button_icon-brand {
+  background-color:#05599c;
+}
+
+.slds-scope .slds-button_icon-brand:hover {
+  background: #005fb2 !important;
+  border: 1px solid #005fb2 !important;
+  color: #fff !important;
+
+}
+.slds-scope .slds-button_brand, .slds-scope .slds-button--brand {
+  --slds-c-button-spacing-inline-start: 8px !important;
+  --slds-c-button-spacing-inline-end: 8px !important;
+}
+
+.showEntries, .showEntries select, .table-pager, .table-pager .fa, .totalRecords {
+  font-size: 12px !important;
+}
+
+.slds-dropdown__item>a {
+  color: #000 !important;
+  padding: 3px 10px !important;
+}
+
+.slds-form-element__label {
+font-weight:bold;
+}
+label.slds-checkbox__label{
+  display:block !important;
+}
+
+  .slds-listbox .slds-listbox_vertical .slds-dropdown .slds-dropdown_fluid .slds-dropdown_left{
+      z-index: 1000 !important;
+    }
+   
+
+    lightning-button-menu>button>lightning-primitive-icon:nth-child(even){
+      display: none;
+    }
+  .slds-button_icon-more{
+      background-color: transparent;
+      height:14px;
+      color: #00396B;
+      Padding:0px;
+      border:none;
+    }
+    .slds-button_icon-more:hover .slds-button__icon,
+.slds-button_icon-more:focus .slds-button__icon,
+ .slds-button--icon-more:hover .slds-button__icon,
+ .slds-button--icon-more:focus .slds-button__icon {
+    fill: #00396B;
+}
+
+    .slds-scope.slds-button:hover{
+    color: #00396B !important;
+    }
+
+    .slds-scope.slds-button_icon:hover {
+      
+      color: #00396B !important;
+    }
+  
+    .slds-scope .slds-table td {
+      padding: 6px;
+    }
+
+
+ .slds-scope .my-round-button .slds-button_icon-border-filled:hover,
+  .slds-scope .my-round-button .slds-button_icon-border-filled:focus{
+    color:#F62217 ;
+}
+
+
+
+.slds-scope .green-icon .slds-button_icon-border:hover,
+  .slds-scope .green-icon .slds-button_icon-border:focus{
+    color:#007400 ;
+}
+.slds-scope .slds-form-element__icon {
+  padding-top:0px;
+}
+
+.slds-scope .slds-table thead th:nth-child(n)[aria-label="#"] .slds-icon_container{
+  display: none;
+}
+
+.slds-scope .slds-dropdown-trigger_click.slds-is-open .slds-dropdown, .slds-scope .slds-dropdown-trigger--click.slds-is-open .slds-dropdown{
+  z-index:1000;
+}
+.slds-scope .slds-dropdown-trigger .slds-dropdown{
+  z-index:1040!important;
+}
+
+/* below css impacted for modalLWC 
+.slds-modal__content .slds-combobox_container .slds-dropdown-trigger .slds-dropdown{
+  left:auto !important;
+ }
+  */
+
+.slds-table th {
+   max-width: 100% !important; 
+}
+
+.slds-scope .slds-dropdown__item > a:focus{
+  background-color: #fff !important;
+  
+}
+
+.slds-scope .slds-is-sortable .slds-th__action:hover .slds-is-sortable__icon, 
+.slds-scope .slds-is-sortable .slds-th__action:focus .slds-is-sortable__icon, 
+.slds-scope .slds-is-sortable.slds-has-focus .slds-th__action .slds-is-sortable__icon, 
+.slds-scope .slds-is-sortable.slds-has-focus .slds-th__action:hover .slds-is-sortable__icon, 
+.slds-scope .slds-is-sortable.slds-has-focus .slds-th__action:focus .slds-is-sortable__icon {
+
+  fill: #333 !important;
+}
+.slds-scope .slds-button.slds-button_icon-more:focus{
+  box-shadow:none;
+}
+
+.slds-scope .slds-form-element__icon {
+  padding-top:0px;
+  border-color:none;
+  border:0px !important;
+}
+
+
+.slds-scope .slds-form-element__icon .slds-button_icon:focus{
+  box-shadow:none;
+  border-color:none;
+  border:0px !important;
+}
+
+.modal-header-ext {
+    padding: 10px 15px 10px 15px!important;
+    background: rgb(243, 242, 242) !important;
+    color: #00396B;
+}
+
+
+ .slds-modal__header .slds-modal__close {
+  position: absolute;
+  right: 10px;
+  margin-left: 0;
+  bottom: 0;
+}
+
+
+.slds-table tbody tr td .slds-dropdown-trigger .slds-dropdown__item a{
+  font-size:13px !important;
+}
+
+
+.slds-combobox__input-entity-icon{
+  display:none !important;
+}
+
+[class*=slds-input-has-icon_left] .slds-combobox__input.slds-combobox__input-value{
+      padding-left: 0.5rem !important;
+}
+
+
+.slds-modal__close .slds-button{
+  font-size: 18px;
+  color: #00396B;
+}
+
+.slds-modal__close .slds-button:focus{
+  box-shadow:none;
+  border-color:none;
+  border:0px !important;
+}
+
+.slds-scope .slds-text-heading_medium{
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+}
+/*modal calender alignment*/
+.slds-datepicker__filter{margin-top:-2px!important;margin-bottom:-8px!important;}
+.slds-datepicker tbody>tr>td {padding:0px !important; overflow-y:auto;}
+
+.richtextarea1 .slds-rich-text-area__content {
+  height: 115px;
+}
+
+
+.slds-modal .slds-form-element_horizontal .slds-form-element__control{
+  padding-left:24.9% !important;
+}
+ .slds-modal .slds-form-element_horizontal .slds-form-element__help {
+    margin-left: 24.9% !important;
+}
+.slds-modal .slds-form-element_horizontal .slds-rich-text-editor .slds-form-element__help {
+    margin-left: 0px !important;
+}
+.slds-scope .slds-form-element_horizontal .slds-form-element__row .slds-form-element__control{
+  padding-left:0px !important;
+}
+.slds-scope .slds-form-element_horizontal .slds-form-element__control .slds-form-element__control, .slds-scope .slds-form_horizontal .slds-form-element .slds-form-element__control .slds-form-element__control, .slds-scope .slds-form_stacked .slds-form-element_horizontal .slds-form-element__control .slds-form-element__control{
+  padding-left: 0px !important;
+}
+
+
+/*modal loading icon */
+.spinner-overlay {
+  filter: alpha(opacity=40);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  opacity:1;
+  background: rgba(118, 116, 116, 0.5);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.spinner-overlay1 {
+  filter: alpha(opacity=40);
+  position: absolute;
+  width: 100%;
+  height: 725px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  opacity:1;
+  background: rgba(118, 116, 116, 0.5);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.rowLevelOverlay1 {
+ filter: alpha(opacity=80);
+position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+top: 0;
+bottom: 0;
+ right: 0;
+ z-index: 11;
+background: rgba(0,0,0,0.25);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+table.slds-table.slds-table_header-fixed {
+width:100%;
+}
+
+.tableCol .slds-rich-text-editor__textarea, .tableCol .slds-rich-text-editor__output > span > table{
+ width:100% !important;
+}
+
+.field-required .slds-required{
+float: right !important;
+}
+
+.hidefilter{
+  display: none !important;
+}
+
+.cardCheck .slds-card .slds-card__body .slds-form-element__icon{
+  display: none !important;
+}
+.filter .slds-box .slds-grid .slds-col .slds-form-element__icon{
+  display: none !important;
+}
+
+
+/*horizontal and vertical scrollbar color  */
+
+.slds-table_header-fixed_container::-webkit-scrollbar {
+  width:10px;
+  height:10px;
+  background:#f2f0f5;
+ }
+ 
+ .slds-table_header-fixed_container::-webkit-scrollbar-thumb{
+  background: #c1c1bf;
+ }
+ 
+ .slds-table_header-fixed_container .slds-scrollable_y::-webkit-scrollbar {
+  width:10px;
+  height:10px;
+  background:#f2f0f5;
+ }
+ 
+ .slds-table_header-fixed_container .slds-scrollable_y::-webkit-scrollbar-thumb{
+  background: #c1c1bf;
+ }
+.menu .slds-dropdown{
+ 
+  position: absolute !important;
+  left: -132px !important;
+  top: 34px !important;
+  margin-left: 3px !important;
+  width: 175px !important;
+}
+/* .errorStep .slds-path__link {
+  background-color:#F23131 !important;
+    background-color:red !important;
+}
+
+.slds-path__nav .errorStep:before, .slds-path__nav .errorStep:after{
+  background-color:#F23131 !important;
+    background-color:red !important;
+      background-image: none !important;
+} 
+
+.slds-path__nav .errorStep {
+    background-color: #ff0000 !important;
+}
+
+.errorStep .slds-path__title{
+color:#fff !important;
+}  */
+
+.menu .slds-button_icon-more{
+padding: 2px !important;
+background-color: transparent !important;
+color: navy !important;
+border-color: transparent !important;
+border: inherit;
+}
+
+.menu .slds-button_icon-large{
+  height: auto !important;
+}
+
+.slds-scope .slds-nubbin_top-left:before, .slds-scope .slds-nubbin--top-left:before, .slds-scope .slds-nubbin_top-left-corner:before {
+ transform: rotate(-135deg) !important;
+}
+.menu .slds-dropdown .slds-dropdown__list .slds-dropdown__item{
+ font-size: 14px;
+ /*font-family: Arial, Helvetica, sans-serif;*/
+}
+.menu .slds-button_icon-more .slds-button__icon{
+  height: 18px !important;
+  width: 28px !important;
+ }
+ 
+.slds-grid .slds-col .slds-nubbin_top-left::after {
+
+  border-left: 1px solid black;
+  border-top-color: black !important;
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
+  border-left-width: 1px  !important;
+  border-left-style: solid !important;
+  border-right-style: unset;
+  border-bottom-style: none;
+  }
+
+  .slds-modal__content .slds-button_brand[disabled], slds-modal__content .slds-button_brand:disabled, slds-modal__content .slds-button--brand[disabled], slds-modal__content .slds-button--brand:disabled{
+
+
+  background:#005eaf !important;
+  border:#005eaf  !important;
+  color: #fff;
+
+  }
+  
+   .slds-scope .slds-input-has-icon .slds-input__icon_right[title="Clear Selection"]{
+    top: 12%!important;
+  }
+.menu .exporticon{
+    float: left;
+    display: list-item;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: 18px !important;
+    text-rendering: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #16A085;
+    height: 22px;
+    padding: 7px 3px;
+}
+
+.menu .exporticon1{
+    float: left;
+    display: list-item;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: 18px !important;
+    text-rendering: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000;
+    height: 22px;
+    padding: 7px 3px;
+}
+ 
+
+
+
+  .field-required .slds-combobox .slds-dropdown_fluid ul li div h3:first-child{
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  }
+  
+.field-required .slds-listbox_vertical .slds-listbox__option:focus .slds-media__body .slds-listbox__option-meta , .field-required .slds-listbox_vertical .slds-listbox__option:hover .slds-media__body .slds-listbox__option-meta 
+  {
+  color:white !important;
+  }
+.field-required .slds-required{
+    float: right !important;
+    }
+  .slds-button_brand, .slds-button--brand, .slds-button_neutral{
+    min-height: 22px !important;
+    padding: 0 8px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+}
+
+.slds-dropdown-trigger .slds-dropdown{
+  z-index:98;
+}
+
+lightning-tabset .tab .govgrantstheme .slds-box{
+/* margin-left:15px;
+margin-right:15px; */
+}

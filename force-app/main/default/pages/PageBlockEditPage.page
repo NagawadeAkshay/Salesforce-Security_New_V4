@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page showHeader="false" sidebar="true" standardController="PageBlockConfig__c" extensions="PageBlockEditPageCtrl" 
+        standardStylesheets="false">
+    
+</apex:page>

@@ -1,0 +1,17 @@
+<!--
+/**
+* 
+* Responsible to display the sidebar components based on the currently selected tab
+* which is identified by browser cookie.
+*
+* CHANGE HISTORY
+*================================================================ 
+* Dated             Name                    Description  
+* 03/02/2014        Shah Kadirmohideen      Created
+*================================================================
+*/
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page sidebar="false" controller="PhaseTemplateCtrl" showHeader="false" standardStylesheets="false" >
+    
+</apex:page>

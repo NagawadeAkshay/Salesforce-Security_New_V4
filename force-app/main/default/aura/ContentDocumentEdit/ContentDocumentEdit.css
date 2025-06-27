@@ -1,0 +1,24 @@
+.THIS .row {
+    margin-bottom: 10px;
+}
+
+.THIS .slds-form-element__label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.THIS#WorkspaceFileEdit form {
+    background: transparent;
+}
+
+.THIS .form-button {
+    text-align: right;
+}
+
+.THIS .slds-welcome-mat__tile-body{
+    border-left: none !important;
+}
+
+.THIS .filesInput select.slds-select {
+    max-width: 100% !important;
+}

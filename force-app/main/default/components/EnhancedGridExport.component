@@ -1,0 +1,11 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="EnhancedGridExportCtrl" access="global">
+  <apex:attribute name="gridType" assignTo="{!flexGridType}" type="String" description="Grid type" />
+  <apex:attribute name="ExportMode" assignTo="{!mode}" type="String" description="PDF/CSV" />
+  <apex:attribute name="level" assignTo="{!level1}" type="Integer" description="" />
+  <apex:attribute name="parentRecordId" assignTo="{!parentRecordId1}" type="String" description="" />
+  <apex:attribute name="gridName" assignTo="{!flexGridName}" type="String" description="Name of budget grid flex table" />
+
+
+ 
+</apex:component>

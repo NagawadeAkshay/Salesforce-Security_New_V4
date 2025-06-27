@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="selectedFolder" type="Object" description="Selected folder to upload the file"/>
+</aura:event>

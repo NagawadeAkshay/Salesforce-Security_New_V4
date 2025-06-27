@@ -1,0 +1,6 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global">
+	<apex:stylesheet value="{!URLFOR($Resource.GovGrants, '/Component/CSS/DynamicPageMessage.css')}" />
+    <apex:attribute name="messageHolder" description="Controller object that holds the message properties" type="DynamicMessageHolder" required="true" access="global"/>    
+    
+</apex:component>

@@ -1,0 +1,39 @@
+.THIS[aria-expanded="true"]>.slds-tree__item .tree-file .slds-button__icon {
+    transition: none;
+    transform: rotate(0deg);
+}
+
+.THIS.slds-tree__item {
+    border: 2px dashed transparent;
+}
+
+.THIS .download-button {
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.THIS .file-action {
+    margin-left: 5px;
+}
+
+.THIS .highlight {
+    font-size: 15px;
+    background: #FFEB3B;
+    padding: 0 5px;
+}
+
+.THIS .tree-file {
+    cursor: default;    
+}
+
+.THIS .folder-file {
+    margin-left: 15px;
+}
+
+.THIS .tree-icon {
+    font-size: 1.3em;
+}
+
+.THIS .file-name {
+    white-space: pre-wrap
+}

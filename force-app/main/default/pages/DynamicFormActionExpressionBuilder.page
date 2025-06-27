@@ -1,0 +1,7 @@
+<!--
+ - Created by Atul Naik on 19-12-2019.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page id="DynamicFormActionExpressionBuilder" standardController="CaptureAction__c" sideBar="true" showHeader="false" standardStylesheets="false">
+    
+</apex:page>

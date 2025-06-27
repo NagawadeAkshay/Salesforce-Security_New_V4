@@ -1,0 +1,133 @@
+/* .button{
+    position: absolute;
+    right:30px;
+  } */
+  .slds-theme--default{
+    font-size: 13px; 
+      /*font-family: 'Helvetica';*/
+    color:#333;
+    line-height: 19px;
+  }
+.header{
+    background: rgb(243, 242, 242);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.headerTitle{
+      display: flex;    
+      align-items: center;
+}
+  
+table th {
+    background: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%) !important; 
+    padding: 7px 8px!important;
+    color:#000!important;
+    border-left: 1px solid #c9c9c9;
+}
+
+
+
+.slds-modal__container { 
+    height: 100% !important;
+}
+.table-responsive {
+    overflow-x:auto;
+   }
+    .table-responsive::-webkit-scrollbar {
+     width:10px;
+     height:10px;
+     background:#f2f0f5;
+     }
+     .table-responsive::-webkit-scrollbar-thumb{
+     background: #c1c1bf;
+     }
+.slds-table tbody tr td{
+      border: 0.5px solid #ededed;
+    padding:5px;
+    
+    }
+  
+    .slds-alert-success{
+      background-color: #dff0d8!important;
+      background-image: none!important;
+      color:#3c763d !important;
+     
+    }
+    .slds-alert-danger {
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1;
+      background-image: none!important;
+}
+  
+  
+    .fa {
+      font-size:18px !important;
+    }
+  
+    .fa-download, .fa-cloud-download {
+      background: transparent;
+      color: #f7892c;
+}
+  
+.fa-trash-o, .fa-trash {
+    color: #F23131;
+    background: transparent;
+}
+  
+.slds-modal__header{
+    background:#f3f2f2 !important;
+}
+.slds-text-heading_medium{
+    font-weight: 700;
+    color:#00396b;
+    font-size:15px !important;
+	cursor:pointer;
+}
+  
+   .slds-modal__container{
+     
+        max-height:600px;
+    }
+    
+    .totalRecords {
+      font-size:12px;
+	  margin-top: 10px;
+  }
+
+  .slds-modal{
+    bottom:auto;
+  }
+
+  .slds-modal__header .slds-modal__close{
+    top:7px;
+    border:0px;
+  }
+  .demo-only{
+    height: 640px;
+    }
+
+.slds-box {
+  padding: 0px !important;
+  margin-bottom: 10px;
+  margin-left:15px;
+  margin-right:15px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+  border: 1px solid rgb(221, 219, 218);
+  
+}
+.slds-alert-success{
+  justify-content: left!important;
+  border-radius: 0.25rem;
+   
+  }
+  .message-button-attach{
+  
+    float: right;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    border: none;
+    background: none;
+}

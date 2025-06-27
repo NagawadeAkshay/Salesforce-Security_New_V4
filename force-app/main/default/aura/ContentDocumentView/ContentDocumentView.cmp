@@ -1,0 +1,3 @@
+<!-- Deprecated component-->
+<aura:component controller="FileUploadCtrl">
+</aura:component>

@@ -1,0 +1,18 @@
+<!--
+Overview of this component
+Author: Prem Pal
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexGridEnhancedCtrl" access="global">
+    <apex:attribute name="tableName" description="Dynamic table Name" type="String" required="true" access="global"/>
+    <apex:attribute name="stringParameters" description="Map containing key value pairs for merge fields" type="string" required="false"  access="global"/>        
+    <apex:attribute name="listParameters" description="Map containing key value pairs for merge fields" type="String" required="false"  access="global"/>
+    <apex:attribute name="skipNavTabName"  description="Associated Tab name, for 508 skip navigation  "  type="String" access="global"/>
+    <apex:attribute name="mode" description="Context of the ParentPage on which Flexgrid present i.e. View and Edit" type="String" access="global"/>    
+    <apex:attribute name="flexGridType" description="How do we want to render this Component: FlexGrid or FlexTable" type="String" access="global"/>
+    <apex:attribute name="pBlockId" description="Map containing key value pairs for merge fields" type="string" required="false" access="global"/>
+    <apex:attribute name="isPreview" description="use for show onle structure of Table in Dynamic View Layout" type="Boolean" required="false" access="global"/>
+    <apex:attribute name="enhancedSearchText" description="search text value of global search" type="String" required="false" access="global"/>
+
+     
+</apex:component>

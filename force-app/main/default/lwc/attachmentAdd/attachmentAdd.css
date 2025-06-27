@@ -1,0 +1,82 @@
+.row{
+  overflow: auto; 
+  font-size: 13px; 
+  /* font-family: 'Helvetica';*/
+  color:#333;
+  line-height: 19px;
+}
+.tablewidth{
+  width:100%;
+  border-collapse: collapse;
+
+}
+.td-width{
+  width:130px;
+}
+
+.textAreaBody {
+  --sds-c-textarea-sizing-min-height:80px;
+}
+.requiredField {
+  color: red;
+}
+.slds-alert-success{
+background-color: #dff0d8!important;
+background-image: none!important;
+color:#3c763d !important;
+justify-content: left!important;
+border-radius: 0.25rem;
+
+}
+.slds-alert-danger {
+color: #a94442;
+background-color: #f2dede;
+border-color: #ebccd1;
+background-image: none!important;
+justify-content: left!important;
+border-radius: 0.25rem;
+}
+
+table tbody tr,table tbody tr:hover{
+background-color:transparent !important;
+
+}
+.slds-modal__container{
+max-width: 60rem !important;
+  width: 60% !important;
+}
+.rowLevelOverlay1 {
+  filter: alpha(opacity=60);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+  background: rgba(0,0,0,0.5);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messageIcon1 {
+  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #a94442)) !important;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.messageIcon1 .slds-icon {
+  fill: #f2e8e8 !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 2px;
+}
+.message-button-attach{
+  
+    float: right;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    border: none;
+    background: none;
+}

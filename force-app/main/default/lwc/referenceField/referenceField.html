@@ -1,0 +1,64 @@
+<template>
+    <template lwc:if={isView}>
+        <lightning-record-view-form object-api-name={fieldDetails.objectNameOfReference} record-id={fieldDetails.recordIdOfReference}>
+            <template if:false={fieldDetails.hideLabel}>
+                <template if:false={fieldDetails.isLabelRichText}>
+                    <label class="slds-text-title header-field-label"> {fieldDetails.label} </label>
+                </template>
+                <template if:true={fieldDetails.isLabelRichText}>
+                    <lightning-formatted-rich-text value={fieldDetails.label}></lightning-formatted-rich-text>
+                </template>
+            </template>
+            <template if:true={fieldDetails.helpText}>
+                <lightning-helptext content={fieldDetails.helpText}></lightning-helptext>
+            </template>
+            <lightning-output-field variant="label-hidden" id={fieldDetails.fieldAPIName} field-name={fieldDetails.actualApiName}> </lightning-output-field>
+            <template if:true={fieldDetails.helpTextPost}>
+                <label class="slds-text-title helpTextPost">{fieldDetails.helpTextPost}</label>
+            </template>
+        </lightning-record-view-form>
+    </template>
+    <template lwc:else>
+        <lightning-record-edit-form
+            object-api-name={fieldDetails.objectNameOfReference}
+            record-id={fieldDetails.recordIdOfReference}
+            onsuccess={handleSuccess}
+            onerror={handleError}
+        >
+            <template if:false={fieldDetails.hideLabel}>
+                <template if:false={fieldDetails.isLabelRichText}>
+                    <label class="slds-text-title header-field-label"> {fieldDetails.label} </label>
+                </template>
+                <template if:true={fieldDetails.isLabelRichText}>
+                    <lightning-formatted-rich-text value={fieldDetails.label}></lightning-formatted-rich-text>
+                </template>
+            </template>
+            <template if:true={fieldDetails.helpText}>
+                <lightning-helptext content={fieldDetails.helpText}></lightning-helptext>
+            </template>
+            <template if:false={fieldDetails.isRichTextFieldType}>
+                <lightning-input-field
+                    variant="label-hidden"
+                    id={fieldDetails.fieldAPIName}
+                    field-name={fieldDetails.actualApiName}
+                    disabled={fieldDetails.readOnly}
+                ></lightning-input-field>
+            </template>
+            <span class="slds-form-element slds-form-element_stacked"></span>
+            <template if:true={fieldDetails.isRichTextFieldType}>
+                <lightning-input-field
+                    variant="label-hidden"
+                    id={fieldDetails.fieldAPIName}
+                    field-name={fieldDetails.actualApiName}
+                    disabled={fieldDetails.readOnly}
+                ></lightning-input-field>
+                Characters : {fieldDetails.fieldLengthCurrEntered} ,Characters Left : {fieldDetails.fieldLengthCurrLimit}
+                <br />
+                Words : {fieldDetails.wordsLengthEntered} , Characters Left : {fieldDetails.wordsLengthLimit}
+            </template>
+            <template if:true={fieldDetails.helpTextPost}>
+                <label class="slds-text-title helpTextPost">{fieldDetails.helpTextPost}</label>
+            </template>
+        </lightning-record-edit-form>
+    </template>
+</template>

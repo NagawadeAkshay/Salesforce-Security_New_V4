@@ -1,0 +1,45 @@
+.layout-header-instructions {
+    background-color: white;
+    margin-top: 0px;
+    padding: 10px;
+    margin-left:0px;
+    margin-right:0px;
+    height: auto;
+    /* contain: content; */
+	display:flex;
+}
+.show-less {
+    /* height: 40px; */
+    display: inline!important;
+}
+.instructionIcon{
+    /* flex: 1; */
+    display: inline-block;
+    float: left;
+}
+.show-more {
+    height: auto;
+     display: inline!important;
+}
+
+.slds-box {
+    padding: 0px !important;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    border: 1px solid rgb(221, 219, 218);
+    
+  }
+  
+  .header-Instruction-text{
+    display: inline!important;
+    /* display:flex;
+	min-width: 80px; */
+}
+.layout-header-instructions .header-Instruction-text > lightning-formatted-rich-text > span > p {
+    text-align: justify;
+    padding-right: 17px;
+    display: inline;
+}
+.instructionbtn{
+	/* margin-right:10px; */
+}

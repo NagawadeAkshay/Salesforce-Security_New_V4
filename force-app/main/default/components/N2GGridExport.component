@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="N2GGridExportCtrl" access="global">
+    <apex:attribute name="gridName" assignTo="{!grid}"     type="String"  description="Name of budget grid flex table" />
+   <apex:attribute assignTo="{!mode}" name="ExportMode"  type="String" description="PDF/CSV" />
+   
+   
+</apex:component>

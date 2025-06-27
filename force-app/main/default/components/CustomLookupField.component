@@ -1,0 +1,16 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" controller="CustomLookupComponentCtrl">
+    <apex:attribute name="pageBlockId" description="This is PageBlockId" type="String" access="global"/>
+    <apex:attribute name="FieldAPIName" description="This is PageBlockId" type="String" access="global" assignTo="{!fieldAPINameVal}"/>
+    <apex:attribute name="FieldLabelName" description="This is PageBlockId" type="String" access="global" assignTo="{!fieldLabelNameVal}"
+    />
+   <apex:attribute name="SObj" description="This is PageBlockId" type="SObject" access="global" assignTo="{!sobjVal}"/>
+    <apex:attribute name="recordId" description="This is PageBlockId" type="String" access="global"/>
+    <!--This is obsolete as we decided to go with layoutHolder paramter-->
+    <apex:attribute name="recordNameVal" description="This is PageBlockId" type="String" access="global"/>
+    <apex:attribute name="filterCriteria" description="This is PageBlockId" type="String" access="global"/>
+    <apex:attribute name="customLookupModalHeader" description="This is PageBlockId" type="String" access="global"/>
+    <!--We had issue with custom lookup in case of validation rule. so decided to pass dynamic layout holder as paramter and get name in controller-->
+    <apex:attribute name="layoutHolder" type="DynamicLayoutHolder" description="dynamiclayoutHolder" assignTo="{!holder}" access="global"/>
+    
+</apex:component>

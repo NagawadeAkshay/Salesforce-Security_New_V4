@@ -1,0 +1,110 @@
+<template>
+    <div id="Attachmentedit" class="row" >
+        <template if:true={sucessAlert}>
+            <div class="slds-notify slds-notify_alert slds-alert-success attach-success" role="alert">
+                <span class="slds-assistive-text">info</span>               
+                <lightning-icon icon-name="utility:success" size="x-small" class="successmessageIconAtt"></lightning-icon>            
+                <h2>Attachment added successfully.</h2>
+                <div class="slds-notify__close">
+                    <!-- <button class="message-button-attach" title="Close" onclick={closeMessage}>x</button> -->
+                    <!-- <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close" onclick={closeMessage}>
+                        <svg class="slds-button__icon" aria-hidden="true"></svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button> -->
+                </div>
+            </div>
+        </template> 
+      
+        <template if:true={fileValidation}>
+            <div class="slds-notify slds-notify_alert slds-alert-danger attach-validation" role="alert">
+                <span class="slds-assistive-text">info</span>               
+                <lightning-icon icon-name="utility:close" size="x-small" class="messageIcon1"></lightning-icon>           
+                <h2>{errorMessage}</h2>
+                <div class="slds-notify__close">
+                    <!-- <button class="message-button-attach" title="Close" onclick={closeMessage}>x</button> -->
+                    <!-- <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close" onclick={closeMessage}>
+                        <svg class="slds-button__icon" aria-hidden="true"></svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button> -->
+                </div>
+            </div>
+        </template>       
+        <div class="bs container-fluid">
+            <div class="panel-default ">
+                <lightning-tabset active-tab-value="Upload file from computer">
+                    <lightning-tab label="Upload file from computer" value="Upload file from computer" onactive={handleActive}>
+                        <div class="tab-pane active" id="addAtt">
+                            <div class="row">
+                                <!-- <c:PageMessages id="editForm" rendered="{!NOT(isUlFromWorkspace)}" />    -->
+                                <div class="col-md-12">
+                                    <table  class="tablewidth" align="center" cellspacing="10">    
+                                        <tr>
+                                            <td class="td-width" >
+                                                <label for="classification" class="col-lg-12 control-label pull-left spacer"><span class="requiredField">*</span><strong>Type</strong></label>
+                                            </td>
+                                            <td>
+                                                <lightning-combobox
+                                                        name="progress"
+                                                        value={selectedValue}
+                                                        placeholder="Select Progress"
+                                                        options={classificationsOptions}
+                                                        onchange={handleChange}
+														
+                                                        ></lightning-combobox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-width">
+                                                <label for="replace" class="col-lg-12 control-label pull-left spacer"><span class="requiredField">*</span><strong>File</strong></label>
+                                            </td>
+                                             <td>
+                                                <lightning-input type="file" 
+                                                    label="" onchange={openfileUpload}>
+                                                </lightning-input>  <template if:true={fileName}>{fileName} </template>              
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="td-width">
+                                                <label for="description" class="col-lg-12 control-label spacer pull-left"><span class="requiredField">*</span><strong>Description</strong></label>
+                                            </td>
+                                            <td>
+                                               <lightning-textarea name="attDescription" class="textAreaBody" onchange={descriptionChange} label="" value={description} ></lightning-textarea>
+                                            </td>
+                                        </tr>                                          
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                 <!-- Save Button Without Closing Modal -->
+                                                 <!--  <template if:true={save}>
+                                                    <button class="slds-button " title="Save1"  onclick={updateAttachment}></button>
+                                                </template> -->
+                                                
+                                                 <!-- Save Button with Closing Modal -->
+                                               <!--<template if:true={saveAndClose}> 
+                                                    <button class="slds-button " title="Save and Close1" onclick={updateAttachmentCloseModal}></button>
+                                                </template>  -->               
+                                            </td>                    
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>                                        
+                        </div>
+                    </lightning-tab>
+                    <template if:true={enableWorkspace}>
+                        <lightning-tab label="Upload file from workspace" value="Upload file from workspace" onactive={handleActive}>
+                            This tab lists all documents uploaded as attachments previously in the system within various records such as programs, announcements, etc. Please select the documents which you want to associate to this record.
+                                                     <lightning-datatable key-field="Id"
+                                                            data={wrapAttachmentList}
+                                                            columns={lstColumns}
+                                                            onrowselection={handleRowSelection}
+															resize-column-disabled="true"
+                                                        ></lightning-datatable>                                                       
+                        </lightning-tab> 
+                    </template>                                       
+                </lightning-tabset>   
+           </div>
+     </div>
+  </div>
+</template>

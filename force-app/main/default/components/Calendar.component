@@ -1,0 +1,18 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component layout="block" controller="CalendarCtrl" extensions="MiniLayoutController" access="global">
+   <!--<c:ExternalLibrary />-->
+   
+    
+    <!-- Required -->
+    <apex:attribute name="configNames" required="false" type="String" description="Attribute for Calendar" access="global"/> 
+    <apex:attribute name="keyValMap" required="false" type="String" description="Key valueMap for Calendar" access="global"/>
+         
+    
+   <apex:attribute name="configName" required="false" type="String" description="Attribute for Calendar" access="global"/>
+    <apex:attribute name="objectName" required="false" type="String" description="Object Name for calendar" access="global"/>
+    <apex:attribute name="fieldName" required="false" type="string" description="Field Name to include in calendar calendar" access="global"/>
+    <apex:attribute name="dateFields" required="false" type="string" description="Filter Clause for object" access="global"/>
+    <apex:attribute name="filterClause" required="false" type="string" description="Filter Clause for object" access="global"/>
+    <apex:attribute name="programCalendarFields" required="false" type="String" description="programCalendarFields" access="global"/>
+    <apex:attribute name="recordId" required="false" type="String" description="Id of Calendar" access="global"/> 
+</apex:component>

@@ -1,0 +1,14 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FormLayoutsCtrl" access="global">
+    <c:ExternalLibrary />
+    <apex:attribute name="layoutId" description="The primary layout Id" type="String" required="true" access="global"/> 
+    <apex:attribute name="packageId" description="Package Id To render forms" type="String" required="false"/> 
+    <apex:attribute name="pageBLockId" description="The PageBlock Id" type="String" required="false"/> 
+    <apex:attribute name="layoutType" description="Edit or View" type="String" required="false" default="View"/>
+    <apex:attribute name="isPreview" description="Edit or View" type="Boolean" required="false"/>
+    <apex:attribute name="formTypes" description="List of form types" type="String" required="false"/>
+    <apex:attribute name="parentId" description="parent Id of form" type="String" required="false"/>
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false"/>
+    
+    
+</apex:component>

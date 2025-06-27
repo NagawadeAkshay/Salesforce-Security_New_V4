@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" controller="BudgetGridExportCtrl">
+    <apex:attribute name="gridName"    access="global" assignTo="{!grid}"     type="String" required="true" description="Name of budget grid flex table" />
+    <apex:attribute name="keyValueMap" access="global" assignTo="{!keyValueMapString}" type="String" description="Key value map" />
+    <apex:attribute name="listKeyValueMap" access="global" assignTo="{!listKeyValueMapString}" type="String" description="List value map" />
+    
+</apex:component>

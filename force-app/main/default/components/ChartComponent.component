@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global">
+	<apex:attribute name="ChartType" type="String" description="Record Type of the chart" access="global"/>
+	<apex:attribute name="ChartName" type="String" description="Name of the chart" access="global"/>
+	<apex:attribute name="ChartParameters" type="String" description="Map of the chart parameters" access="global"/>
+	<apex:attribute name="contextRecordId" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+	<apex:attribute name="ChartHTMLId" type="String" description="HTML ID of the chart" access="global"/>
+	
+</apex:component>

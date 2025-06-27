@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="CollabCtrl">
+	<apex:attribute name="referenceID"
+		description="ID that the page passes the component" type="ID"
+		required="true" assignTo="{!controllerReferenceID}" />
+
+</apex:component>

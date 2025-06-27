@@ -1,0 +1,4 @@
+<!--Deprecated component-->
+<aura:component controller="LibraryCtrl" access="global">
+	<aura:attribute name="parentId" type="String" access="global"/> 
+</aura:component>

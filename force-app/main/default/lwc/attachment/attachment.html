@@ -1,0 +1,248 @@
+<template>
+    <div class="slds-box slds-theme--default slds-is-relative">
+        <template if:true={deleteAlert}>
+            <div class="slds-notify slds-notify_alert slds-alert-success attach-success" role="alert">
+                <span class="slds-assistive-text">info</span>               
+                <lightning-icon icon-name="utility:success" size="x-small" class="successmessageIconAtt"></lightning-icon>              
+                <h2>Attachement deleted successfully.</h2>
+                <div class="slds-notify__close">
+                    <!-- <button class="message-button-attach" title="Close" onclick={closeMessage}>x</button> -->
+                    <!-- <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"  tabindex="0" title="Close" onclick={closeMessage}>
+                        <svg class="slds-button__icon" aria-hidden="true"></svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button> -->
+                </div>
+            </div>
+        </template>    
+        <template if:true={showParentLoadingIcon} >           
+            <c-spinner  gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>            
+        </template> 
+		<template if:true={isLoading}>
+            <span>Loading....</span>
+        </template>
+		<template if:false={isLoading}> 
+        <div class="slds-text-color_inverse slds-p-around_xx-small header">        
+            <!-- <lightning-button  onclick={handleCollapsed} 
+            class="togglePageBlock" ></lightning-button> SnapShot History -->
+            <div class="headerTitle">
+                <a>
+                    <lightning-icon icon-name={collapsedicon}  tabindex="0" alternative-text="Expanded" variant="bare"  onclick={handleCollapsed} class="toggleAction slds-m-right_xx-small slds-p-left_x-small toggleIcon" ></lightning-icon>
+                </a>               
+                <span class="slds-text-heading_medium" title={title}>{title}</span>
+            </div>     
+            <template if:false={hideCreateAction}> <!--Bug 250783 -->       
+                <lightning-button variant="brand" label="Add" title="Add" onclick={addAttachment} class="slds-p-right_small button" ></lightning-button>                                        
+            </template> 
+        </div>
+        <template if:false={isCollapsed}>
+        <span></span><span></span>
+        <div class="table-responsive slds-p-left_medium slds-p-right_medium slds-p-top_small">
+            <table class="slds-table slds-table_cell-buffer tableClass slds-border_left slds-border_right">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <span>Name</span>                           
+                    </th>
+                    <th class="" scope="col">
+                        <span>Type</span>
+                    </th>
+                    <th class="" scope="col">
+                        <span>Description</span>                         
+                    </th>
+                    <th class="" scope="col">
+                        <span>Date Attached</span> 
+                    </th>
+                    <th class="" scope="col">
+                        <span>Attached By</span> 
+                    </th>
+                    <th class="" scope="col">
+                        <span>Actions</span>                       
+                    </th>                   
+                </tr>
+            </thead>
+            <tbody>
+                <template iterator:it={records}>
+                    <tr class="slds-hint-parent" key = {it.value.Id}>
+                        <td data-label="Account Name">
+                            <div class="slds-cell-wrap"><a class="" title= {it.value.attachmentName} href={it.value.hrefVal} target="_blank" tabindex="0"  name="Name">
+                                {it.value.attachmentName}
+                            </a></div>
+                        </td>
+                        <td data-label="Classification">
+                                <div class="slds-cell-wrap" title= {it.value.classification}>{it.value.classification}</div>
+                        </td>
+                        <td data-label="Description">
+                                <div class="slds-cell-wrap" title= {it.value.attachmentDescription}>{it.value.attachmentDescription}</div>
+                        </td>  
+                        <td data-label="LastModified">
+                                <div class="slds-cell-wrap" title= {it.value.formatedLastModified}>{it.value.formatedLastModified}</div>
+                        </td> 
+                        <td data-label="Owner">
+                                <div class="slds-cell-wrap" title= {it.value.attachmentOwner}>{it.value.attachmentOwner}</div>
+                        </td> 
+                        <td>
+                                <a href={it.value.hrefVal} target="_blank"  title="Download" class="actionIcons">
+                                    <i class="fa fa-cloud-download"></i>
+                                    </a>
+                                <span class="separator slds-p-right_x-small" aria-hidden="true"> </span>
+                            <template if:true={disableRowActions}>
+                                <a tabindex="0" class="tableLinks actionIcons" title="Edit" >
+                                    <template if:true={hideEditAction}>
+                                            <span class="fa fa-pencil disable-action" ></span>
+                                    </template>
+                                    <template if:false={hideEditAction}>
+                                        <span class="fa fa-pencil slds-p-right_x-small"  data-classification ={it.value.classification} data-id ={it.value.attachmentId} onclick={editAttachment}></span>
+                                    </template>
+                                    
+                                </a>
+                                <span class="separator" aria-hidden="true">  </span>
+                                    <a tabindex="0" class="tableLinks actionIcons"  title="Delete" >
+                                        <template if:true={hideDeleteAction}>
+                                          
+                                            <span class="fa fa-trash disable-action" ></span>
+                                            
+                                        </template>
+                                        <template if:false={hideDeleteAction}>
+                                            <span class="fa fa-trash" data-classification ={it.value.classification} data-id ={it.value.attachmentId} onclick={confirmAndDelete}> </span> 
+                                        </template>
+                                </a>                               
+                            </template> 
+                            <template if:true={hideRowActions}>
+                                <template if:false={hideEditAction}>
+                                    <a  class="tableLinks actionIcons"  title="Edit"  ng-model="fileObject"  id={selectrow}>
+                                        <span class="fa fa-pencil slds-p-right_x-small"  data-classification ={it.value.classification} data-id ={it.value.attachmentId} onclick={editAttachment}></span>
+                                   
+                                    </a>
+                                </template>
+                                
+                                <span class="separator" aria-hidden="true"> </span>
+                                <template if:false={hideDeleteAction}>
+                                    <a tabindex="0" class="tableLinks actionIcons"  title="Delete"  click={confirmAndDelete} >
+                                       <span class="fa fa-trash slds-p-right_x-small" data-classification ={it.value.classification} data-id ={it.value.attachmentId} onclick={confirmAndDelete}  > </span> 
+                                    </a>  
+                                </template>
+                                                             
+                            </template>
+                        </td>             
+                    </tr>
+                </template>
+            </tbody>
+        </table>   
+        </div> 
+        <span class="slds-align_absolute-center slds-p-bottom_small totalRecords">{totalRecords}</span>
+    	</template>
+	 </template>
+    </div>
+    <!-- EDit  Modal/Popup -->
+    <template if:true={isModalOpen}>
+        <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" >
+		 <template if:true={showLoadingIcon} >
+                <div class="spinner-overlay1" >
+                    <c-spinner show-spinner="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon} is-modal="true"></c-spinner>
+                </div>
+                </template>
+		
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header modal-header-ext">
+                    <lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={closeModal} ></lightning-button>
+                   <!-- <lightning-button-icon icon-name="utility:close"  alternative-text="close" title="close" onclick={closeModal}></lightning-button-icon>-->
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" title="Edit Attachment">Edit Attachment</h2>
+                </header>
+               <!--body-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <c-attachment-edit attachment-id={attachmentId}  parent-id={parentId} classification="Program Artifacts;Financial Artifacts;Other Artifacts" pageblock-id={pblockId} attach-table-type="Attachment" onhandletab={tabHandler} onmodalloading={handleModalLoad} ></c-attachment-edit>               
+                
+               <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-float_right slds-p-bottom_small">
+                         <!-- Save Button Without Closing Modal -->
+    <template if:false={workspaceEnable}>
+                         <template if:true={save}>
+                    <button class="slds-button slds-button_brand slds-p-right_medium" onclick={saveDetails} title="Save">Save</button>
+                         </template>
+                         <!-- Save Button with Closing Modal -->
+                         <template if:true={saveAndClose}>
+                            <button class="slds-button slds-button_brand" onclick={saveCloseModal} title="Save and Close">Save and Close</button>
+                        </template>
+    </template>
+    <template if:true={workspaceEnable}>
+        <div class="attachBtn">
+            <lightning-button variant="brand" label="Attach" title="Attach" onclick={editfromWorkspace} class="slds-m-left_x-small slds-float_right slds-p-bottom_small slds-p-top_small"></lightning-button>
+        </div> 
+    </template>
+                </footer></div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    </template>
+    <!-- Add  Modal/Popup -->
+    <template if:true={isAddModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+		
+		  <template if:true={showLoadingIcon} >
+                <div class="spinner-overlay1" >
+                    <c-spinner show-spinner="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon} is-modal="true"></c-spinner>
+                </div>
+                </template>
+            
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header modal-header-ext">
+                    	<lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={closeAddModal} ></lightning-button>
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate" title="Add Attachments">Add Attachments</h2>
+                </header>
+               <!--body-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                    <c-attachment-add  parent-id={parentId} classification="Program Artifacts;Financial Artifacts;Other Artifacts" pageblock-id={pblockId} attach-table-type="Attachment" onhandletab={tabHandler} onmodalloading={handleModalLoad1}></c-attachment-add>               
+               
+               <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-float_right slds-p-bottom_small">
+                     <!-- Save Button Without Closing Modal -->
+                     <template if:false={workspaceEnable}>
+                     <template if:true={save}>
+                    <button class="slds-button slds-button_brand" onclick={addSaveDetails} title="Save">Save</button>
+                     </template>
+                     <!-- Save Button with Closing Modal -->
+                     <template if:true={saveAndClose}>
+                        <button class="slds-button slds-button_brand" onclick={addSaveCloseModal} title="Save and Close">Save and Close</button>
+                    </template>                    
+                     </template>  
+                     <template if:true={workspaceEnable}>
+                        <div class="attachBtn">
+                            <lightning-button variant="brand" label="Attach" title="Attach" onclick={addfromWorkspace} class="slds-m-left_x-small slds-float_right slds-p-bottom_small slds-p-top_small"></lightning-button>
+                        </div> 
+                     </template>          
+                </footer>
+            </div> </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- Confirmation Message-->
+    <template if:true={openConfirmmodel}>
+        <div class="demo-only">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_small slds-fade-in-open" >
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header modal-header-ext">
+                        	<lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={closeConfirmationModal} ></lightning-button>
+                        <h2 id="modal-heading-03" class="slds-text-heading_medium slds-hyphenate">Confirm</h2>
+                    </header>
+                
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+                       <h2><b>Do you want to delete? Once it is deleted it cannot be restored.</b></h2><br/>
+                            <p></p>                      
+                        
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="No" variant="brand" onclick={closeConfirmationModal} class="slds-p-right_xx-small"></lightning-button>
+                        <lightning-button label="Yes" variant="brand" onclick={deleteRecord}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+        </template>
+</template>

@@ -1,0 +1,14 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ExpressionBuilderCtrl" access="global">
+
+<apex:attribute name="JsonExpFieldNames"  description="JSON Expression Fields Name" type="String" />
+
+<apex:attribute name="ContextRecordId" description="Id of current record where expression will be saved" type="String" required="false"  access="global"/>
+<apex:attribute name="FieldProviderSObject" description="API name of sObject whose fields are to be displayed in field selector" type="String" required="false"  access="global"/>
+<apex:attribute name="ExpressionJSONField" description="Field API name of current record where expression will be saved" type="String"  required="false"  access="global"/>
+<apex:attribute name="LOperandSkip" description="Semi-colon spearated list of items to skip from left picklist" type="String" required="false" />
+<apex:attribute name="ROperandSkip" description="Semi-colon spearated list of items to skip from right picklist" type="String"  required="false" />
+<apex:attribute name="EnableExpObjectSelector" description="When set to true, this will enable selection of the sObject on which the expression will be built on, the fields displayed in field selector will be fields of selected sObject" type="Boolean" default="false"  required="false" />
+
+
+</apex:component>

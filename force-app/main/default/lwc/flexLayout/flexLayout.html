@@ -1,0 +1,18 @@
+<template>
+    <div class="layout">
+        <template if:true={showTabs}>
+            <template if:true={pageLayoutWrapper}>
+                <c-flex-layout-tabs
+                    page-layout-wrapper={pageLayoutWrapper}
+                    active-tab-id={activeTabId}
+                    active-tab-name={activeTabName}
+                    first-load={firstCallToTabs}
+                    is-view={isView}
+                ></c-flex-layout-tabs>
+            </template>
+        </template>
+        <template lwc:if={showConfigError}>
+            <lightning-card title="Oops...! Something went wrong, Please contact administrator"> </lightning-card>
+        </template>
+    </div>
+</template>

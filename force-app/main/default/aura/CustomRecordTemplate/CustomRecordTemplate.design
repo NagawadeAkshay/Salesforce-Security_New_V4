@@ -1,0 +1,11 @@
+<design:component label="Custom Record Template">
+    <flexipage:template>
+        <flexipage:region label="Header" name="header" defaultWidth="LARGE" />
+        <flexipage:region label="Main Layout" name="main" defaultWidth="MEDIUM" />
+        <flexipage:region label="Related Components" name="sidebar" defaultWidth="SMALL" />
+    </flexipage:template>
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+</design:component>

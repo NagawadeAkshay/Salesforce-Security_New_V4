@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event fired whenever an item is dropped on a pipeline">
+   
+</aura:event>

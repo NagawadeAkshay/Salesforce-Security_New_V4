@@ -1,0 +1,105 @@
+.THIS .btn-collapse{
+    width: 18px;
+    background-color: #00396B;
+    height: 50px;
+    align-items: center;
+}
+
+.THIS .btn-collapse-header{
+    width: 50px;
+    background-color: #00396B;
+    height: 18px;
+    min-height: 18px !important;
+    align-items: center;  
+}
+
+.THIS .slds-hide {
+    display: none !important;
+}
+
+.THIS .right-panel.slds-size_3-of-12{
+    width: 23.40%;
+}
+
+.THIS .left-panel.slds-size_12-of-12{
+    width: 98.20%;
+}
+
+.THIS .btn-collapse-header .slds-text-selected .slds-button__icon_left, .THIS .btn-collapse-header .slds-text-selected-focus .slds-button__icon_left, .THIS .btn-collapse-header .slds-text-not-selected .slds-button__icon_left{
+    margin-left: 14px; 
+    margin-bottom: 4px;
+    color: red;
+    width: 18px;
+    height: 18px; 
+}
+.THIS .btn-collapse .slds-text-selected .slds-button__icon_left, .THIS .btn-collapse .slds-text-selected-focus .slds-button__icon_left, .THIS .btn-collapse .slds-text-not-selected .slds-button__icon_left{
+    margin-bottom: 4px; 
+    color: red;
+    width: 18px;
+    height: 18px; 
+}
+
+.THIS .resize-div{
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    resize: horizontal;
+    overflow: auto;
+}
+.THIS.resizeable-container {
+    display: flex;
+
+}
+
+.THIS .resizer-x {
+    z-index: 2;
+
+}
+
+.THIS .resizer-x::before,
+.THIS .resizer-x::after {
+    content: "";
+    width: 2px;
+    height: 16px;
+}
+
+.col-resize {cursor: col-resize;}
+
+.resizebtn .slds-button__icon_left {
+    margin-right: 0px;
+}
+
+.THIS .scrollable-container {
+    max-height: 700px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}
+
+.THIS .scrollable-container::-webkit-scrollbar {
+    width: 8px; /* Adjust the width as needed */
+}
+
+.THIS .scrollable-container::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3; /* Grey scrollbar thumb color */
+    border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+.THIS .scrollable-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Grey scrollbar track color */
+    border-radius: 6px; /* Rounded corners for the track */
+}
+
+.THIS .scrollable-container::-webkit-scrollbar-thumb:hover {
+    background-color: #8e918f; /* Darker grey color on hover */
+}
+
+.THIS.right-panel .splitreview-scrollbar .slds-page-header .headerposition{
+position:static !important;
+}
+
+.THIS.right-panel .splitreview-scrollbar .slds-page-header .pageblksect{
+margin-top:0px !important;
+}
+
+.cCustomRecordTemplate .right-panel.slds-size_3-of-12 .splitreview-scrollbar .header-overview-padd{
+    margin-top: 0px;
+}

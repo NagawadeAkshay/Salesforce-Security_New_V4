@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="PageMessagesCtrl" access="global" layout="block" >
+    <apex:attribute name="fieldLabelMap" description="This will save field label with respect to overriden label" type="String" required="false" access="global" assignTo="{!fieldLabelMapStr}"/>
+     
+</apex:component>

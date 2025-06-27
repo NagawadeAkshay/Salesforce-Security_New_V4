@@ -1,0 +1,21 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="CollabCtrl" id="collabComponent1" allowDML="true" layout="block" access="global">
+    <!-- <apex:attribute name="ReferenceID"
+        description="ID that the page passes the component" type="ID"
+        required="false" assignTo="{!controllerReferenceID}" /> -->
+    <apex:attribute name="AllowCustomers"
+        description="If this is a group this indicates if the group allows community users" 
+        type="Boolean" required="false" default="false"  access="global"/>
+    <apex:attribute name="NumberOfPosts"
+        description="The number of posts to display per scroll" 
+        type="Integer" required="false" default="25"  access="global"/>
+    <apex:attribute name="InfiniteScroll"
+        description="Boolean that dictates whether or not to display more posts on scroll down" 
+        type="Boolean" required="false" default="true"  access="global"/>
+    <apex:attribute name="Collapse"
+        description="Boolean that dictates whether or not to display the collapse icon" 
+        type="Boolean" required="false" default="false"  access="global"/>
+    <apex:attribute name="collabHeight" description="String will decide the height of collab"
+    	type="String" required="false" access="global"/>    
+	
+</apex:component>

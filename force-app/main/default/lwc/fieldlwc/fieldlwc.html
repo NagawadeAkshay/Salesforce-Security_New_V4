@@ -1,0 +1,156 @@
+<template>
+    <template if:true={isView}>
+        <div class="slds-truncate">
+        <template if:true={isText}>
+            <lightning-formatted-text title={value} value={value} onchange={handleInputChange}></lightning-formatted-text>
+        </template>
+        <template if:true={isNumber}>
+            <lightning-formatted-number value={value} format-style={formatter} minimum-fraction-digits={minimumFractionDigit} currency-code="USD"></lightning-formatted-number>
+        </template>
+        <template if:true={isUrl}>
+            <lightning-formatted-url label={label} title={label} value={value} onchange={handleInputChange}  ></lightning-formatted-url>
+        </template>
+        <template if:true={isDateTime}>
+            <lightning-formatted-date-time value={value} year="numeric" month="numeric" day="numeric" hour="2-digit" hour12="true" minute="2-digit" time-zone={timeZone}>
+            </lightning-formatted-date-time>
+        </template>
+        <template if:true={isDate}>
+            <lightning-formatted-date-time value={value} year="numeric" month="numeric" day="numeric" hour12="true" time-zone="UTC" >
+            </lightning-formatted-date-time>
+        </template>
+        <template if:true={isbase64}>
+            <lightning-formatted-rich-text
+                value={value} title={hoverValue}>
+            </lightning-formatted-rich-text>
+        </template>
+        <template if:true={isformula}>
+            <lightning-formatted-rich-text
+                value={value} >
+            </lightning-formatted-rich-text>
+        </template>
+        <template if:true={isboolean}>
+            <!--lightning-input type="checkbox" checked disabled> </lightning-input-->
+            <template if:true={showtrue}>
+                <lightning-icon icon-name="utility:check" alternative-text="Check!" size="small" title=""></lightning-icon>
+            </template>
+            <template if:true={showfalse}>
+                <lightning-icon icon-name="utility:close" alternative-text="Close!" size="small" title=""></lightning-icon>
+            </template>
+         </template>
+
+        <template if:true={isemail}>
+            <lightning-formatted-email value={value} title={value}>
+            </lightning-formatted-email>
+        </template>
+        <template if:true={isPhone}>
+                <lightning-formatted-phone value={value} title={value} disabled>
+                </lightning-formatted-phone>
+        </template>
+        </div>
+    </template>
+    <template if:false={isEdit}>
+        <template if:true={isText}>
+            <lightning-formatted-text title={value} value={value} onchange={handleInputChange}></lightning-formatted-text>
+        </template>
+        <template if:true={isNumber}>
+            <lightning-formatted-number value={value} format-style={formatter} minimum-fraction-digits={minimumFractionDigit} currency-code="USD"></lightning-formatted-number>
+        </template>
+        <template if:true={isUrl}>
+            <lightning-formatted-url label={label} title={label} value={value} onchange={handleInputChange}  ></lightning-formatted-url>
+        </template>
+        <template if:true={isDateTime}>
+            <lightning-formatted-date-time value={value} year="numeric" month="numeric" day="numeric" hour="2-digit" hour12="true" minute="2-digit" time-zone={timeZone}>
+            </lightning-formatted-date-time>
+        </template>
+        <template if:true={isDate}>
+            <!--lightning-formatted-date-time value={value} year="numeric" month="numeric" day="numeric" >
+            </lightning-formatted-date-time-->
+            <lightning-formatted-date-time value={value} year="numeric" month="numeric" day="numeric" hour12="true" time-zone={timeZone}>
+            </lightning-formatted-date-time>
+        </template>
+        <template if:true={isbase64}>
+            <lightning-formatted-rich-text
+                value={value}>
+            </lightning-formatted-rich-text>
+        </template> 
+        <template if:true={isboolean}>
+            <!--lightning-input type="checkbox" checked disabled> </lightning-input-->
+            <template if:true={value}>
+                <lightning-icon icon-name="utility:check" alternative-text="Check!" size="x-small" title=""></lightning-icon>
+            </template>
+            <template if:false={value}>
+                <lightning-icon icon-name="utility:close" alternative-text="Close!" size="small" title=""></lightning-icon>
+            </template>
+         </template>
+
+        <template if:true={isemail}>
+            <lightning-formatted-email value={value} title={value}>
+            </lightning-formatted-email>
+        </template>
+        <template if:true={isPhone}>
+                <lightning-formatted-phone value={value} title={value}>
+                </lightning-formatted-phone>
+        </template>
+
+    </template>
+
+    <template if:false={isView}>
+
+        <template if:false={column.isReference}>
+
+            <template if:true={isText}>
+                <lightning-input type="text" value={value} onchange={handleInputChange} required={column.isRequired}></lightning-input>
+            </template>
+            <template if:true={isNumber}>
+                <lightning-input step="any" type="number" value={value} onchange={handleInputChange} required={column.isRequired}></lightning-input>
+            </template>
+            <template if:true={isDate}>
+                <lightning-input type="date" value={value} onchange={handleInputChange} required={column.isRequired}></lightning-input>
+            </template>
+            <template if:true={isDateTime}>
+                <!-- <lightning-input type="datetime" value={value} onchange={handleInputChange} required={column.isRequired}> </lightning-input> -->
+                <div onclick={handleDateTimeParentDivClick}>
+                    <lightning-input type="datetime" value={value} onchange={handleInputChange} required={column.isRequired}
+                        onclick={handleDateTimeMouseIn} onmouseenter={handleDateTimeMouseIn} onmouseleave={handleDateTimeMouseOut}
+                        onblur={handleDateTimeOnBlur}> </lightning-input>
+                </div>
+            </template>
+            <template if:true={isemail}>
+                <lightning-input type="email" value={value} onchange={handleInputChange} required={column.isRequired}> </lightning-input>
+            </template>
+            <template if:true={isPhone}>
+                <lightning-input type="tel" value={value} onchange={handleInputChange} required={column.isRequired}></lightning-input>
+            </template>
+            <template if:true={isboolean}>
+                <lightning-input type="checkbox"  checked={value} onchange={handleBooleanChange} required={column.isRequired}> </lightning-input>
+            </template>
+            <template if:true={isbase64}>
+                <lightning-textarea  value={value} onchange={handleInputChange} required={column.isRequired}></lightning-textarea>
+            </template>
+            <template if:true={isPickList}>
+               <!-- <lightning-combobox
+                        key={fieldName}
+                        name="progress"
+                        variant="label-hidden"
+                        value={value}
+                        placeholder="Select Values"
+                        options={options}
+                        onchange={handleChange} ></lightning-combobox>  -->
+                        <c-multi-select-pick-list onselectoption={handleSelectOption} open-drop-down-at-top-side={openDropDownAtTopSide} options={options} selected-value={value} record={record} column={column}></c-multi-select-pick-list>
+           
+                    </template>
+            <template if:true={isMultiPicklist}>
+                <c-multi-select-pick-list multi-select="true" onselectoption={handleSelectOption} open-drop-down-at-top-side={openDropDownAtTopSide} options={options} selected-values={selectedValues} record={record} column={column}></c-multi-select-pick-list>
+        
+            </template>
+             <template if:true={column.isLookup}>
+                <c-custom-lookup-lwc  fields-name={LookupDisplayFields} open-drop-down-at-top-side={openDropDownAtTopSide} s-object-api-name={SobjectApi} lookupfield-name={lookupfieldapi} placeholder="Search..." filter-clause={filterclause} available-record-id={onloadid} onselectedrecord={handlelookupvalue} string-parameters={stringParameters} list-parameters={listParameters} record={record} column={column}></c-custom-lookup-lwc>
+
+            </template>
+             <template if:true={isCombobox}>
+                <c-multi-select-pick-list onselectoption={handleSelectOption} open-drop-down-at-top-side={openDropDownAtTopSide} options={options} selected-value={value} record={record} column={column}></c-multi-select-pick-list>
+              </template>
+        </template>
+
+    </template>
+</template>

@@ -1,0 +1,11 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component >
+    <apex:attribute name="sobject"  type="Sobject" description="sobject" />
+    <apex:attribute name="apiName" type="String" description="apiName of the field" />
+    <apex:attribute name="dataType" type="String" description="fieldData type" />
+    <apex:attribute name="currySymbol" type="String" description="Currency Symbol locale"/>
+    <apex:attribute name="decimalScalePer" type="Integer" description="Decimal scale for per"/>
+    <apex:attribute name="currencyDecimalScale" type="Integer" description="Currency scale"/>
+    <apex:attribute name="doubleDecimalSale" type="Integer" description="Double Val scale"/>
+    
+</apex:component>

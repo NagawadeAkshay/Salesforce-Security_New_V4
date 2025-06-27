@@ -1,0 +1,55 @@
+.pageSection {
+    padding: 0px;
+    margin-bottom: 10px;
+}
+.pageSectionTitle {
+    color: #00396b;
+    background: rgb(243, 242, 242);
+	border-top-left-radius: 0.25rem;
+border-top-right-radius: 0.25rem;
+padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.helpTextPost {
+    padding-top: 10px;
+    padding-right: 5px;
+    color: #6d6d6d;
+}
+.hide {
+    display: none;
+}
+
+.slds-box {
+    padding: 0px !important;
+    margin-bottom: 10px;
+    margin-left:15px;
+    margin-right:15px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    border: 1px solid rgb(221, 219, 218);
+    
+  }
+   .pointer{
+    cursor:pointer;
+  }
+
+.required-for-submit{
+    float:left;
+    margin-right:5px;
+}
+.required-for-save {
+    float:left;
+    margin-left: 0px;
+}
+.rich-text-with-warning {
+    background-color: yellow;
+}
+.rich-text-limit-reached {
+    background-color: red;
+}
+
+ .slds-text-heading_small.pointer{
+    color: #00396B;
+    font-size: 15px;
+cursor:pointer;
+}

@@ -1,0 +1,28 @@
+<!--
+ - Created by MCPL-L72 on 28-11-2019.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+ <apex:component id="FormEditLayout" controller="FormController" allowDML="true" access="global">
+    <apex:attribute name="formId" description="Form Id for Edit" type="string" assignTo="{!formIdVal}" access="global" />
+    <apex:attribute name="packageId" description="Form Id for View" type="string" assignTo="{!packageIdVal}" access="global"
+    />
+    <apex:attribute name="recordId" description="Form Id for View" type="string" assignTo="{!recordIdVal}" access="global" />
+    <apex:attribute name="layoutType" description="Type can be Edit/View/Print" type="string" assignTo="{!type}" access="global"
+        default="Edit" />
+    <apex:attribute name="saveURL" description="pageReference for Save to be used on Edit Layout" type="PageReference" required="false"
+                    assignTo="{!savePage}" access="global" />
+    <apex:attribute name="cancelURL" description="pageReference for Cancel to be used on Edit Layout" type="PageReference" required="false"
+                    assignTo="{!cancelPage}" access="global" />
+    <apex:attribute name="HideSidebar" description="This attribute is used to decide whether to show the sidebar on first login for Ext User "
+        type="boolean" required="false" access="global" />
+    <apex:attribute name="hideCancelBtn" description="Should the cancel button be hidden on edit page " type="boolean" required="false"
+        access="global" />
+    <apex:attribute name="hideSaveBtn" description="Should the save button be hidden on edit page " type="boolean" required="false"
+        access="global" />
+    <apex:attribute name="showHeader" description="Whether to display title" type="boolean" access="global" required="false"
+        default="true" />
+    <apex:attribute name="isModal" description="Display within Modal" type="boolean" access="global" default="false" assignTo="{!isModalVal}"
+    />
+    <apex:attribute name="tableName" description="grid table name" type="String" />
+    
+</apex:component>

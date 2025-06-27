@@ -1,0 +1,102 @@
+.collapseIcon .slds-icon {
+width: 20px !important;
+height: 20px !important;
+fill: #0176d3 !important;
+}
+  .combobox-input .slds-form-element__control .slds-combobox_container .slds-combobox .slds-dropdown{
+  padding:0px !important;
+  }
+  
+ .combobox-input .slds-media__figure{
+	  display:none;
+  }
+  
+    .combobox-input .slds-listbox_vertical .slds-listbox__option_plain, .combobox-input .slds-listbox_vertical .slds-listbox__option--plain, .combobox-input .slds-listbox--vertical .slds-listbox__option_plain, .combobox-input .slds-listbox--vertical .slds-listbox__option--plain {
+                    padding: 3px 15px !important;
+                    color:#333 ;
+                    }
+
+                .combobox-input .slds-dropdown{
+                    border-radius: 0px !important;
+                    background-color: #fff;
+                    color:#333 !important;
+                     padding:0px !important;
+                  }
+
+.combobox-input .slds-listbox_vertical .slds-listbox__option:focus,.combobox-input .slds-listbox_vertical .slds-listbox__option:hover, 
+.combobox-input .slds-listbox_vertical .slds-listbox__option.slds-has-focus, .combobox-input .slds-listbox--vertical .slds-listbox__option:focus, 
+.combobox-input .slds-listbox--vertical .slds-listbox__option:hover, 
+.combobox-input .slds-listbox--vertical .slds-listbox__option.slds-has-focus
+{
+background-color:#1e90ff !important; 
+text-decoration:none;
+color:#ffffff;
+}
+
+.oneUtilityBarPanel .slds-utility-panel__body .body_container .sidebar .custom-sidebar .sidebarcollapse{
+	display:none !important;
+}
+.oneUtilityBarPanel .slds-utility-panel__body .body_container .sidebar .custom-sidebar{
+	height:auto !important;
+	overflow-y: hidden !important;
+}
+  .slds-utility-panel__body:hover::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background:transparent;
+display:block
+}
+
+.slds-utility-panel__body:hover::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+  border-radius: 0.25rem;
+  display:block;
+}
+.slds-utility-panel__body::-webkit-scrollbar {
+	  width:6px;
+	  height:6px;
+  background:transparent;
+  display:none;
+}
+
+.slds-utility-panel__body::-webkit-scrollbar-thumb{
+	background: #c1c1bf;
+  border-radius: 0.25rem;
+   display:none;
+}
+.slds-utility-panel__body{
+	overflow: hidden;
+	overflow-y: auto;
+}
+.toggleIcon .slds-icon {
+	width: 14px !important;
+	height: 14px !important;
+	fill: #00396B !important;
+}
+.flexipageHeader {
+  display:none !important;
+}
+
+.oneUtilityBarPanel .headerLink.panel-header span .popOutButton{
+  display:none;
+}
+	
+.main-planning .sidebar .custom-sidebar{
+border-radius: 0.25rem;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    border: 1px solid rgb(221, 219, 218);
+}
+/*
+.main-planning .sidebar.open-panel{
+width: 238px;
+}
+*/
+
+
+.header{
+border-top-left-radius: 0.25rem;
+border-top-right-radius: 0.25rem;
+}
+.slds-accordion__list-item:first-child{
+  border-top:0px !important;
+  }

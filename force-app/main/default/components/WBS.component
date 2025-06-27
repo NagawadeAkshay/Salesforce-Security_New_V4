@@ -1,0 +1,8 @@
+<!-- Tejashree D - 17-11-22 We are not using this component so commenting out the call of GanttDxHTML and DHTMLGantt
+for Security review if i future want to use this component then uncomment Static Resources loaded in this file -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" controller="WBSCtrl" >
+    <apex:attribute required="true" name="wbsGridName" description="wbsGridName" type="String" access="global"/>
+    <apex:attribute name="paramtersMap" description="Map containing key value pairs for merge fields" type="string" required="false" access="global"/>
+     
+</apex:component>

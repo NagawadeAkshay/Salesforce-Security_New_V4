@@ -1,0 +1,53 @@
+<aura:component implements="lightning:recordHomeTemplate" description="Header overview, main layout and collapsible right sidebar">
+    <aura:attribute name="header" type="Aura.Component[]" description="Header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" />    
+    <aura:attribute name="buttonstate" type="Boolean" access="private" default="false"/> 
+    <aura:attribute name="isHeaderCollapsed" type="Boolean" access="PRIVATE" default="true"/>
+    <aura:attribute name="headerButtonState" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="resizer" type="Object" />
+    <aura:attribute name="canMove" type="Boolean" default="false"/>
+    <aura:attribute name="firstDivFlex" type="String" />
+   
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	
+    <lightning:layout multipleRows="true">
+
+        <lightning:layoutItem size="12" class="{! v.isHeaderCollapsed ? '' : 'slds-hide' }">
+            {!v.header}
+        </lightning:layoutItem>
+        <lightning:buttonStateful   class="btn-collapse-header" variant="border-filled" onclick ="{!c.toggleHeader}"
+                                    iconNameWhenOff="utility:up"
+                                    iconNameWhenOn="utility:down"
+                                    title="{! v.isHeaderCollapsed ? 'Collapse' : 'Expand' }"
+                                    state="{! v.headerButtonState }" />
+        <lightning:layoutItem size="12">
+                <div class="resizeable-container" onmouseup="{!c.handleOnMouseUp}" onmousemove="{!c.handleOnMouseMove}">
+                <lightning:layout>  
+                    <lightning:layoutItem aura:id="mainRegion" size="{! v.isSidebarCollapsed ? 9 : 12}" class="slds-p-top_small slds-p-bottom_small left-panel">
+                        {!v.main}
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="no-flex" class="slds-p-top_small slds-p-left_x-small">
+                        <lightning:buttonStateful   variant="border-filled" onclick="{!c.toggleSection}" class="btn-collapse"
+                                                    iconNameWhenOff="utility:right"
+                                                    iconNameWhenOn="utility:left"
+                                                    title="{! v.isSidebarCollapsed ? 'Collapse' : 'Expand' }"
+                                                    state="{! v.buttonstate }"/>
+                     <div aura:id="resizer" class="resizer-x col-resize" onmousedown="{!c.handleOnMouseDown}">
+                        <lightning:button variant="base" iconName="utility:slider" label="" title="Resize" class="col-resize resizebtn"/>
+                     </div>                                                             
+                    </lightning:layoutItem>
+                
+                    <lightning:layoutItem aura:id="rightSidebar" size="3" class="{! v.isSidebarCollapsed ? 'slds-p-top_small slds-p-right_xx-small right-panel' : 'slds-hide' }">
+                    {!v.sidebar}
+              
+                    </lightning:layoutItem>
+              
+           
+                </lightning:layout>
+           </div> 
+        </lightning:layoutItem>
+     
+    </lightning:layout>
+</aura:component>

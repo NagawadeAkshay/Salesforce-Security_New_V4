@@ -1,0 +1,3 @@
+<!-- Deprecated component-->
+<aura:component controller="GGFileEditctrl" access="global">
+</aura:component>

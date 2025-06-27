@@ -1,0 +1,3 @@
+<!-- after discussion with Aniket deprecating this unused component-->
+<aura:component >
+</aura:component>

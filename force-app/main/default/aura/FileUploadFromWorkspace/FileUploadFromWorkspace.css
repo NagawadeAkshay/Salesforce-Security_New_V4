@@ -1,0 +1,9 @@
+.THIS .custom-input{
+    max-width:30%;
+}
+.THIS .custom-input .searchCollabFeeds{
+    z-index:0 !important;
+}
+.THIS .cust-row{
+    margin-top: 10px;
+}

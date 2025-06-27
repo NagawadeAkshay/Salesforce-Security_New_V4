@@ -1,0 +1,138 @@
+<template>
+    <template if:true={pageLayoutWrapper}>
+      
+
+        <div class={topPageHeaderClass}>
+            <template if:false={isModal}>
+                <div class={pageHeaderClass}>
+                    <div class={pageTitleClass}>
+                        <!-- <div class="slds-col slds-page-header__col-title"> -->
+                        <h2 class="header-title-upperpart" tabindex="0">{headerUpperTitle}</h2>
+                        <template if:true={headerLowerTitle}>
+                            <div class="slds-media">
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name">
+                                        <div class="slds-page-header__name-title header-title-lowerpart" tabindex="0">
+                                            <template for:each={headerLowerTitle} for:item="title"> <span key={title} title={title}>{title}</span><br key={title} /> </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <template if:true={enableStepProgressBar}>
+                        <template if:true={pageLayoutWrapper.stepProgressGroupName}>
+                            <div class="slds-col slds-size_3-of-7 stepprogressbr" >
+                              <div data-id="progressbarDiv">
+                                <c-step-progressbar
+                                    record-id={recordId}
+                                    group-name={pageLayoutWrapper.stepProgressGroupName}
+                                    sobject-name={pageLayoutWrapper.objectName}
+                                    onupdateheaderprogbarstyle={onUpdateHeaderProgbarStyle}
+                                    show-all-stages={showAllStages}
+                                ></c-step-progressbar> 
+                               </div>
+                            </div>
+                        </template>
+                    </template>
+                    <!-- action buttons -->
+                    <div class={actionButtonClass}>
+                        <!-- <div class="slds-page-header__col-actions"> -->
+                        <div class="slds-float_right">
+                            <c-flex-layout-actions
+                                page-layout-wrapper={pageLayoutWrapper}
+                                context={context}
+                                rec-id={recordId}
+                                show-download-as-pdf={pageLayoutWrapper.showDownloadAsPdf}
+                                show-snapshot-menu-button={pageLayoutWrapper.showSnapshotMenuButton}
+                                enable-step-progress-bar={enableStepProgressBar}
+                                onhandle_page_messages={setPageMessages}
+                            ></c-flex-layout-actions>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template if:true={isModal}>
+                <div class="slds-float_right">
+                    <c-flex-layout-actions
+                        page-layout-wrapper={pageLayoutWrapper}
+                        context={context}
+                        rec-id={recordId}
+                        enable-step-progress-bar={enableStepProgressBar}
+                        onhandle_page_messages={setPageMessages}
+                    ></c-flex-layout-actions>
+                </div>
+            </template>
+
+            <template if:true={isTabAvailable}>
+                <div class={pageBlockSectionClass}>
+                    <c-page-block-section page-layout-wrapper={pageLayoutWrapper} is-view="true" tab-id={headerTabId} ></c-page-block-section>
+                </div>
+            </template>
+            <template if:true={enableHeaderInstructions}>
+                <template if:true={hasHeaderInstructions}>
+                    <c-layout-header-instructions header-instructions={pageLayoutWrapper.headerInstructions} class="headerinstruction"></c-layout-header-instructions>
+                </template>
+            </template>
+            <template if:true={showApprovalComponent}>
+                <div class="">
+                    <c-approval-decision
+                        record-id={recordId}
+                        context={context}
+                        key-value-map={pageLayoutWrapper.keyValueMap}
+                        list-value-map={pageLayoutWrapper.listValueMap}
+                        page-layout-id={pageLayoutWrapper.pageLayoutId}
+                        template-name={pageLayoutWrapper.formName}
+                        approval-options={approvalOptions}
+                        is-delegate={isDelegate}
+                        onafter_approval_event={refreshApprovalComponent}
+                    ></c-approval-decision>
+                </div>
+            </template>
+            <template if:true={recordSendToowner}>
+                <div class="slds-box send-to-owner">
+                    <div>{approvalDecisionMessage}</div>
+                </div>
+            </template>
+            <!-- <template if:true={enableStepProgressBar}>
+                <template if:true={pageLayoutWrapper.stepProgressGroupName}>
+                    <div class="slds-box">
+                        <c-step-progressbar
+                            record-id={recordId}
+                            group-name={pageLayoutWrapper.stepProgressGroupName}
+                            sobject-name={pageLayoutWrapper.objectName}
+                        ></c-step-progressbar>
+                    </div>
+                </template>
+            </template> -->
+        </div>
+        <div>
+        <template if:true={enablePageMessages}>
+            <c-flex-layout-page-messages
+                message-time-out={messageTimeOut}
+                message-time-out-enabled={messageTimeOutEnabled}
+                page-message-list={pageMessageList}
+                enable-page-messages={enablePageMessages}
+                class="custommsg"
+            ></c-flex-layout-page-messages>
+        </template></div>
+        <template if:true={showBannerPageMessages}>
+            <div class="header-field-label">
+                <template for:each={bannerPageMessages} for:item="message">
+                    <c-flex-layout-page-messages
+                        key={message}
+                        is-banner-msg={isBannerMsg}
+                        message-time-out={message.messageTimeOut}
+                        message-time-out-enabled={message.messageTimeOutEnabled}
+                        page-message-list={message.messageList}
+                    ></c-flex-layout-page-messages>
+                </template>            
+            </div>
+        </template>
+    </template>
+    <template lwc:if={showConfigError}>
+        <template if:false={isModal}>
+            <lightning-card title="Oops...! Something went wrong, Please contact administrator"> </lightning-card>
+        </template>
+    </template>
+</template>

@@ -1,0 +1,90 @@
+.message-cancel-button {
+    float: right;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    border: none;
+    background: none;
+}
+.page-message-error {
+    color: #762f2e;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    padding-left: 35px;
+}
+.page-message-info {
+    color: #214a5e;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    padding-left: 35px;
+}
+.page-message-confirm {
+    color: #2b502b;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    padding-left: 35px;
+}
+.page-message-warning {
+    color: #654f2a;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    padding-left: 35px;
+}
+.pagemsg {
+    position: fixed;
+    z-index: 9;
+    top: 175px;
+    width: 23.5%;
+    right: 15px;
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.pagemsg .page-message-error,
+.pagemsg .page-message-info,
+.pagemsg .page-message-confirm,
+.pagemsg .page-message-warning {
+    max-height: 180px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.page-message-error::-webkit-scrollbar,
+.page-message-info::-webkit-scrollbar,
+.page-message-confirm::-webkit-scrollbar,
+.page-message-warning::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #f2f0f5;
+}
+
+.page-message-error::-webkit-scrollbar-thumb,
+.page-message-info::-webkit-scrollbar-thumb,
+.page-message-confirm::-webkit-scrollbar-thumb,
+.page-message-warning::-webkit-scrollbar-thumb {
+    background: #c1c1bf;
+}
+
+
+
+.pagemsg::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #f2f0f5;
+}
+
+.pagemsg::-webkit-scrollbar-thumb {
+    background: #c1c1bf;
+}

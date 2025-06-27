@@ -1,0 +1,35 @@
+.THIS .slds-card__footer {
+    padding: 0;
+}
+
+.THIS .slds-docked-form-footer {
+    display: flow-root;
+    justify-content: inherit;
+    padding: 0.5rem 0.5rem;
+    position: inherit;
+}
+
+.THIS .slds-scope {
+    min-height: 100vh;
+}
+
+.THIS .slds-tree_container {
+    max-width: 100%;
+}
+
+.THIS .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.THIS .slds-border_top {
+    margin: 5px -15px 15px -15px;
+}
+
+.THIS .listview-action {
+        padding-top: 23px;
+}
+
+.THIS .listview-action .slds-button_icon {
+    max-height: 30px;
+}

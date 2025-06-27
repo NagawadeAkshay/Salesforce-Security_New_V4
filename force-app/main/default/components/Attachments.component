@@ -1,0 +1,21 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="AttachmentsCtrl" access="global">
+    <!--<apex:includeScript value="{!URLFOR($Resource.Bootbox)}"/>-->
+    <!-- <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />-->
+    <!--    <apex:includeScript value="{!URLFOR($Resource.AttachmentRes, 'AttachmentRes/staticResourcesScripts/bootstrap-filestyle.min.js')}" />  -->
+    <apex:attribute name="parentObject" assignTo="{!parentObjectId}" description="This is the value of the parent object Id for which we are defining the notes and attchments list." type="String" required="false" access="global"/>
+    <apex:attribute name="title" assignTo="{!titleValue}" description="This is the value for the title that will be displayed on the list." type="String" required="false" access="global"/>
+    <apex:attribute name="pbId" assignTo="{!pageblockId}" description="This is the value for the Id of the page block." type="String" required="false" access="global"/>
+    <apex:attribute name="messages"  description="This is the value required for page messages." type="DynamicMessageHolder" required="false" access="global"/>
+    <apex:attribute name="attachmentClassification" assignTo="{!classification}" description="This value will contain a list of Classification types available for the record" type="String" required="false" access="global"/>
+    <apex:attribute name="isHistory"  description="This value will be used to display Record History" type="boolean" required="false" access="global"/>
+    <apex:attribute name="isView"  description="This value will be used to Hide button on Edit mode" type="boolean" required="false" access="global" assignTo="{!isViewVal}"/>
+    <apex:attribute name="HideDisableRowActions"  description="This value will be used to Hide/Disable row level actions" type="String" required="false" access="global"/>
+    <apex:attribute name="isDigitallySigned"  description="This value will be used to display Record Digitally Signed Artifact" type="Boolean" required="false" access="global" assignTo="{!isDigiSign}"/>
+    <apex:attribute name="isFieldLevelAttach" description="This value will be used to hide action column, add attachment button and page message of component" type="Boolean" required="false" access="global" assignTo="{!isFieldLevelAtt}"/>
+    <apex:attribute name="isPreview" description="This value will be used to hide Add Attachment button" type="Boolean" required="false" access="global" />
+    <apex:attribute name="headerInstructionText" description="This value will be used to show header instruction text" type="string" required="false" access="global" />  
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false" access="global"/>
+
+    
+</apex:component>

@@ -1,0 +1,832 @@
+.flexipageHeader {
+    display: none !important;
+}
+
+.column.region-main {
+    width: 75% !important;
+}
+
+.column.region-sidebar-right {
+    width: 25% !important;
+}
+
+.slds-button_brand,
+.slds-button--brand,
+.slds-button_neutral {
+    min-height: 22px !important;
+    padding: 0 8px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+}
+
+.slds-form-element__icon {
+    padding-top: 0px !important;
+
+}
+
+.slds-tabs_default__item .slds-tabs_default__link {
+    font-size: 15px !important;
+}
+
+.slds-tabs_default__item.slds-is-active .slds-tabs_default__link {
+    text-decoration: none !important;
+    font-weight: 400;
+}
+
+.slds-tabs_default__item {
+    color: #000 !important;
+}
+
+.slds-tabs_default__link .slds-icon {
+    width: 18px !important;
+    height: 18px !important;
+    fill: #000;
+}
+
+/* 
+  .slds-page-header {
+    padding: 0px;
+    
+  } */
+
+lightning-timepicker .slds-form-element__label {
+    display: none !important;
+}
+
+.slds-page-header__name-title {
+    font-size: 15px !important;
+}
+
+.slds-tabs_default__item {
+    color: #000 !important;
+}
+
+.instructionbtn .slds-button {
+    line-height: 0px !important;
+    white-space: nowrap;
+}
+
+.instructionbtn .slds-button:hover,
+.instructionbtn .slds-button:focus {
+    box-shadow: none;
+    border-radius: 0px;
+    border-color: transparent !important;
+}
+
+.toggleIcon .slds-icon {
+    width: 14px !important;
+    height: 14px !important;
+    fill: #00396B !important;
+}
+
+.instructionIcon .slds-icon {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #00396B !important;
+}
+
+.slds-popover {
+
+    background-color: #f3f2f2;
+    display: inline-block;
+
+    border: 1px solid #000 !important;
+}
+
+.slds-popover--tooltip .slds-popover__body,
+.slds-popover_tooltip .slds-popover__body {
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+}
+
+.slds-nubbin--bottom-left:before,
+.slds-nubbin_bottom-left-corner:before,
+.slds-nubbin_bottom-left:before {
+
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.slds-nubbin--bottom-right:before,
+.slds-nubbin_bottom-right-corner:before,
+.slds-nubbin_bottom-right:before {
+
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+
+
+.slds-nubbin--top-right:before,
+.slds-nubbin_top-right-corner:before,
+.slds-nubbin_top-right:before {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.slds-modal__header .slds-modal__close {
+    position: absolute;
+    right: 10px;
+    margin-left: 0;
+    bottom: 0;
+}
+
+
+.slds-modal__close .slds-button {
+    font-size: 18px;
+    color: #00396B;
+}
+
+
+.header-Instruction-text .slds-rich-text-editor__output {
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+}
+
+fieldset .slds-form-element__control lightning-datepicker .slds-form-element__label {
+    display: none !important;
+}
+
+
+
+.fix-slds-modal .slds-modal__container .slds-theme_alert-texture,
+.slds-theme--alert-texture {
+    padding: 10px 15px 10px 15px !important;
+    background: rgb(243, 243, 243) !important;
+    background-image: none !important;
+}
+
+
+.slds-text-heading_medium {
+    font-weight: 700;
+    color: #00396b;
+    font-size: 15px !important;
+
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__header {
+
+    border-bottom: 1px solid #c9c9c9 !important;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__header .slds-modal__title {
+font-weight: 700;
+    font-size:15px !important;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__footer {
+    border-top: 1px solid #c9c9c9 !important;
+    background: rgb(243, 243, 243) !important;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__footer .slds-button.slds-button_neutral {
+    background-color: var(--sds-c-button-neutral-color-background, white) !important;
+    border-color: var(--sds-c-button-neutral-color-border, #c9c9c9);
+
+}
+
+.slds-modal__footer .slds-button.slds-button_neutral:hover,
+.slds-modal__footer .slds-button.slds-button_neutral:focus {
+    border: 1px solid #c9c9c9 !important;
+
+}
+
+.slds-form-element__static {
+    color: #000;
+}
+
+.slds-color-picker__summary-button {
+    height: 30px !important;
+}
+
+.slds-form-element__control .slds-form-element__static a:hover,
+.slds-form-element__control .slds-form-element__static a:focus {
+    text-decoration: none;
+}
+
+.slds-tabs_default__overflow-button .slds-button {
+    color: #000 !important;
+    font-size: 15px;
+}
+
+/* Approval Decision Component */
+
+.approveDecision lightning-radio-group div.slds-form-element__control[part="options"] {
+    display: flex;
+}
+
+.radioButtons fieldset .slds-form-element__control .slds-radio .slds-radio__label .slds-form-element__label {
+    font-weight: 400;
+}
+
+.text-area .slds-form-element .slds-form-element__label {
+    display: none;
+}
+
+.text-area .slds-form-element .textarea-container .slds-textarea {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.radioButtons fieldset .slds-form-element__control .slds-radio {
+    margin-left: 10px;
+}
+
+.required-for-submit .slds-icon {
+    width: 12px;
+    height: 12px;
+    fill: #FFA500;
+
+}
+
+.header {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.confirm-modalheader .slds-modal__header {
+    padding: 10px 15px 10px 15px !important;
+    background: #f3f2f2 !important;
+}
+
+.confirm-modalheader .slds-modal__header .slds-modal__title {
+    color: #00396b;
+    font-size: 15px !important;
+    cursor: pointer;
+    font-weight: 700;
+
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__close .slds-button lightning-primitive-icon .slds-button__icon {
+    fill: #00396B;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__close .slds-button lightning-primitive-icon .slds-button__icon {
+    fill: #00396B;
+    font-size: 18px;
+    font-weight: 700;
+    width: 12px;
+    height: 12px;
+}
+
+.fix-slds-modal .slds-modal__container .slds-modal__close .slds-button {
+    top: 50px;
+    right: 10px;
+    z-index: 9002;
+}
+
+.confirm-modalfooter .slds-modal__footer {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.confirm-modal lightning-modal-body .slds-modal__content {
+    min-height: 50px !important;
+}
+
+/* Custom lookup LWC Component */
+.lookupInputContainer .slds-dropdown_fluid::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #f2f0f5;
+}
+
+.lookupInputContainer .slds-dropdown_fluid::-webkit-scrollbar-thumb {
+    background: #c1c1bf;
+}
+
+.fix-slds-modal.slds-modal_prompt .slds-modal__container .slds-modal__footer .slds-button.slds-button_neutral {
+    border-color: #c9c9c9 !important;
+    position: absolute;
+    right: 60px;
+}
+
+.fix-slds-modal.slds-modal_prompt .slds-modal__container .slds-modal__footer .slds-button_brand {
+    float: right;
+}
+
+.text-area .label1 .slds-form-element__label {
+    display: none;
+}
+
+/* Approval Decision Component-searchableCombobox */
+
+.dropdownlist.slds-listbox_vertical .slds-listbox__option_plain,
+.dropdownlist.slds-listbox_vertical .slds-listbox__option--plain,
+.dropdownlist.slds-listbox--vertical .slds-listbox__option_plain,
+.dropdownlist.slds-listbox--vertical .slds-listbox__option--plain {
+    padding: 0px 0px 0px 15px !important;
+    color: #333;
+}
+
+
+
+.media_icon.slds-listbox__option-icon {
+    display: none !important;
+}
+
+.dropdownlist.slds-listbox_vertical .slds-listbox__option:focus,
+.dropdownlist.slds-listbox_vertical .slds-listbox__option:hover,
+.dropdownlist.slds-listbox_vertical .slds-listbox__option.slds-has-focus,
+.dropdownlist.slds-listbox--vertical .slds-listbox__option:focus,
+.dropdownlist.slds-listbox--vertical .slds-listbox__option:hover,
+.dropdownlist.slds-listbox--vertical .slds-listbox__option.slds-has-focus {
+    background-color: #1e90ff !important;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown1.slds-dropdown {
+    border-radius: 0px !important;
+    background-color: #fff;
+    color: #333 !important;
+    padding: 0px !important;
+}
+
+/* .slds-modal__content.slds-modal_full .slds-combobox_container .slds-dropdown-trigger .slds-dropdown.dropdown-auto1 {
+    left: 50% !important;
+} */
+
+.dropdown-auto1 .slds-table td {
+    border: 1px solid #ededed;
+}
+
+.lonTextArea lightning-textarea .slds-form-element__label {
+    display: none;
+}
+
+:focus {
+    outline: none;
+}
+
+/* Modal header action */
+
+.modalContent .slds-tabs_default__nav {
+    border-bottom-style: hidden;
+}
+
+.modalContent .tab.pb-tabs {
+    border-top-width: var(--slds-c-tabs-list-sizing-border, var(--sds-c-tabs-list-sizing-border, var(--lwc-borderWidthThin, 1px)));
+    border-top-style: solid;
+    border-top-color: var(--slds-c-tabs-list-color-border, var(--sds-c-tabs-list-color-border, var(--slds-g-color-border-base-4, var(--lwc-colorBorder, rgb(229, 229, 229)))));
+
+}
+
+/* Page layout header action */
+.actionmenubtn .headerMenu .slds-button_icon-container-more[part="button button-icon"] {
+    height: auto !important;
+    margin-top: -2px;
+    padding-right: 0px;
+    line-height: 1.2rem;
+}
+
+.actionmenubtn .headerMenu .slds-button_icon-container-more[part="button button-icon"]:focus {
+    box-shadow: none;
+}
+
+.actionmenubtn .headerMenu .slds-button_icon-container-more[part="button button-icon"]:active {
+    border-color: transparent;
+}
+
+lightning-button-menu.headerMenu>button>lightning-primitive-icon:nth-child(even) {
+    display: block;
+}
+
+.stepprogressbr {
+    margin: auto;
+}
+
+.stepprogressbr .test {
+    margin: 0px !important;
+}
+
+.stepprogressbr .progressIndicator {
+    margin: 0px !important;
+}
+
+/* .stepprogressbr .progressBarWrap .slds-path{
+    margin-top:5px;
+    }  */
+
+.stepprogressbr .progressBarWrap {
+    background-color: transparent !important;
+    height: 34px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.progressBarWrap .slds-path__nav .slds-is-incomplete:before,
+.progressBarWrap .slds-path__nav .slds-is-incomplete:after,
+.progressBarWrap .slds-path__nav .slds-is-incomplete {
+    background: #ddd;
+}
+
+/* .pageblksect .slds-box{
+    margin-top:50px;
+   } */
+.headerinstruction .slds-box {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+
+.custommsg .pmsg {
+    margin-top: 10px;
+    margin-bottom: -11px;
+}
+
+/*Modal customlookup */
+.dropdown-bottom {
+    bottom: 100% !important;
+    top: auto !important;
+}
+
+.dropdown-top {
+    top: 100% !important;
+}
+
+.overlapdropdown {
+    overflow: initial !important;
+}
+
+.nooverlapdropdown {
+    overflow: hidden !important;
+    overflow-y: auto !important;
+}
+
+/* Flexlayoutaction related css */
+.headerMenu .slds-button_icon-border-filled {
+    height: 22.5px;
+}
+
+.headerMenu .slds-dropdown.slds-dropdown_right {
+    padding: 0px;
+    border-radius: 0px;
+
+}
+
+.headerMenu .slds-dropdown.slds-dropdown_right .slds-dropdown__item>a {
+    color: #000 !important;
+    padding: 3px 10px !important;
+}
+
+.layoutAction.slds-button-group .slds-button+.slds-button,
+.layoutAction.slds-button-group .slds-button+.slds-button_last .slds-button,
+.layoutAction.slds-button-group .slds-button+.slds-button--last .slds-button,
+.layoutAction.slds-button-group-list li+li .slds-button {
+    margin-left: 1px !important;
+}
+
+.layoutAction .slds-button:active {
+    border-color: transparent !important;
+}
+
+.layoutAction .slds-button {
+    white-space: nowrap !important;
+}
+
+.lookupInputContainer .slds-dropdown_fluid,
+.lookupInputContainer .slds-dropdown--fluid {
+    max-width: 527px !important;
+    width: auto !important;
+    min-width: 100% !important;
+}
+
+.lookupInputContainer .slds-dropdown {
+    left: 0;
+    float: none;
+    transform: none;
+    padding-top: 0px;
+}
+
+.slds-size_1-of-4:nth-of-type(4n) .slds-combobox_container .lookupInputContainer .slds-dropdown {
+    right: 0;
+    left: auto;
+}
+
+.slds-size_1-of-3:nth-of-type(3n) .slds-combobox_container .lookupInputContainer .slds-dropdown {
+    right: 0;
+    left: auto;
+}
+
+.modalContent .slds-size_1-of-2:nth-of-type(2n) .slds-combobox_container .lookupInputContainer .slds-dropdown {
+    right: 0;
+    left: auto;
+}
+
+.tableoverFlow .slds-table tbody tr td:last-child .slds-combobox_container .lookupInputContainer .slds-dropdown {
+    right: 0;
+    left: auto;
+}
+
+/*layout action icon*/
+.headerMenu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="pdf_ext"] {
+    fill: rgb(22 160 133);
+}
+
+.headerMenu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="photo"] {
+    fill: rgb(51 51 51);
+}
+
+/*Modal layout action */
+.modalcontainer c-header-overview .header-overview-padd {
+    margin-top: 10px;
+}
+
+.modalcontainer c-header-overview .header-field-label {
+    padding-top: 0px;
+}
+
+.modalcontainer c-header-overview .header-overview-padd c-page-block-section .slds-box {
+    margin-top: 10px;
+}
+
+.modalcontainer c-header-overview .slds-page-header {
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: -10px;
+}
+
+.modalcontainer c-header-overview .header-overview-padd div.slds-float_right {
+    display: flex;
+    justify-content: flex-end;
+    float: none;
+    margin-right: 15px;
+}
+
+/*tabs more dropdown*/
+.slds-tabs_default__overflow-button[part="tab-item tab-overflow"] .slds-dropdown {
+    z-index: 4;
+}
+
+/*calender date time field*/
+.fields lightning-input.slds-form-element lightning-datetimepicker .slds-form .slds-form-element_compound .slds-form-element__control .slds-form-element__group .slds-form-element__row .slds-form-element {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fields lightning-input.slds-form-element lightning-datetimepicker .slds-form .slds-form-element.slds-form-element_compound .slds-form-element__control .slds-form-element__group .slds-form-element__row lightning-timepicker .slds-form-element__control .slds-combobox_container {
+    padding-left: var(--lwc-spacingXxSmall, 0.25rem);
+    padding-right: var(--lwc-spacingXxSmall, 0.25rem);
+}
+
+.fields lightning-icon.slds-icon-utility-clock {
+    right: 5px !important;
+    top: 10px !important;
+}
+
+/*============= Attachment component - flextable column left right border missing ============*/
+
+.slds-table_edit tbody td,
+.slds-table_edit tbody th {
+    border-left: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+}
+
+.slds-table_bordered.slds-table_edit {
+    border-bottom: 0px;
+}
+
+.slds-cell-fixed.slds-has-button-menu {
+    border-left: 1px solid #ddd;
+}
+
+.slds-table_header-fixed_container.slds-scrollable_x {
+    border-right: 1px solid #ededed;
+}
+
+/*=========== instruction button =============*/
+.instructionbtn [kx-scope=button][kx-type=underline]:after {
+    background: none;
+}
+
+/*============ lwc send email ================*/
+.slds-download lightning-primitive-icon .slds-icon {
+    fill: #f7892c;
+}
+
+/*picklist check mark color white on hover*/
+.page-block .slds-grid .slds-listbox__option_plain:hover .slds-icon[data-key="check"]
+ {
+    fill: rgb(255, 255, 255) !important;
+}
+
+/*clone application*/
+.headerMenu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="layers"] {
+    fill: #d58a6a;
+}
+
+/*dnd as pdf with forms*/
+.headerMenu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="form"] {
+    fill: rgb(22 160 133);
+}
+
+/*clone announcement*/
+.headerMenu .slds-dropdown .slds-dropdown__list lightning-menu-item .slds-dropdown__item a .slds-truncate lightning-primitive-icon .slds-icon[data-key="announcement"] {
+    fill: #d58a6a;
+}
+
+/*menu icon cut somewhere - round somewhere*/
+
+.slds-button-group .fix_button-group-flexbox .headerMenu .slds-button:first-child {
+    border-radius: var(--lwc-buttonBorderRadius, .25rem);
+}
+
+.slds-button-group .fix_button-group-flexbox .headerMenu .slds-button.slds-button_last.slds-button_last {
+    border-radius: 0 var(--lwc-buttonBorderRadius, .25rem) var(--lwc-buttonBorderRadius, .25rem) 0;
+    margin-left: calc(-1 * var(--lwc-borderWidthThin, 1px));
+}
+
+.fix_button-group-flexbox .fix-slds-button_icon-border-filled {
+    margin-bottom: 0.5px;
+    height: 22.5px !important;
+}
+
+.btn-wrapper .slds-button:active {
+    border-color: transparent !important;
+}
+
+.buttonDiv .blue-icon .slds-button_icon-brand {
+    background-color: #fff !important;
+    border: 1.2px solid #A49999;
+}
+
+.buttonDiv .blue-icon .slds-button_icon-brand[disabled] {
+    background-color: #ededed !important;
+    border: 1px solid #A49999;
+}
+
+.buttonDiv .blue-icon .slds-button_icon-brand[disabled] .slds-button__icon {
+    color: var(--slds-g-color-neutral-base-80, var(--lwc-colorTextButtonDefaultDisabled, rgb(201, 201, 201)))
+}
+
+
+.buttonDiv .slds-button__icon {
+    color: #726a6a;
+}
+
+.slds-modal__header.modal-header-ext .slds-button .slds-button[kx-scope=button][kx-type=underline]:after {
+    background: transparent;
+}
+
+.page-block .slds-has-error .slds-form-element__help {
+    word-break: break-all;
+}
+
+.slds-listbox_vertical .slds-listbox__item .slds-media.slds-listbox__option:hover .user .slds-icon[data-key="user"] {
+    fill: #fff !important;
+}
+
+.user .slds-icon[data-key="user"] {
+    fill: #00396B;
+    height: 18px;
+    width: 18px;
+}
+
+/*validation msg for sne email*/
+.email-error .emailIcon .slds-icon {
+    fill: #f2e8e8 !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 2px;
+}
+
+.send-success .successmessageIconAtt .slds-icon {
+    fill: green !important;
+}
+
+.attach-validation .messageIcon1 .slds-icon {
+    fill: #f2e8e8 !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 2px;
+}
+
+/*attachment success message, notes */
+.attach-success .successmessageIconAtt .slds-icon,
+.successmessagenote .slds-icon {
+    fill: green !important;
+
+}
+
+.successmessageIconAtt,
+.successmessagenote {
+    margin-right: 5px !important;
+}
+
+.pageSectionEdit lightning-input-field lightning-helptext {
+    display: none;
+}
+
+.stepprogressbr .progressBarWrap .buttonDiv {
+    top: 0px;
+}
+
+.stepprogressbr .progressBarWrap .previousButton {
+    right: 36px;
+}
+
+.stepprogressbr .progressBarWrap .nextButton {
+    right: 0;
+}
+
+.page-block c-alternate-rendering label.slds-checkbox__label {
+    display: flex;
+}
+
+.page-block c-alternate-rendering label.slds-checkbox__label .slds-checkbox_faux {
+    margin-top: 5px;
+}
+
+.stepprogressbr .progressBarWrap {
+    margin-top: 0px !important;
+}
+
+.pageSectionEdit .page-block .slds-grid .slds-col .slds-form-element__icon .slds-button_icon .slds-button__icon {
+    margin-bottom: 2px;
+}
+
+.page-block .slds-grid .slds-col .slds-form-element__icon .slds-button_icon .slds-button__icon {
+    margin-bottom: 2px;
+}
+
+.tablewidth .slds-listbox_vertical .slds-listbox__option_plain,
+.tablewidth .slds-listbox_vertical .slds-listbox__option--plain,
+.tablewidth .slds-listbox--vertical .slds-listbox__option_plain,
+.tablewidth .slds-listbox--vertical .slds-listbox__option--plain {
+    padding: 0px 0px 0px 0px !important;
+    color: #333;
+}
+
+.tablewidth .slds-media_small .slds-media__figure,
+.tablewidth .slds-media--small .slds-media__figure {
+    margin-right: 2px;
+}
+
+.slds-table_edit .slds-has-focus .slds-th__action {
+    box-shadow: none;
+}
+/*Bug 428025 */
+.modal-header-ext {
+  padding: 10px 15px 10px 15px !important;
+  background: rgb(243, 242, 242) !important;
+  color: #00396B;
+}
+
+.slds-modal__header {
+  color: #00396b !important;
+  font-weight: 600;
+  border-bottom-width: 1px !important;
+}
+.modalSection .slds-modal__container .slds-modal__footer {
+  border-top: 1px solid #c9c9c9 !important;
+  background: rgb(243, 243, 243) !important;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+/* Calender */
+.slds-datepicker tbody>tr>td {
+  padding: 0px !important;
+  overflow-y: auto;
+}
+.promptInputDialogLabel lightning-input lightning-primitive-input-simple div label{
+display:none;
+}
+
+.page-block .slds-has-error .slds-form-element__help[role="status"] {
+    display:none;
+}
+
+.page-block .slds-grid.slds-wrap .slds-p-horizontal_small.slds-col div .slds-text-title.header-field-label{
+    margin-right:3px;
+    }
+.tab-instructions .slds-rich-text-editor__output span div {
+    padding-right: 15px;
+}
+.layoutAction .headerMenu .slds-button_icon-border-filled{
+    background-color:#66b645;
+    color:#fff;
+    margin-left: 1px !important;
+    }
+    /*visual indicator*/
+    .slds-tabs_default__link .slds-tabs__right-icon .slds-icon[data-key="record"]
+    {
+        fill:#ff6939;
+        margin-bottom: 10px;
+        width: 17px !important;
+        height: 17px !important;
+        margin-left: -7px;
+    } 
+/*Date-time calender*/
+    .slds-datepicker tbody>tr>td {
+        padding: 1px !important;
+      }

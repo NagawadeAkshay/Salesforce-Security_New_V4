@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="message" type="String" description="Message to show using PageMesage component"/>
+    <aura:attribute name="type" type="String" description="Message Type to show using PageMesage component"/>
+</aura:event>

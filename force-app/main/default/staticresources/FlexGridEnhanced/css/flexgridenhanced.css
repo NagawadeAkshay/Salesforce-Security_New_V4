@@ -1,0 +1,590 @@
+.messageIcon{
+  padding: 0 5px 0 0;
+  vertical-align: middle;
+}
+.marginTopMinus15{
+  margin-top: -15px;
+}
+.marginBottom20{
+  margin-bottom: 20px;
+}
+
+a.disabledCls,
+.disabledOpacity {
+   pointer-events: none;
+   cursor: default;
+}
+.disabledOpacity {
+  opacity: 0.3;
+}
+table.gridTable {
+  min-width: 100%;
+  max-width: inherit;
+}
+table.gridTable th {
+    max-width: inherit;
+}
+table.gridTable tbody td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.gridTable .panel {
+  margin-bottom: 0;
+}
+.gridFooter,
+.gridFooter .showEntries {
+  display: flex;
+    align-items: center;
+}
+.gridFooter .pageSelectOption {
+  margin-top: 0;
+}
+.handPointer {
+  cursor: pointer;
+}
+.gridTable .tableColumnHeader .fa {
+  font-size: 13px !important;
+}
+.gridTable .tableColumnHeader helpicon {
+    padding: 5px 0 0 5px;
+    float: left;
+    /* vertical-align: middle; */
+    display: flex;
+    /* align-items: center; */
+    /* padding-top: 5px; */
+}
+.gridTable .tableColumnHeader helpicon .tooltipstered {
+  display: block;
+}
+.gridSearchInputButton {
+  margin-left: -2px;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+.flexHeaderName{
+  font-weight: bold; 
+  font-size: 15px;
+}
+span.topActions, 
+button.secondaryBtn {
+   margin : 2px;
+}
+.width100{
+  width: 100% !important;
+}
+.displayFlexOnly{
+  display: flex;
+}
+.displayFlex {
+  display: flex;
+  align-items: center;
+}
+.displayFlexCenter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flexEnd {
+  justify-content: flex-end;
+      margin-left: auto;
+}
+
+.overlayWrap {
+  /* position: relative; */
+}
+
+.alertMessage .fa.fa-times {
+  padding-left: 5px;
+}
+.alertMessage {
+  white-space: normal;
+}
+ 
+.overlay {
+  width: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+  margin-top: -10px;
+  position: absolute;
+}
+ 
+.overlayContent {
+    text-align: center;
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+}
+ 
+.overlayAnimation {
+    background: transparent;
+    max-height: 45px;
+    animation: RotateHorizontal 2000ms ease-in-out infinite running;
+  }
+.expColaIcon {
+    width: 35px;  
+}
+.closeBtn{
+  color: black !important;
+}
+
+/* Advanced filter */
+.advfWrap {
+  border: 1px solid #eee;
+}
+div.advf.advfWrap .row .col-md-3 {
+  padding: 10px 15px;
+}
+.advfDetail {
+  background: #4c90b5;
+  padding: 10px 5px 10px 15px;
+  color: #fff;
+  position: relative;
+  margin: 0 5px 5px 0;
+  display: inline-block;
+}
+
+.advfDetail .operatorLanel {
+  font-style: italic;
+  color: #ddd;
+}
+.advfDetail .closeIcon {
+  margin-left: 5px;
+  color: #fff;
+  padding: 5px;
+}
+.advfDetail .fieldValue {
+  margin-left: 5px;
+}
+
+/* Input group */
+.customInputGroup .form-control {
+  height: 30px;
+}
+.customInputGroup .input-group-btn .btn {
+  padding: 5px 10px;
+  margin-left: -2px;
+  height: 30px;
+}
+
+/*.panel-heading .headingDropdown {
+  margin-left: 10px;
+}*/
+
+/* sort Field Message*/
+.sortFieldMsg{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+  font-size:12px;
+}
+.sortArrowSpace i{
+  margin: 0 0 0 5px;
+  min-width: 5px;
+}
+.table>thead>tr>th.thDropMenuWrap {
+  padding-right: 25px;
+  position: relative;
+}
+.thDropMenuWrap .thDropMenu {
+  height: 100%;
+  border-left: 1px solid #ddd;
+  /* border-right: 1px solid #ddd; */
+  position: absolute;
+  right: 0;
+  top:0;
+  opacity: 0;
+  z-index: 1;
+  visibility: hidden;
+  /* background: #ccc; */
+  }
+
+  th.thDropMenuWrap:hover .thDropMenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+  .thDropMenuWrap .thDropMenu .dropdown-toggle {
+    display: flex;
+    height: 100%;
+    color: #000;
+    padding: 5px;
+    align-items: center;
+    outline: none !important;
+  }
+
+  .rowLevelOverlay {
+    filter: alpha(opacity=80);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 11;
+    background: rgba(0,0,0,0.5);
+     display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+  
+
+/* Grid Table - Color Themes*/
+/*table.gridTable {
+  border-collapse: separate !important;
+  border: none !important;
+}
+table#table-ext.gridTable table#table-ext {
+  border: none !important;
+}
+table.gridTable th {
+  background: #b3e5fc !important;
+  border: none !important;
+}
+table.gridTable tbody td,
+table.gridTable tfoot td,
+table.gridTable tfoot th {
+  border: 1px solid #b3e5fc !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+table.gridTable tbody td:first-child,
+table.gridTable tfoot td:first-child,
+table.gridTable tfoot th:first-child {
+  border-left: 1px solid #b3e5fc !important;
+}
+table.gridTable thead th  {
+  border: none !important;
+}
+.gridTable>tbody+tbody {
+  border-top: 1px solid #b3e5fc;
+}
+
+table.gridTable table th {
+  background: #d6ce7c !important;
+}
+table.gridTable table >tbody+tbody {
+  border-top: 1px solid #d6ce7c;
+}
+table.gridTable table tbody td,
+table.gridTable table tfoot td,
+table.gridTable table tfoot th {
+  border: 1px solid #d6ce7c !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+table.gridTable table tbody td:first-child,
+table.gridTable table tfoot td:first-child,
+table.gridTable table tfoot th:first-child {
+  border-left: 1px solid #d6ce7c !important;
+}
+table.gridTable table tbody td:last-child {
+  border-right: 1px solid #d6ce7c !important;
+}
+table#table-ext.gridTable table#table-ext td:last-child, 
+table#table-ext.gridTable table#table-ext th:last-child {
+  border-right: 1px solid #d6ce7c !important;
+}
+
+
+table.gridTable table table th {
+  background: #c2d47c !important;
+}
+table.gridTable table table >tbody+tbody {
+  border-top: 1px solid #c2d47c;
+}
+table.gridTable table table tbody td,
+table.gridTable table table tfoot td,
+table.gridTable table table tfoot th {
+  border: 1px solid #c2d47c !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+table.gridTable table table tbody td:first-child,
+table.gridTable table table tfoot td:first-child,
+table.gridTable table table tfoot th:first-child {
+  border-left: 1px solid #c2d47c !important;
+}
+table#table-ext.gridTable table table#table-ext td:last-child, 
+table#table-ext.gridTable table table#table-ext th:last-child {
+  border-right: 1px solid #c2d47c !important;
+}
+table.tableClass.gridTable tr td.paddingZero {
+  border: 1px solid #000 !important;
+}*/
+
+/* dropdown */
+/*.thDropMenuWrap .dropdown-submenu {
+  position: relative;
+}*/
+/*
+.thDropMenuWrap .dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
+}
+
+.thDropMenuWrap .dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+.thDropMenuWrap .dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #444;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+
+.thDropMenuWrap .dropdown-submenu:hover>a:after {
+  border-left-color: #444;
+}
+
+.thDropMenuWrap .dropdown-submenu.pull-left {
+  float: none;
+}
+
+.thDropMenuWrap .dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+
+.thDropMenuWrap .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+} */
+
+
+table.gridTable {
+  /* border-collapse: separate !important; */
+  /* border: none !important; */
+  /* border: 1px solid #ddd !important; */
+}
+table#table-ext.gridTable table#table-ext {
+  border: none !important;
+}
+table.gridTable th {
+  border-top: none !important;
+  border-left: none !important;
+}
+/* table.gridTable tbody td,
+table.gridTable tfoot td,
+table.gridTable tfoot th {
+  border-top: 1px solid #ddd !important;
+} */
+table.gridTable tfoot td,
+table.gridTable tfoot th {
+  border-top: 0.5px solid #ededed !important;
+}
+table.gridTable tbody td{
+  border-top: 0px solid #ededed !important;
+}
+table.gridTable th:first-child
+table.gridTable tr td:first-child,
+table.gridTable tr td:first-child,
+table.gridTable tr th:first-child {
+  border-left: 0.5px solid #ededed !important;
+}
+
+table.gridTable th:last-child
+table.gridTable tr td:last-child,
+table.gridTable tr td:last-child,
+table.gridTable tr th:last-child {
+  border-right: 1px solid #ddd !important;
+}
+.gridTable>tbody+tbody {
+  border-top: 1px solid #ddd;
+}
+
+.thDropMenuBtn {
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+.modal.flexGridDropdownModal div.modal-dialog {
+  width: 300px;
+}
+.flexGridDropdownModal .modal-header {
+  padding: 10px 15px;
+}
+.thDropMenuList .dropdown-menu {
+  position: static;
+  float: none;
+  border: 0;
+}
+.thDropMenuList .dropdownList .icon {
+  width: 25px;
+}
+
+table.tableClass.gridTable tr td.paddingZero {
+  padding: 0;
+}
+
+.thDropMenuList .dropdown-menu.selectMultipleCheck {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.selectMultipleCheck .checkbox {
+  margin: 0;
+}
+
+.selectMultipleCheck .checkbox label {
+  display: block;
+  padding: 3px 10px 3px 30px;
+  white-space: normal;
+}
+.dropdown-menu.selectMultipleCheck > li > a {
+  padding: 0;
+}
+
+.dropdown-menu>li>a.columnSelect {
+  padding-right: 20px;
+}
+
+.showEntries .pageSelectOption {
+  margin: 0 5px;
+}
+
+.tableLinks i.fa-lock {
+  color: #f4c84b;
+}
+
+td i.fa{
+  min-width: 20px;
+}
+.searchHelpIcon {
+  padding: 0;
+  margin-left: -10px;
+}
+
+/* totalRow and subTotalRow : As these classNames are to used in ng-class, and in ng-class syntax, className is treated as JSON Key. To keep className unique we have 2 Classes */
+.totalRowBold{     
+  font-weight: bold;
+}
+
+.subTotalRowBold{
+    font-weight: bold;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+/* to remove scroll if jquery resizable applied */
+table .ui-resizable-e {
+  right: 0;
+}
+
+.alertMessages .alert-success i.fa.fa-times:before {
+    color: #3c763d !important;
+}
+.alertMessages .alert-info i.fa.fa-times:before {
+    color: #31708f !important;
+}
+.alertMessages .alert-warning i.fa.fa-times:before {
+    color: #8a6d3b !important;
+}
+.alertMessages .alert-danger i.fa.fa-times:before {
+    color: #a94442 !important;
+}
+.tooltipster-base {
+	max-width: 600px;
+}
+.contactCss {
+	font-weight: bold;
+	font-style: italic;
+}
+.negativeValue{
+	color: red;
+}
+.activeItem {
+  background: #4b8db1;
+  color: #fff;
+}
+div.advf.advfWrap .form-group input[type=checkbox] {
+  width: 15px;
+}
+
+table.gridTable .flexGridDropdownModal .modal-title {
+  padding-right: 15px;
+  white-space: normal;
+}
+
+table.gridTable tbody td .thDropMenuWrap {
+  white-space: normal;
+}
+
+
+table tbody .dropdown-menu a.tableLinks {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+.quickSearchBoxWrap {
+  max-width: 250px!important;
+}
+
+/* Table Level Scroll*/
+.tableScrollArrow {
+  position: absolute;
+  top:0;
+  width: 10px;
+  height: 100%;
+  background: #888;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+.leftTableScroll {
+  left: 5px;
+}
+.rightTableScroll {
+  right: 5px;
+}
+.rightIndentHeader {
+  justify-content: flex-end;
+  /* display: flex;
+  align-items: right;*/
+}
+
+/*.gridTable .panel-body {
+  padding: 15px 30px;
+}*/
+.tableClass td .actionColIconWrap {
+  display: flex;
+  align-items: center;
+}
+.tableClass td .actionColIconWrap i.fa {
+  min-width: auto;
+  padding: 0 2px;
+}
+
+@media (max-width: 767px) {
+  .sortFieldMsg {
+    margin-bottom: 0;
+  }
+}

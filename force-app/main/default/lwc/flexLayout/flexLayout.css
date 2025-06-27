@@ -1,0 +1,12 @@
+.layout {
+  font-size: 13px;
+  /* font-family: 'Helvetica';*/
+  color: #333;
+  line-height: 19px;
+  background-color: #fff;
+  border-radius:0.25rem;
+}
+
+.abc lightning-tab-bar ul li{
+  background-color: blue !important;
+}

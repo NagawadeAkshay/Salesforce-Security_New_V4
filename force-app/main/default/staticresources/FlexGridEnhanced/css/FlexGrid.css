@@ -1,0 +1,144 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+} 
+.panel-header-height{
+	height:45px;
+}
+.branch-div {
+	margin-left: 5px;
+	padding-top: 5px;
+}
+.branch-div-min {                    
+	margin-left: 5px;
+	padding-top: 5px;
+}        
+.branch-td {
+   padding:0px !important;
+}
+.leaf {
+	position: relative;
+	display: inline-block;
+	width: 15px;
+	top: -4px;
+}
+.branch-child-data-container {
+	/*padding-top: 5px;*/
+	padding-bottom: 5px;
+	margin-left: 26px;
+}
+.lastBranch {
+	border-left: none;           
+}
+.lastBranch .leaf {
+	border-left: 1px dotted #aaa;
+	height: 12px;
+	top: -6px;
+}
+.tableBottomMargin {
+	margin-bottom:5px !important;
+}
+.modal-backdrop.in {
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
+}
+.tbody-no-border-top {
+	border-top:0px !important;
+}
+.border-msg {
+	border: 1px solid !important;
+	border-radius: 6px !important;
+}
+.inlineEditIcon {
+	display: none;
+}
+.fieldTd:hover .inlineEditIcon {
+	display : block;
+}
+.tdContent {
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.textAreaContent {
+	width:95%
+}
+
+.contentCenterH {
+	text-align:center;
+}
+
+.gridEntryTd  input{            
+	text-align: right; 
+	border:0 !important; 
+}
+.gridReadOnlyTd{
+	text-align: left;
+}
+.gridReadOnlyTh{
+	text-align: left;
+	
+}
+.gridReadOnlyTd a{            
+	text-decoration: none !important;
+}
+.gridReadOnlyTh a{            
+	text-decoration: none !important;
+}
+
+.n2g-view{
+	float:left;
+	margin:1px;
+}
+.n2g-edit{
+	 float:left;
+	 margin:1px;
+}
+.n2g-delete{
+	 float:left;
+	 margin:1px;
+}
+
+.plus-div{
+	cursor:pointer;
+}    
+.disable-action{
+	cursor: default !important;
+}   
+
+.btn-div-ext{
+	padding: 4px 2px 4px 2px;
+}
+.padding-right-5{
+	padding-right: 5px;
+}
+
+.border-ext{
+	border: 0px !important;
+	box-shadow: inset 0 0px 0px !important;
+	margin-bottom: 0px !important; 
+}
+.tooltip-title{
+	font-size: 14px !important;         
+	font-weight: 600;
+	padding-bottom: 10px;
+}
+/*Classes for the Help Text for flex grid*/
+.tooltipster-noir {
+	border-radius: 0px; 
+}
+.tooltipster-noir .tooltipster-content {
+	font-family: 'Georgia', serif;
+	font-size: 14px;
+	line-height: 16px;
+	padding: 8px 10px;
+}
+

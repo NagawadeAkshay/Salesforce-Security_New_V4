@@ -1,0 +1,150 @@
+.THIS .slds-tree__item-label {
+    cursor: pointer;
+}
+
+.THIS.slds-tree__item,
+.THIS .slds-tree__item {
+    border: 2px dashed transparent;
+}
+
+.THIS .dropzone {
+    border: 2px dashed #0087F7;
+}
+
+.THIS[aria-expanded=true]>.slds-tree__item .slds-button__icon {
+    transition: .2s transform ease-in-out;
+    transform: rotate(0deg) !important;;
+}
+
+.THIS .folder-action {
+    margin-left: 5px;
+}
+
+.THIS label {
+    font-weight: normal;
+}
+
+.THIS .slds-text-heading_small.library {
+   font-size: 0.85rem;
+}
+.THIS .tree-library,
+.THIS .tree-folder {
+    cursor: default;
+}
+
+.THIS .tree-folder .slds-icon-text-default {
+    fill: rgb(0, 161, 224);
+}
+
+.THIS .tree-library .slds-icon {
+    fill: rgb(32, 136, 177);
+}
+
+.THIS .library {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700; 
+    white-space: pre-wrap
+}
+
+.THIS .folder {
+    font-size: .9rem;
+    white-space: pre-wrap
+}
+
+.THIS .highlight {
+    font-size: .9rem;
+    background: #FFEB3B;
+    padding: 0 5px;
+}
+
+.THIS .slds-scope .slds-tree__item .slds-is-disabled {
+    display: none;
+}
+
+.THIS .default-folder {
+    font-size: 11px;
+    color: dimgrey;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.THIS .contentFolderName {
+    max-width: 100%;
+}
+
+.THIS .modal-dialog {
+    width: 600px;
+}
+
+.THIS .spin {
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
+.THIS .mr-lef{
+    margin-left: 75px;
+}
+
+.THIS .bg-transparent{
+    background: transparent;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@media all and (max-width:420px) {
+    .THIS .slds-dropdown.slds-dropdown_left {
+        max-width: 100%;
+        left:-50px;
+    }
+    .THIS .slds-truncate {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    .THIS .slds-text-heading_small.library {
+        width: 100px;
+    }
+        .THIS .GNTContentFile .slds-tree__item{
+            max-width:280px;
+            }
+            
+            .THIS .GNTContentFolder .folder {
+                word-break: break-all;
+                /* font-size: .9rem; */
+                white-space: pre-wrap;
+                max-width: 200px;
+            }
+            
+            .THIS .GNTContentFile .file-name {
+            
+                white-space: pre-wrap;
+                word-break: break-all;
+               
+            }
+
+        
+
+}
+
+@media all and (max-width:380px) {
+    .THIS .slds-dropdown.slds-dropdown_left {
+        max-width: 100%;
+        left:-65px;
+    }
+    .THIS .GNTContentFile .slds-tree__item{
+        max-width:225px;
+        }
+
+}

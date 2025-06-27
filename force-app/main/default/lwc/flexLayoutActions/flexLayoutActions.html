@@ -1,0 +1,76 @@
+<template>
+    <template if:true={showSpinner}>
+        <c-spinner gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+    </template>
+
+    <lightning-button-group class="layoutAction">
+    <template lwc:if={actions}>
+    	<template for:each={actions} for:item="action">
+	        <template if:true={action.showButton}>
+	            <template if:true={action.isHeaderButton}>
+	            <template lwc:if={action.showIconOnly}>
+	                    <lightning-button-icon
+	                        class="slds-button"
+	                        key={action.actionId}
+	                        data-id={action.actionId}
+	                        data-type={action.actionType}
+	                        variant="brand"
+	                        icon-name={action.iconCss}
+	                        alternative-text={action.actionName}
+	                        tooltip={action.toolTipText}
+	                        onclick={handleActionButtonClick}
+	                    >
+	                </lightning-button-icon>
+            </template>
+            <template lwc:else>
+                    <lightning-button
+                        class="slds-button"
+                        data-id={action.actionId}
+                        data-type={action.actionType}
+                        variant="brand"
+                        title={action.toolTipText}
+                        icon-name={action.iconCss}
+                        label={action.actionName}
+                        key={action.actionId}
+                        disabled={buttonDisabled}
+                        onclick={handleActionButtonClick}
+                    >
+                </lightning-button>
+            </template>
+        </template>
+    </template>
+        </template>
+    </template>
+        <template if:true={showMenu}>
+            <lightning-button-menu variant="border-filled" menu-alignment="right" nubbin alternative-text="Show menu" class="headerMenu">
+                <template lwc:if={actions}>
+                <template for:each={actions} for:item="action">
+                    <template if:true={action.showButton}>
+                        <template if:true={action.isMenuButton}>
+                            <lightning-menu-item
+                                key={action.actionId}
+                                data-id={action.actionId}
+                                data-type={action.actionType}
+                                prefix-icon-name={action.iconCss}
+                                label={action.actionName}
+                                onclick={handleActionButtonClick}
+                            ></lightning-menu-item>
+                        </template>
+                    </template>
+                </template>
+                </template>
+            </lightning-button-menu>
+        </template>
+    </lightning-button-group>
+
+    <template if:true={isModalFlexLayout}>
+        <c-modal-flex-layout
+            s-oject-name={objectName}
+            modal-header={ModalHeader}
+            record-id={ModalRecordId}
+            modal-attribute={ModalAttribute}
+            onmodal_close={clodeModalFlexlayout}
+        ></c-modal-flex-layout>
+        <!-- <c-task-summary-l-w-c s-oject-name={objectName} modal-header={ModalHeader} record-id={ModalRecordId} modal-attribute={ModalAttribute} onmodal_close={clodeModalFlexlayout}></c-task-summary-l-w-c> -->
+       </template>
+</template>

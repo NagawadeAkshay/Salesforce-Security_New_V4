@@ -1,0 +1,6 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="StepProgressbarCtrl" access="global">
+    <apex:attribute name="pbGroupName" type="String" assignTo="{!groupName}" description="Status field for the Progressbar" access="global" required="true"/>
+    <apex:attribute name="parentId" type="String" assignTo="{!recordId}" description="record Id for the progressbar" access="global" required="true"/>
+	
+</apex:component>

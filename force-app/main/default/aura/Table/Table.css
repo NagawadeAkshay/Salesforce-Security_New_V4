@@ -1,0 +1,88 @@
+.THIS lightning-primitive-header-actions {
+    display : none;
+}
+.THIS ::-webkit-scrollbar{
+    height: 8px;
+    width: 8px;
+} 
+.THIS ::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+.THIS ::-webkit-scrollbar-thumb{
+    background: -webkit-linear-gradient(top, #c3c3d2 1%,#c3c3d2 100%);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.THIS .display-flex {
+    display: flex;
+}
+.THIS .slds-select_container {
+    width: 100px;
+}
+.THIS .slds-table th, 
+.THIS .slds-table td {
+    white-space: normal;
+    vertical-align: top;
+}
+.THIS .firstPageButton svg {
+    transform: rotate(-180deg);
+}
+.THIS .pageButtonIcon .slds-button {
+    min-height: 32px;
+}
+.THIS .pageButtonIcon .fa-2x {
+    font-size: 1.5em;
+}
+.THIS td .slds-truncate{
+    white-space: normal;
+}
+.THIS .slds-table_bordered tbody td, 
+.THIS .slds-table_bordered tbody th, 
+.THIS .slds-table--bordered tbody td, 
+.THIS .slds-table--bordered tbody th {
+    border-top: 1px solid rgb(217, 219, 221) !important;
+    background: inherit !important;
+}
+.THIS .slds-table_header-fixed thead th, 
+.THIS .slds-table--header-fixed thead th {
+    padding: 0 !important;
+}
+
+.THIS .pageButtonIcon .slds-button {
+    min-height: 32px;
+    border-radius: inherit !important;
+}
+
+.THIS .pageButtonIcon .slds-button:first-child {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+.THIS .pageButtonIcon .slds-button:last-child {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+.THIS .slds-input__icon-group_right .slds-input__icon_right, 
+.THIS .slds-input__icon-group_right .slds-input__icon--right {
+    right: .75rem;
+}
+@media (max-width: 47em){
+    .THIS .mobileCenter{
+        text-align:center;
+        float: none;
+        
+    }
+    .THIS td:last-child {
+        overflow: visible !important;
+    }  
+    .THIS .slds-select_container {
+        width: auto;
+    }
+    .THIS .slds-table th, .THIS .slds-table td {
+        white-space: normal;
+        text-align: left;
+    }
+    .THIS .slds-max-medium-table_stacked-horizontal td:before, 
+    .THIS .slds-max-medium-table--stacked-horizontal td:before {
+        float: none;
+        text-align: left;
+    }
+}

@@ -1,0 +1,35 @@
+<!-- **
+*   Send Email to User, Contact, Person Account
+*
+*   CHANGE HISTORY
+*   ===================================================
+    ===================================================
+*   Date            Name                Description
+*   08/24/2015      Shrawan Raina       Created
+*   09/02/2015      Shrawan Raina       Edited    -- Added feature to add attachments
+*   09/04/2015      Shrawan Raina       Edited    -- Fixed bug with multiple attachment empty files
+* -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="EmailTemplateCtrl" access="global" allowDML="true"> 
+    <apex:attribute name="emailId" type="String" assignTo="{!email}" description="Email Id of the recipient" required="false" access="global" />
+
+    <apex:attribute name="ccEmail" type="String" assignTo="{!email}" description="cc Email Id of the recipient" required="false" access="global" />
+
+    <apex:attribute name="showLabel" type="String" assignTo="{!isLabelShow}" description="used to show field label instead of field value" required="false" access="global" />
+
+    <apex:attribute name="emailTemplateName" type="String" assignTo="{!templateName}" description="Email Template Name" required="false" access="global" />
+    <apex:attribute name="target" type="String" assignTo="{!targetId}" description="Target Id for the Email Template" required="false" access="global" />
+
+    <apex:attribute name="targets" type="String" assignTo="{!targetIds}" description="Target Id for the Email Template" required="false" access="global" />
+
+
+    <apex:attribute name="actionInterface" type="invokeEmailActionInterface" description="The page controller instance" required="false" access="global" assignTo="{!updRecord}" />
+    <apex:attribute name="what" type="String" description="The whatId to be set when using for Custom Objects" required="false" access="global" assignTo="{!whatId}" />
+    <apex:attribute name="showCC" type="boolean" description="show cc?" required="false" access="global" assignTo="{!isCC}" default="false" />
+    <apex:attribute name="enableAttachment" type="boolean" description="enable Attachment?" required="false" access="global" assignTo="{!isAttachment}" default="false" />
+    <apex:attribute name="bulkMode" type="String" description="enable bulk mode to   email" required="false" access="global" assignTo="{!isBulkMode}" />
+    <apex:attribute name="userMode" type="boolean" description="enable email component for user" required="false" access="global" assignTo="{!isUser}" />
+    <apex:attribute name="closeOnSuccess" type="Boolean" description="decide model close after success" required="false" access="global" />
+    <apex:attribute name="readOnlyTemplate" type="Boolean" assignTo="{!readOnlyMode}" description="To keep richtextArea ReadOnly" required="false" access="global" />
+    
+</apex:component>

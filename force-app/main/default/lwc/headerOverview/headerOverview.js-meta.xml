@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                label="Enable Step Progress Bar"
+                name="enableStepProgressBar"
+                required = "true"
+                default = "false"
+                type="Boolean"
+            />
+            <property
+                label="Show All Stages"
+                name="showAllStages"
+                required = "true"
+                default = "false"
+                type="Boolean"
+            />
+            <property
+                label="Enable Header Instructions"
+                name="enableHeaderInstructions"
+                required = "true"
+                default = "true"
+                type="Boolean"
+            />
+            <property
+                label="Enable Page Messages"
+                name="enablePageMessages"
+                required = "true"
+                default = "true"
+                type="Boolean"
+            />
+            <property
+            label="Enable Sticky Header"
+            name="enableStickyHeader"
+            required = "true"
+            default = "true"
+            type="Boolean"
+        />
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Record ID" description="Should be set to {!recordId}"/>
+            <property
+                label="Enable Step Progress Bar"
+                name="enableStepProgressBar"
+                required = "true"
+                default = "false"
+                type="Boolean"
+            />
+            <property
+                label="Show All Stages"
+                name="showAllStages"
+                required = "true"
+                default = "false"
+                type="Boolean"
+            />
+            <property
+                label="Enable Header Instructions"
+                name="enableHeaderInstructions"
+                required = "true"
+                default = "true"
+                type="Boolean"
+            />
+            <property
+                label="Enable Page Messages"
+                name="enablePageMessages"
+                required = "true"
+                default = "true"
+                type="Boolean"
+            />
+            <property
+                label="Enable Sticky Header"
+                name="enableStickyHeader"
+                required = "true"
+                default = "true"
+                type="Boolean"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

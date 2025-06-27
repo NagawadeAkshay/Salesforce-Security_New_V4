@@ -1,0 +1,11 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexTableCtrl" access="global">
+    <apex:attribute name="tableId" description="Dynamic table id" type="String" access="global"/>
+    <apex:attribute name="flexTableParameters" description="Map containing key value pairs for merge fields" type="string" required="false" assignTo="{!keyValueMap}" access="global"/>        
+    <apex:attribute name="listParams" description="Map containing key value pairs for merge fields" type="String" required="false" assignTo="{!listKeyValueMap}" access="global"/>
+    <apex:attribute name="skipNavTabName"  description="Associated Tab name, for 508 skip navigation  "  type="String" access="global"/>
+    <apex:attribute name="mode" description="Context of the FlexGrid i.e. View and Edit" type="String" access="global"/>
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false" access="global"/>
+
+    
+</apex:component>

@@ -1,0 +1,27 @@
+<template>
+    <template lwc:if={showConfigError}>
+        <lightning-card title="Oops...! Something went wrong, Please contact administrator"> </lightning-card>
+    </template>
+    <template lwc:else>
+        <div lwc:if={headerInstructions} class="layout-header-instructions slds-box slds-m-bottom_small">
+            <lightning-icon
+                icon-name="utility:info_alt"
+                alternative-text="page help text"
+                title="page help text icon"
+                class="instructionIcon slds-p-vertical_x-small slds-p-left_small"
+            ></lightning-icon>
+
+            <div class="header-Instruction-text show-less slds-p-vertical_x-small slds-p-left_xx-small slds-p-right_small">
+                <lightning-formatted-rich-text value={instructionString} tabindex="0"></lightning-formatted-rich-text>
+                <template if:true={displayShowMoreButton}>
+                    <lightning-button
+                        class="slds-m-left_medium instructionbtn"
+                        variant="base"
+                        label={showTextLabel}
+                        onclick={headerInstructionClickHandler}
+                    ></lightning-button>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>

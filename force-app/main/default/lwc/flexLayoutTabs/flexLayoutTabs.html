@@ -1,0 +1,41 @@
+<template>
+    <template if:true={showTabs}>
+        <div class="floatRight">
+            <span class="required-for-save">* Required to Save | </span>
+            <span>
+                <lightning-icon class="required-for-submit" icon-name="utility:warning" alternative-text="Warning!" title="Warning"></lightning-icon>
+                <span> Required to Submit</span>
+            </span>
+        </div>
+        <lightning-tabset active-tab-value={activeTabId}>
+            <template iterator:it={tabsDetail}>
+                <lightning-tab
+                    class="tab pb-tabs"
+                    key={it.value.id}
+                    label={it.value.tabName}
+                    data-id={it.value.id}
+                    icon-name={it.value.iconName}
+                    value={it.value.id}
+                    onactive={handleActiveTab}
+                >
+                    <template if:true={it.value.tabHeaderInstruction}>
+                        <div class="tab-instructions slds-m-left_medium">
+                            <lightning-formatted-rich-text value={it.value.tabHeaderInstruction}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+
+                    <c-page-block-section
+                        page-layout-wrapper={_pageLayoutWrapper}
+                        is-view={isView}
+                        tab-id={it.value.id}
+                        show-page-block-title="true"
+                        ontab_loaded={tabLoaded}
+                        onsave_check={handleSaveEvent}
+                        onsubmit_check={handleSubmitEvent}
+                        onguest_save={handleGuestSave}
+                    ></c-page-block-section>
+                </lightning-tab>
+            </template>
+        </lightning-tabset>
+    </template>
+</template>

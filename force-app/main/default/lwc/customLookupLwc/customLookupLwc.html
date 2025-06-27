@@ -1,0 +1,89 @@
+<template>
+    <div class="slds-form-element" onclick={handleParentDivClick} onblur={handleBlur}>
+        <div class="slds-combobox_container slds-has-selection"  data-source="lookupContainer" onmouseout={handleMouseOut} onclick={handleMouseIn} onmouseenter={handleMouseEnter}>
+            <div
+                class="lookupInputContainer slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                role="combobox"
+            >
+                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right" role="none">
+                    <div class="searchBoxWrapper slds-show">
+                        <!--Lookup Input Field-->
+                        <lightning-input
+                            type="search"
+                            data-source="searchInputField"
+                            onclick={toggleResult1}
+                            onchange={handleKeyChange}
+                            is-loading={isSearchLoading}
+                            value={searchKey}
+                            variant="label-hidden"
+                            placeholder={placeholder}
+                        >
+                        </lightning-input>
+                    </div>
+
+                    <!--Lookup Selected record pill container start-->
+                    <div class="pillDiv slds-hide">
+                        <!-- <span class="slds-icon_container slds-combobox__input-entity-icon">
+							<lightning-icon icon-name={iconName} size="x-small" alternative-text="icon"></lightning-icon> 
+							</span>-->
+
+                        <template if:true={isSelectedValue}>
+                            <input type="text" id="combobox-id-1" value={selectedRecord.Name} class="slds-input slds-combobox__input" readonly />
+                        </template>
+                        <template if:false={isSelectedValue}>
+                            <input type="text" id="combobox-id-2" value={lookupDisiplayFieldName} class="slds-input slds-combobox__input" readonly />
+                        </template>
+                        <!--  -->
+                        <button
+                            class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                            title="Remove selected option"
+                            onclick={handleRemove}
+                        >
+                            <lightning-icon icon-name="utility:close" size="x-small" alternative-text="close icon" onclick={handleRemove}></lightning-icon>
+                        </button>
+                    </div>
+                </div>
+                <!-- lookup search result part start-->
+                <template if:true={showDropdownContent}>
+                <div id="listbox-id-5" data-id="lookup-dropdown" class="slds-dropdown slds-dropdown_fluid dropdown-auto1 customLookCls"  role="listbox" tabindex="0">
+                    <table class="slds-table slds-border_left slds-border_right slds-border_bottom">
+                        <thead>
+                            <tr class="" tabindex="0">
+                                <template for:each={fieldNameDisplay} for:item="obj">
+                                    <th class="title" key={obj.key} scope="col"><div class="slds-truncate" title="" tabindex="0">{obj.value}</div></th>
+                                </template>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <template for:each={finalResultMap} for:item="item">
+                                <tr key={item.key} tabindex="0">
+                                    <template for:each={item.value} for:item="field" tabindex="0">
+                                        <td data-label={field.value} key={field.key}>
+                                            <div class="slds-truncate" title={field.value} data-recid={item.key} onclick={handelSelectedRecord}  onkeyup={handleonkeyup} tabindex="0">
+                                                {field.value}
+                                            </div>
+                                        </td>
+                                    </template>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                  
+                    <template if:true={hasRecords}>
+                        <div class="slds-truncate slds-p-top_xx-small slds-align_absolute-center" tabindex="0">Top ({finalResultMap.length}) Records</div>
+                    </template>
+
+                    <template if:false={hasRecords}>
+                        <div class="slds-truncate slds-p-top_xx-small slds-align_absolute-center" tabindex="0">No Records Found</div>
+                    </template>
+               
+                </div>
+            </template>
+            </div>
+        </div>
+    </div>
+    <!-- <lightning-button label="Say Hello in the JS Console" onclick={clickHandler}></lightning-button> -->
+</template>

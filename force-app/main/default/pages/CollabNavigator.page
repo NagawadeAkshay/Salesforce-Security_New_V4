@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false" >
+    
+</apex:page>

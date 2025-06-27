@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page standardcontroller="HelpConfig__c" extensions="HelpCtrl" sidebar="false" showHeader="false" standardStylesheets="false" >
+    
+</apex:page>

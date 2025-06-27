@@ -1,0 +1,10 @@
+<!--
+ - Created by MCPL-L72 on 29-11-2019.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component id="CaptureSectionItemLayout" allowDML="true" access="global">
+    <apex:attribute name="captureItemObj"  type="CaptureItem__c" description="Capture Item Sobject Record"/>
+    <apex:attribute name="captureItemResponseMap" type="CaptureItemResponse__c" description="Capture Item response map"/>
+    <apex:attribute name="colSpanVal"  type="String" description="col span to display" />
+ 
+</apex:component>

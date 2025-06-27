@@ -1,0 +1,52 @@
+<aura:component implements="lightning:apphomeTemplate" description="Left collpasible navigator, Phase table(s) or Dashboard section and two sections for dashboards.">
+    
+    <aura:attribute name="sidebar" type="Aura.Component[]" />
+    <aura:attribute name="phaseTable" type="Aura.Component[]" />
+    <aura:attribute name="dashboard1" type="Aura.Component[]" />
+    <aura:attribute name="dashboard2" type="Aura.Component[]" />
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE"  /> 
+    <aura:attribute name="buttonstate" type="Boolean" access="private" default="false"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <lightning:layout class="slds-p-right_small">
+        <lightning:layoutItem size="2" class="{! v.isSidebarCollapsed ? 'left-panel' : 'slds-hide' }">
+            {!v.sidebar}
+        </lightning:layoutItem>
+         <lightning:layoutItem flexibility="no-flex">
+                <lightning:buttonStateful labelWhenOff="Navigator" 
+                                          labelWhenOn="Navigator" 
+                                          variant="border-filled" 
+                                          onclick="{!c.toggleSection}" 
+                                          class="btn-collpase" 
+                                          iconNameWhenOff="utility:left"
+                                          iconNameWhenOn="utility:right"
+                                          title="{! v.isSidebarCollapsed ? 'Collapse' : 'Expand' }"
+                                          state="{! v.buttonstate }"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="{! v.isSidebarCollapsed ? 10 : 12}" class="slds-p-bottom_small slds-p-left_x-small right-panel">
+            <div>
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="12" >
+                        <div class="phase-table">
+                            {!v.phaseTable}
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+            <div>
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="6" class="slds-p-right_small slds-p-top_xx-small">
+                        <div class="dashboard1">
+                             {!v.dashboard1}
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6" class="slds-p-top_xx-small">
+                        <div class="dashboard1">
+                             {!v.dashboard2}
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

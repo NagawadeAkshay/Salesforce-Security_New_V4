@@ -1,0 +1,65 @@
+<template>
+    <div class="slds-box slds-theme--default slds-is-relative">
+        <div class="slds-text-color_inverse slds-p-around_x-small slds-p-left_x-small header">
+            <!-- <lightning-button  onclick={handleCollapsed} 
+            class="togglePageBlock" ></lightning-button> SnapShot History -->
+            <div class="headerTitle">
+                <span class="slds-text-heading_medium">{label}</span>
+            </div>
+        </div>
+        <div class=" slds-grid slds-wrap  slds-p-horizontal_small">
+            <div class="slds-col slds-size_6-of-12 slds-p-top_large slds-p-bottom_large approveDecision">
+                <lightning-radio-group
+                    class="radioButtons"
+                    name="radioGroup"
+                    label=""
+                    options={radioButtonOptions}
+                    value={value}
+                    type="radio"
+                    onchange={handleActionSelection}
+                    ><!-- add pick list type-->
+                    <!-- type="button" onchange={handleActionSelection} > -->
+                </lightning-radio-group>
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-list_horizontal slds-align_absolute-center">
+                <div class="slds-col slds-size_4-of-6">
+                    <div class="other  ">
+                        <template if:true={isReassignSelected}>
+						 <div class="slds-p-top_small">
+                            <span class="required-width" >
+                                <span class="slds-required asterisk">*</span>
+                            </span>
+                            <div class="searchable-combobox ">
+                                    <c-searchable-combobox
+                                        
+                                        options={optionsToReassign}
+                                        onselected_id={handleReassignChange}
+                                    ></c-searchable-combobox>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template if:true={isCommentsshown}>
+                            <div class="text-area slds-m-top_x-small slds-m-bottom_xx-small">
+                                <template lwc:if={commentRequired}>
+                                    <lightning-textarea placeholder="Enter Your Comments" onchange={addComment} class="required1 label1"></lightning-textarea>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-textarea placeholder="Enter Your Comments" onchange={addComment} class="label1"></lightning-textarea>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                    <div class="slds-col slds-size_2-of-6">
+                        <div class="submit-button">
+                        <lightning-button variant="brand" label="Submit" title="Submit" onclick={handleSubmit} class="sub-btn"></lightning-button>
+                        </div>
+                    </div>
+            </div>
+            <template if:true={showSpinner}>
+                <c-spinner gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component >
+
+    <apex:attribute name="collabSpritesResoureUrl"
+    description="This will take sprites resource URL from parent"
+    type="string" default="0"  access="public"/>
+    
+</apex:component>

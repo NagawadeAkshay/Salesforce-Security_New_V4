@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page controller="DashboardCtrl" sidebar="false" standardStylesheets="false" showHeader="false" readonly="true">
+
+    
+</apex:page>

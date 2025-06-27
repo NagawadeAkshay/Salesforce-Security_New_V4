@@ -1,0 +1,163 @@
+<template>
+    <div class="sidebar slds-split-view_container slds-is-open open-panel" data-my-id="leftPanel">
+       <div class="custom-sidebar slds-scrollable_y">
+          <div class="sidebarcollapse collapsebg">
+             <button onclick={togglePanel}  class="slds-button slds-button_icon slds-button_icon-brand collapsebutton"
+                aria-controls="split-view-id" aria-expanded="true" title="Collapse">
+                <svg class="slds-button__icon" aria-hidden="true">
+                   <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#picklist_type "></use>
+                </svg>
+                <span class="slds-assistive-text">Search</span>
+             </button>
+          </div>
+          <template if:true={components}>
+          <template for:each={components} for:item="com">
+             <template if:false={com.disableInLwc}>
+                <ul key={com.name} class="slds-accordion">
+                   <template if:false={com.isAvialable}>
+                      <!-- check in apex -->
+                      <li class="slds-accordion__list-item">
+                         <section data-my-id = {com.name} data-my-type = 'component' data-my-name = {com.id} class="slds-accordion__section sect slds-is-open">
+                            <div class="slds-accordion__summary summary1">
+                               <h2 class="slds-accordion__summary-heading">
+                                  <button onclick={collapseButton} data-my-id={com.name} class="slds-button padd" data-id={com.name} aria-controls="referenceId-16" aria-expanded="false" title={com.label}>
+                                     <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="false">
+                                        <template if:false={collapseicon}>
+                                           <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                                        </template>
+                                     </svg>
+                                     <template if:true={collapseicon}>
+                                        <lightning-icon icon-name={com.iconCss} alternative-text={com.label} label ={com.label} class="collapseIcon"></lightning-icon>
+                                     </template>
+                                     <span data-my-id = {com.name}  class="slds-accordion__summary-content">{com.label}</span>
+                                  </button>
+                               </h2>
+                            </div>
+                            <div  data-my-id = {com.name}  class="slds-accordion__content">
+                               <template if:false={enableLWC}>
+                                  <template if:true={com.isSearch}>
+                                     <div class='fa fa-search global-search'>
+                                        <lightning-input type="search"
+                                           value={searchValue}
+                                           placeholder="enter the term you wish to search for"
+                                           variant = "label-hidden"
+                                           label="Global Search"
+                                           onchange={searchKeyword}>
+                                           <lightning-button-icon icon-name="utility:close" variant="bare" onclick={handleClearButtonClick} label="Clear"></lightning-button-icon>
+                                        </lightning-input>
+                                        <span  class="globalSearch-dropdown">
+                                           <template if:true={isTypeAhead}>
+                                              <template if:true={Result} for:each={Result} for:item="R">
+                                                 <li key={R.id} >
+                                                    <a class="" onclick={selectValue} data-id={R.Id} data-name={R.Name}>{R.Name}</a>
+                                                 </li>
+                                              </template>
+                                           </template>
+                                        </span>
+                                     <button class="slds-button slds-button_icon slds-button_icon-brand" title="Search" onclick={globalSearchButton}>
+                                        <svg class="slds-button__icon" aria-hidden="true">
+                                           <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#search" ></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Search</span>
+                                     </button>
+                            </div>
+                            <div class="select-option">
+                               <lightning-combobox
+                                  name=""
+                                  label=""
+                                  value={optionValue}
+                                  options={option1}
+                                  onchange={handleChange} 
+                                  class="combobox-input">
+                               </lightning-combobox>
+                               </div>
+                            </template>
+                         </template>
+                         <!-- check for child component for Accordion sub Header -->
+                         <template if:true={com.isHeader}> 
+                         <ul class="slds-accordion">
+                            <li class="slds-accordion__list-item">
+                               <template for:each={com.header} for:item="head">
+                                  <section  key ={head.id} data-my-type = 'header'  data-my-id={head.id} class="slds-accordion__section slds-is-open">
+                                     <div  class="slds-accordion__summary summary2">
+                                        <h2 class="slds-accordion__summary-heading">
+                                           <button onclick={collapseButton} data-my-id={head.id} class="slds-button padd" data-id ={head.id} aria-controls="referenceId-16" aria-expanded="false" title={head.name}>
+                                              <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="false">
+                                                 <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                                              </svg>
+                                           <span key ={head.id} data-my-id={head.id} class="slds-accordion__summary-content">{head.name}</span>
+                                           </button>
+                                        </h2>
+                                     </div>
+                                     <div data-my-id={head.id}  class="slds-accordion__content cont">
+                                           <template for:each={head.subHeaders} for:item="subHead">
+                                     <div key={head.name}>
+                                        <ul  class="slds-accordion slds-acc">
+                                           <li class="slds-accordion__list-item">
+                                              <template if:false={subHead.isHidden}>  
+                                                 <section data-my-id={head.name} class="slds-accordion__section ">
+                                                    <div class="slds-accordion__summary summary3">
+                                                       <h2 class="slds-accordion__summary-heading">                                                              
+                                                          <span class="slds-accordion__summary-content accordian1">{subHead.name}</span>
+                                                       </h2>
+                                                    </div>
+                                                 </section>
+                                              </template>
+                                              <template for:each={subHead.contents} for:item="content">
+                                                 <c-accordion-content key={content.id} content={content} enable-lwc={enableLWC} tab-name={tabName} app-page={isAppPage}></c-accordion-content>
+                                              </template>
+                                           </li>
+                                        </ul>
+                                     </div>
+                                           </template>
+                                     </div>
+                                  </section>
+                               </template>
+                            </li>
+                         </ul> 
+                      </template>
+                      <!-- <template if:true={com.isRecentlyViewed}> 
+                         <template if:true={recentlyViewed} for:each={recentlyViewed} for:item="RV">
+                            <ul key={RV.RecordId} id={RV.RecordId} class="slds-accordion content">
+                               <template lwc:if={enableLWC}>
+                                  <li class="accordian-padd">
+                                     <a onclick={navigateToRecentlyViewed} data-item={RV.RecordId} data-obj={RV.Type} data-target="_self">{RV.Name}</a>
+                                  </li>
+                               </template>
+                               <template lwc:else>
+                                  <li class="accordian-padd">
+                                     <a onclick={handleRedirection} data-item={RV.RecordId} data-url={RV.RecordId} data-target="_self">{RV.Name}</a>
+                                  </li>
+                               </template>
+                            </ul>
+                         </template>
+                      </template> -->
+                      <template if:true={com.isExternalLinks}>
+                         <template if:true={ExternalLinks} for:each={ExternalLinks} for:item="link">
+                            <ul key={link.Id} id={link.Id} class="slds-accordion content" >
+                               <li class="accordian-padd" title={link.Name}>
+                                  <a onclick={handleRedirection} data-url={link.URL} data-target={link.OpenNewWindow}>{link.Name}</a>
+                               </li>
+                            </ul>   
+                         </template>            
+                      </template>
+                      <template if:true={com.isTechnicalsupport}>
+                         <template if:true={TechSupportLinks} for:each={TechSupportLinks} for:item="Tech">
+                            <ul key={Tech.Id} id={Tech.Id} class="slds-accordion content">
+                                  <li class="accordian-padd" title={Tech.Name}>
+                                     <a onclick={handleRedirection}  data-url={Tech.URL} data-target={Tech.OpenNewWindow}>{Tech.Name}</a>
+                                  </li>
+                            </ul>
+                         </template>
+                      </template>
+                      </div>
+                      </section>
+                      </li>
+                   </template>
+                </ul>
+              	</template>
+              </template>
+          </template>
+       </div>
+    </div>
+ </template>

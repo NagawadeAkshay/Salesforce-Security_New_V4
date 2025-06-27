@@ -1,0 +1,17 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component id="compId" controller="SelectCheckboxesCtrl" access="global" >
+	<apex:attribute name="displayValues"	type="SelectOption[]" 	required="true" description="What to display as the checkbox values" access="global" />
+	<apex:attribute name="disabled"			type="Boolean" 			required="true" description="Wheather the checkboxes are clickable" access="global" />
+	<apex:attribute name="label"			type="String" 			required="true" description="The checkboxes' label" access="global" />
+	<apex:attribute name="style"			type="String" 			required="true" description="The checkboxes' style"  access="global"/>
+	<apex:attribute name="label"			type="String" 			required="true" description="The checkboxes' label" access="global" />
+	<apex:attribute name="sObject"			type="sObject" 			required="true" assignTo="{!sObj}" 			description="The object to read/write the values to" access="global"/>
+	<apex:attribute name="field"			type="String" 			required="true" assignTo="{!fieldApiName}" 	description="The field to read/write to"  access="global"/>
+    <apex:attribute name="layout"			type="String" 			required="false" description="Render checkbox in pageDirection or InLine"  access="global"/>
+    <apex:attribute name="isMultiSelect"    type="Boolean"          required="false" default="false" description="Render selectall only if multiselect"  access="global"/>
+    <apex:attribute name="disableSelectALL" type="Boolean"          required="false" default="false" description="Whether the Select All is disable" access="global" />
+	<apex:attribute name="hideFieldsJSON" description="Hide Field Json" type="String" access="global"/>
+
+    
+    
+</apex:component>

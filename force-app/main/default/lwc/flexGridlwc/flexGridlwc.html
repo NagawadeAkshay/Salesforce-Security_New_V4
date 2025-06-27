@@ -1,0 +1,6 @@
+<template>
+    <template if:true={initateGrid}>
+
+        <c-lwc-flex-table  data-flextablename={name} parent-id ={parentRecordId} table-meta-data={initResult.ParentFlexTable} init-result={result} grid-level={level}  string-parameters={_stringParameters} list-parameters={listParameters} is-lightning={isLightning} current-page-reference={currentPageReference} mode={mode} page-block-id={pageBlockId}  is-modal={isModal}></c-lwc-flex-table>
+    </template>
+</template>

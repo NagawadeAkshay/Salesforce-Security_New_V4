@@ -1,0 +1,40 @@
+<!--
+  The MultiselectPicklist component implements a multiselect picklist similar
+  to that seen when adding tabs to a Force.com application.
+  
+  HTML elements use the same classes as the native multiselect picklist, to
+  keep visual consistency in the UI.
+  
+  In addition to the visible elements, the component contains two hidden input
+  elements, the purpose of which is to hold a string representation of the
+  contents of each listbox. As options are added, removed or moved within the
+  listboxes, the content of the hidden elements is synchronized to the content
+  of the listboxes. When the Visualforce page is submitted, the 
+  MultiselectController updates its SelectOption[] variables from these hidden 
+  elements.
+ -->
+ <!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="MultiselectController" access="global">
+  <apex:attribute name="leftLabel" description="Label on left listbox."
+    type="String" required="true" access="global" />
+  <apex:attribute name="rightLabel" description="Label on right listbox."
+    type="String" required="true" access="global"/>
+  <apex:attribute name="size" description="Size of listboxes."
+    type="Integer" required="true" access="global" />
+  <apex:attribute name="width" description="Width of listboxes."
+    type="String" required="true" access="global" />
+
+  <apex:attribute name="leftOptionsAttr"
+    description="Options list for left listbox." type="SelectOption[]"
+    required="true" assignTo="{!leftOptions}" access="global" />
+  <apex:attribute name="rightOptionsAttr"
+    description="Options list for right listbox." type="SelectOption[]"
+    required="true" assignTo="{!rightOptions}" access="global" />
+
+  <apex:attribute name="targetFieldName"
+        description="Field of current object that will hold the selection."
+        type="Object" assignTo="{!targetFieldVar}" access="global"/>
+        
+    <apex:attribute name="disableAddRemove" description="Disable the Add/Remove button" type="Boolean" required="false" access="global" />
+  
+</apex:component>

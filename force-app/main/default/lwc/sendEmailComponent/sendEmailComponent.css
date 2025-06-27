@@ -1,0 +1,10 @@
+.slds-gutters.slds-col{
+    padding:0px !important;
+}
+.slds-form-element{
+    font-size: 13px; 
+    font-family: 'Helvetica';
+     color:#000; 
+     line-height:19px;
+
+}

@@ -1,0 +1,4 @@
+<!-- Deprecated component-->
+<aura:component controller="LightningUtilityCtrl" extensible="true" access="global" >
+    
+</aura:component>

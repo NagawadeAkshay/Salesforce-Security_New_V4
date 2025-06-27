@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component layout="block" id="MainTabComponentID" controller="MainTabsController" access="global" allowDML="true"> 
+   
+</apex:component>

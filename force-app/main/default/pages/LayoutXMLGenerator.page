@@ -1,0 +1,6 @@
+<!-- As discussed with Nakul we are deprecating this functionality - as not one use this also this 
+    functionality is not working in case of all forms  -->
+    <!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+   
+</apex:page>

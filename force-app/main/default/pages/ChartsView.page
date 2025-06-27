@@ -1,0 +1,4 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page id="chartPageId" standardStylesheets="false" showHeader="false" controller="ChartsViewCtrl" readonly="true">
+    
+</apex:page>

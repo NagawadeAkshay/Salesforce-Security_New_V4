@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" >
+    <apex:attribute name="layoutHolder" description="Controller object that holds the layout properties" type="DynamicLayoutHolder" required="true" access="global"/>
+    <apex:attribute name="tabName" description="Which tab contents to display?" type="String" required="true" access="global"/>
+    <apex:attribute name="flexTableParameters" description="Map of parameters to be fed to flexTable" type="String" required="false" access="global"/>
+    <apex:attribute name="listParams" description="Map of parameters to be fed to flexTable" type="String" required="false" access="global"/>       
+	<apex:attribute name="tabRecordId" description="Which tab Id contents to display?" type="String" access="global"/>     
+    
+</apex:component>

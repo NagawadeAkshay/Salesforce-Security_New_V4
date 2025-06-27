@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexTableCtrl" access="global" >
+    <!-- This component is no more required so commented out -->
+    <!-- List of attributes -->
+    <apex:attribute name="FlexTableName" assignTo="{!dataTableConfigName}" description="This is the value for the object name which decides the list to be displayed." type="String" access="global"/>    
+    <apex:attribute name="TableId" description="Dynamic ID for the table. It is same string as the flexTableName." type="String" required="true" access="global"/>               
+    
+</apex:component>

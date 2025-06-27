@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexTableExportCtrl" access="global" >    
+    <apex:attribute name="FlextableName" assignTo="{!tableName}" required="false" type="String" description="Flex table name" access="global"/>
+    <!--<apex:attribute assignTo="{!parentId}" name="parentIdAtt" required="false" type="string" description="Flex table name" access="global"/>-->
+    <apex:attribute assignTo="{!mode}" name="ExportMode" required="false" type="string" description="PDF/CSV" access="global"/>
+    
+    
+  </apex:component>

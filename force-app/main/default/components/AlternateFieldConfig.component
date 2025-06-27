@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="AlternateFieldConfigCtrl"  access="global">
+    <apex:attribute name="displayValues"    type="SelectOption[]"   required="true"  assignTo="{!selectOption}" description="What to display as the select list's values"  access="global"/>
+    <apex:attribute name="sObject"          type="sObject"          required="true"  assignTo="{!sObj}"          description="The object to read/write the values to" access="global" />
+    <apex:attribute name="field"            type="String"           required="true"  assignTo="{!fieldApiName}"  description="The field to read/write to" access="global" />
+    <apex:attribute name="skip" type="String" default="String" assignTo="{!skipValue}" description="The field to skip the default value" access="global" />
+   
+</apex:component>

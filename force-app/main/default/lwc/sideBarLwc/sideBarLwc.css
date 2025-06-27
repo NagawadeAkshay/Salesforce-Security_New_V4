@@ -1,0 +1,427 @@
+.close-panel .slds-accordion__summary-content{
+    display:none;
+    }
+
+    .custom-sidebar{
+   background-color: #fff;
+   border-right: 1px solid #ededed;
+	border-radius:0.25rem;
+ }  
+ /*.sidebar{
+    float:left;
+}*/
+ .slds-card{
+   border-radius:none !important;
+}
+
+.slds-is-close .summary2{
+padding-bottom:15px !important;
+}
+.expand-panel{
+    width: 99.5%;
+    transition: 0.3s;
+}
+.collapse-panel{
+    width: 82.5%;
+    transition: 0.3s;
+}
+
+.slds-split-view__toggle-button {
+    right: -1rem;
+    height:3%;
+}
+
+.togglebutton .slds-button{
+display:block !important;
+}
+/*.sidebar{
+    height:100vh;
+}*/
+.sidebar-button{    
+    width: 20px;
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+.open-panel {
+     /*  width: 245px;
+ overflow:hidden;*/
+    transition: 0.3s;
+}
+.close-panel {
+    width: 13%;
+    min-width: 0px;
+    overflow:unset;
+    transition: 0.3s;
+ 
+}
+
+.close-panel .slds-accordion__summary{
+    width:70px !important;
+}
+
+.close-panel .slds-accordion__content{
+   display:none;
+}
+
+.close-panel .slds-button.padd{
+    padding-left:0px ;
+}
+
+/*.slds-accordion__summary.summary1{
+    padding: 0px 5px 0px 15px !important;
+}
+.slds-accordion__summary.summary2{
+    padding: 0px 5px 0px 10px !important;
+}
+.slds-accordion__summary.summary3{
+    padding: 0px 5px 0px 10px !important;
+}
+.summary1 .slds-accordion__content{
+    padding: 0px 5px 0px 15px !important;
+}
+*/
+.slds-accordion__list-item{
+   /* border-bottom:1px solid #ededed;*/
+}
+/*
+.slds-accordion__summary.summary1{
+    padding: 0px !important;
+}
+.slds-accordion__summary.summary2{
+    padding: 0px !important;
+}
+.slds-accordion__summary.summary3{
+    padding: 0px  !important;
+}
+
+.slds-button.padd{
+    padding-left:15px;
+}
+
+.slds-accordion__section{
+    padding-bottom:0px;
+}
+
+.slds-accordion__section.sect{
+    padding-bottom:10px;
+}
+*/
+.summary1 .slds-button.padd{
+  line-height:1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary2 .slds-button.padd{
+    line-height:1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.slds-button.padd{
+    padding-left:15px;
+    line-height:1.2;
+    border-radius: 0px !important;
+}
+.slds-button:focus{
+    box-shadow: none;
+}
+.slds-button:active{
+    border-color: transparent;
+}
+
+   .slds-accordion__summary-heading .slds-button:focus {
+        text-decoration: none;
+        box-shadow: none;
+    }
+    .slds-accordion__summary.summary1:nth-of-type(0){
+        border-bottom: 0.5px solid #ededed;
+    }
+    .slds-accordion__summary.summary2{
+        padding-left: 20px !important;
+       
+       /* border-bottom: 0.5px solid #ededed;*/
+    }
+    .slds-accordion__summary.summary3{
+        padding: 7px  !important;
+    }
+   
+    .slds-accordion__list-item{
+      border-top:0.5px solid #ededed;
+       
+    }
+
+    .slds-accordion__section{
+        padding-top:10px !important;
+        padding-left:0px !important;
+        padding-right:0px !important;
+     
+       
+    }
+    .bgcolor .slds-accordion__section{
+        padding-top:5px !important;
+        padding-bottom:5px !important;
+        padding-left:0px !important;
+        padding-right:0px !important;
+    }
+    .slds-accordion__summary{
+       /* font-family: 'Helvetica'!important;*/
+	  
+        padding:5px;
+        background-color: #fff;
+       border-top: 0.5px solid #ededed;
+        /*width: 238px;*/
+        margin-right:0px;
+    }
+
+    .slds-accordion{
+       /* font-family: 'Helvetica'!important;*/
+      
+        font-weight: 400;
+    }
+
+    .summary1 .slds-accordion__summary-content{
+        color: #00396b;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .summary2 .slds-accordion__summary-content{
+            color: #00396b;
+              font-size: 13px;
+              font-weight: 600;
+            }
+            .summary3 .slds-accordion__summary-content{
+                color: #00396b;
+                  font-size: 13px;
+                  font-weight: 400;
+                }
+
+      .slds-accordion__summary-action{
+        padding:6px 25px 6px 15px !important;
+    }
+
+    .slds-accordion__content ul li a{
+        text-decoration :none;
+
+
+        
+             color:rgba(0,0,0,0.8);
+            font-size:12px;
+       }
+       
+       
+       .slds-accordion__content ul li{
+        border-top:0.5px solid #ededed;
+        text-decoration :none;
+            /* padding:6px 25px 6px 40px !important;*/
+                cursor: pointer;
+               
+       }
+
+       .slds-accordion__section.content-wrap{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+       }
+
+       .content li{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+       }
+       /*
+       .slds-accordion__content ul li a:hover{
+           color:#fff !Important;
+       }*/
+       
+     /*  .slds-accordion__content ul li:hover{
+            background: #ededed;
+           color: #000 !important;
+           font-style: italic;
+       }*/
+       
+       .content li:hover{
+    	background: #f3f3f3;
+    	color: #000 !important;
+    	font-style: italic;
+    	}
+       .content li:hover a{
+      
+        color: #000 !important;
+      
+       }
+
+       .slds-tile h3 a{
+        text-decoration :none !important;
+      
+             color:rgba(0,0,0,0.8) !important;
+            font-size:12px;
+       }
+       .slds-accordion__content li .content-wrap:hover a{
+       color:#fff !important;
+        }
+       
+        .slds-accordion__section.sect.slds-is-open{
+            margin-bottom:-14px;
+        }
+        .cont{
+            margin-bottom:-10px !important;
+        }
+        .global-search{
+           /* padding-left:15px;
+            padding-right:15px;*/
+            padding: 10px 15px 0px 15px;
+            display:inline-flex;
+            border-top:0.5px solid #ededed;
+        }
+        .select-option{
+            /* padding-left:15px;
+             padding-right:15px;*/
+             padding: 0px 15px 15px 15px;
+            
+         }
+
+        .global-search .slds-form-element div .slds-form-element__control .slds-input{
+           border-radius: 0px !important;
+        }
+
+       .slds-form-element__control .slds-input{
+            border-radius: 0px !important;
+         }
+         lightning-input{
+            --slds-c-input-radius-border: 0rem;
+            }
+            button{
+                --slds-c-button-radius-border: 0rem;  
+            }
+
+            .combobox-input{
+                --slds-c-button-radius-border: 0rem;  
+            }
+            lightning-combobox{
+                --slds-c-input-radius-border: 0rem;
+            }
+            .global-search .slds-button_icon-brand{
+                background: #05599c !important;
+                border: 1px solid #05599c !important;
+                }
+
+            a{
+                text-decoration :none !important;
+      
+                color:rgba(0,0,0,0.8) !important;
+               font-size:12px; 
+            }
+
+
+ .custom-sidebar:hover::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background:transparent;
+display:block
+}
+
+.custom-sidebar:hover::-webkit-scrollbar-thumb {
+  background: #c1c1bf;
+  border-radius: 0.25rem;
+  display:block;
+}
+            .custom-sidebar::-webkit-scrollbar {
+                width:6px;
+                height:6px;
+  background:transparent;
+  display:none;
+                }
+                
+                .custom-sidebar::-webkit-scrollbar-thumb{
+                background: #c1c1bf;
+  border-radius: 0.25rem;
+   display:none;
+                }
+                
+
+
+
+                .combobox-input .slds-form-element__control .slds-combobox_container .slds-combobox .slds-dropdown{
+                    padding:0px !important;
+                }
+                .slds-listbox_vertical .slds-listbox__option_plain, .slds-listbox_vertical .slds-listbox__option--plain, .slds-listbox--vertical .slds-listbox__option_plain, .slds-listbox--vertical .slds-listbox__option--plain {
+                    padding: 0px 0px 0px 15px !important;
+                    color:#333 ;
+                    }
+
+                .slds-dropdown{
+                    border-radius: 0px !important;
+                    background-color: #fff;
+                    color:#333 !important;
+                     padding:0px !important;
+                  }
+                 
+                  .globalSearch-dropdown{
+                    width: 87%;
+                   
+                    position: absolute;
+                    z-index: 9;
+                    top: 72px;
+                    border-right: 1px solid #ededed;
+                    border-left: 1px solid #ededed;
+                    background-color: #fff;
+                    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+                  }
+                  .globalSearch-dropdown li a{
+                    border-top: none !important;
+                    
+                  }
+
+                  .globalSearch-dropdown li{
+                    padding:3px 10px;
+                  }
+                  .globalSearch-dropdown li:hover{
+                background: #1e90ff;
+                    
+                  }
+                  .globalSearch-dropdown li:hover a{
+                    color:#fff !important;
+                        
+                      }
+
+                      .lastSelectedSideBarLink{
+                        /*background: rgba(0,0,0,0.5) !important;*/
+    					color: #00396b;
+    					font-weight: 600;
+                    }
+                    
+                    .lastSelectedSideBarLink a{
+                        color: #00396b !important;
+                        font-style: italic;
+                    }
+                    .collapsebutton{
+                        width:55px !important;
+                        background: #00396b;
+                    }
+                    
+                    .collapsebutton.slds-button_icon-brand{
+                        border-color: #00396b !important;
+                    }
+                    
+                    .open-panel .custom-sidebar .collapsebutton {
+                        width:40px !important;
+                        margin-left: 205px;
+                    }
+.collapsebg{
+        background-color:#00396b; 
+display:none;
+    }
+    
+    .accordian1{
+        padding-left:55px;
+    }
+    
+    .accordian-content{
+        padding-left:60px;
+    }
+    
+    .accordian-padd{
+        padding:5px;
+        padding-left:50px;
+    }

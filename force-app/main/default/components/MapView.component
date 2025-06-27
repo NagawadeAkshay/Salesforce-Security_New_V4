@@ -1,0 +1,14 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="MapViewCtrl" access="global" >
+    <apex:attribute name="mapClass" description="Class name that should be dynamically executed by the controller to get the collection of pins" type="String" access="global"/>
+    <apex:attribute name="tabId" description="Id of the tab." type="String" access="global"/>
+    <apex:attribute name="headerTitle" description="The title to be shown." type="String" access="global"/>
+    <apex:attribute name="isDashboard" description="Is the map shown on dashboard." type="Boolean" access="global"/>
+    <apex:attribute name="height" description="The height for the map." type="String" access="global"/>
+    <apex:attribute name="isPreview" description="Is preview?" default="false" type="boolean" required="false" access="global"/>
+   <apex:attribute name="streetFieldAPI" description="StreetFieldAPI" default="false" type="String" required="false" access="global"/>
+    <apex:attribute name="cityFieldAPI" description="CityFieldAPI" default="false" type="String" required="false" access="global"/>
+    <apex:attribute name="stateFieldAPI" description="StateFieldAPI" default="false" type="String" required="false" access="global"/>
+    
+    
+</apex:component>

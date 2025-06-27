@@ -1,0 +1,4 @@
+({
+	getResponse : function(component) {
+		}
+})

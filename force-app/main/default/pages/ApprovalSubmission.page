@@ -1,0 +1,11 @@
+<!-- 
+    Page shows when a record is submitted for Approval when Submit for Approval Button is clicked
+     
+    Audit History
+    ***********************************************************
+    03/31/2014      Vineeth Shetty             Created
+ -->
+ <!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page controller="ApprovalSubmissionCtrl" showHeader="false" sidebar="false" standardStylesheets="false" >
+
+</apex:page>

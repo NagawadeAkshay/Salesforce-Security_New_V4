@@ -1,0 +1,43 @@
+<!-- 13-10 2022 Tejashree D - U158S201 - Modified function removeErrorMessage - passed one more param here that is fieldapiname and 
+added that while adding error class -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="DynamicLayoutController" allowDML="true" access="global">
+    <apex:attribute name="templateName" description="name of the page template" type="string" required="true" assignTo="{!tmplName}" access="global"/>
+    <apex:attribute name="currentPhaseName" description="name of tab to load sidebar accordingly" type="string" required="false" assignTo="{!phaseName}" access="global"/>
+    <apex:attribute name="packageName" description="name of the page package" type="string" required="false" assignTo="{!pkgName}" access="global"/>
+    <apex:attribute name="packageId" description="Id of the page package" type="string" required="false" assignTo="{!pkgId}" access="global"/>
+    <apex:attribute name="parentLayoutId" description="This variable will be used in case of forms. It is a Id of parent record layout Id" type="string" required="false" assignTo="{!parentLytId}" access="global"/>
+    <apex:attribute name="formTypes" description="List of forms for filter existing forms" type="String[]" required="false" assignTo="{!formTypeList}" access="global"/>
+    <apex:attribute name="recordId" description="record Id for the layout" type="string" required="true" assignTo="{!rcrdId}" access="global"/>
+    <apex:attribute name="layoutType" description="Type can be Edit/View/Print" type="string" required="true" assignTo="{!type}" access="global"/>
+    <apex:attribute name="saveURL" description="pageReference for Save to be used on Edit Layout" type="PageReference" required="false" assignTo="{!savePage}" access="global"/>
+    <apex:attribute name="cancelURL" description="pageReference for Cancel to be used on Edit Layout" type="PageReference" required="false" assignTo="{!cancelPage}" access="global"/>
+    <apex:attribute name="deleteURL" description="pageReference for Delete to be used on View Layout" type="PageReference" required="false" assignTo="{!deletePage}" access="global"/>
+    <apex:attribute name="flexTableParameters" assignTo="{!flexTableParameterJSON}" description="Map of parameters to be fed to flexTable" type="String" required="false" access="global"/>
+    <apex:attribute name="chartParameters" description="Map of parameters to be fed to Charts" type="String" required="false" access="global"/>
+    <apex:attribute name="listParams" assignTo="{!listParameters}" description="Map containing key value pairs for merge fields" type="String" required="false" access="global"/>
+    <apex:attribute name="HideSidebar" description="This attribute is used to decide whether to show the sidebar on first login for Ext User " type="boolean" required="false" access="global"/>
+    <apex:attribute name="hideCancelBtn" description="Should the cancel button be hidden on edit page " type="boolean" required="false" access="global"/>
+    <apex:attribute name="hideSaveBtn" description="Should the save button be hidden on edit page " type="boolean" required="false" access="global"/>
+    <apex:attribute name="refreshLayoutSpecificTables" description="On any DML on flex table, refreshes other flex tables on the same layout" default="false" type="boolean" required="false" access="global"/>
+    <apex:attribute name="createDefaultValues" description="List of default values to be fed to Dynamic Layout" 
+        type="DynamicLayoutDefaultValueHelper[]" required="false" assignTo="{!listDefaultValues}" access="global"/>
+    <apex:attribute name="isPreview" description="Is preview?" default="false" type="boolean" required="false" access="global" assignTo="{!isPreviewLayout}"/>
+    <apex:attribute name="hideHeaderBtns" description="Whether to hide buttons on header" type="boolean" required="false" default="false" access="global"/>
+    <apex:attribute name="pageBlockConfigIds" description="In case of Change Request,this will decide whether to show/hide a certain Page Block" type="String" required="false" assignTo="{!pageBlockIds}" access="global"/>
+    <apex:attribute name="showPDF" type="boolean" required="false" default="true" description="Decision field for visibility of Download as PDF Button" access="global"/>
+    <apex:attribute name="showHeader" description="Whether to display title" type="boolean" required="false" default="true" access="global"/>
+    <apex:attribute name="isFooter" type="boolean" required="false" default="false" description="Determines style to be applied for Footer" access="global"/>
+    <apex:attribute name="registrationId" type="string" required="false" default="false" description="Determines style to be applied for Footer" access="global" />
+    <apex:attribute name="nexttabId" type="string" assignTo="{!tabId}" required="false" description="Determines Next Tab Id" access="global" />
+    <apex:attribute name="parentId" type="string"  description="Determines parent of form" access="global" />
+    <apex:attribute name="hidePreviousBtn" description="Should the Previous button be hidden on edit page " type="boolean" required="false" access="global"/>
+    <apex:attribute name="hideMenuBar" type="boolean" required="false" default="false" description="Hide DynamicLayoutMenu bar" access="global"/>
+
+
+    <apex:attribute name="autoSavePrompt" type="boolean" required="false" description="AutopromptForm display" access="global" default="false"/> 
+
+    <!--Tomy - added new sObjName attribute for layout selection scenario in create context, when Id won't be available-->
+    <apex:attribute name="sObjName" type="string" required="false" description="Name of sObject whose layout has to be rendered" assignTo="{!sObjectName}" access="global"/>
+    
+</apex:component>

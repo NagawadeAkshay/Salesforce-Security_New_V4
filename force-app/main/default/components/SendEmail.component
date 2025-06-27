@@ -1,0 +1,15 @@
+﻿<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="SendEmailCompCtrl" access="global">
+    <apex:attribute name="emailFieldName" description="Field Names of Email Object " type="String" access="global" />
+    <apex:attribute name="parentId" description="Field Names of Email Object" assignTo="{!parentIdVal}" type="String" access="global" />
+    <apex:attribute name="oldTaskId" description="Field to pass old task Id" type="String" access="global" />
+    <apex:attribute name="taskId" description="Field to pass task Id" type="String" access="global" />
+    <apex:attribute name="mode" description="Field to specify mode" type="String" access="global" />
+    <apex:attribute name="renderType" description="Field to specify rendering" type="String" access="global" />
+    <apex:attribute name="closeOnSuccess" description="Decide modal close on success" type="Boolean" access="global" />
+    <apex:attribute name="parentTableName" description="Provide Table Name where we include table name" type="String" access="global"
+    />
+    <apex:attribute name="tableType" description="Table or Grid" type="String" access="global" />
+
+   
+</apex:component>

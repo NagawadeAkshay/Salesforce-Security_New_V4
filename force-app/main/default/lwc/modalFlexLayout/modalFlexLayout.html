@@ -1,0 +1,74 @@
+<template>
+
+    <section
+        role="dialog"
+        tabindex="-1"
+        aria-labelledby="modal-heading-01"
+        aria-modal="true"
+        aria-describedby="modal-content-id-1"
+        class="slds-modal slds-fade-in-open slds-modal_medium modalSection"
+    	>
+         <template if:true={isModalLoading} >
+                       
+            <c-spinner is-modal="true" gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+          
+        </template>  
+        <div class="slds-modal__container">
+            <header class="slds-modal__header modal-header-ext">
+              <lightning-button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" label="×" variant="base" onclick={handleCloseModal} style="top:3px;border:0px;"></lightning-button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" title={modalHeader}>{modalHeader}</h2>
+            </header>
+            <div class="slds-modal__content slds-modal_full modalContent modalcontainer" id="modal-content-id-1">
+              <c-flex-layout-page-messages
+                    message-time-out={messageTimeOut}
+                    message-time-out-enabled={messageTimeOutEnabled}
+                    page-message-list={pageMessageList}>
+                  </c-flex-layout-page-messages>
+              <template if:true={isModal}>
+                    
+                  <div class="slds-float_right slds-m-top_small slds-m-right_small">
+                    <template if:true={customActionShow}>
+                        <c-flex-layout-actions
+                            page-layout-wrapper={pageLayoutWrapper}
+                            context={context}
+                            rec-id={recordId}
+                            onhandle_page_messages={setPageMessages}>
+                        </c-flex-layout-actions>
+                    </template>
+                  </div>
+                  <template if:true={mode}>
+                    <template if:true={isHeaderTabAvaiable}>
+                      <c-header-overview page-layout-wrapper={pageLayoutWrapper} record-id={recordId} context="View" is-modal={isModalcall}></c-header-overview>
+                     </template>
+                    <c-flex-layout-tabs page-layout-wrapper={pageLayoutWrapper} is-view={mode}></c-flex-layout-tabs>
+                  </template>
+                  <template if:false={mode}>
+                    <c-flex-layout-tabs page-layout-wrapper={pageLayoutWrapper} is-view={mode}></c-flex-layout-tabs>
+                  </template>
+              </template>
+              <template if:true={isSaveAndContinue}>
+                    <c-header-overview record-id={recordId} context={ContextOnSaveAndContinue} is-modal={isModalcall}></c-header-overview>
+                    <c-flex-layout record-id={recordId} context={ContextOnSaveAndContinue}></c-flex-layout>
+              </template>
+              <template if:true={isFlexTable}>
+      
+                <c-flex-gridlwc parent-record-id={recordId} flex-grid-type={componentType} name={FlexTableName} string-parameters={keyValueMap} list-parameters={listValueMap} is-modal={isModalcall} onmodal_refresh={handleModalRefresh}></c-flex-gridlwc>
+               </template>
+
+               <template if:true={isFlow}>
+                  <c-dynamic-flow-component flow-name={flowName} params={flowParams}> </c-dynamic-flow-component> 
+              </template>
+               
+            </div>
+           
+            <div class="slds-modal__footer slds-float_right">
+                <lightning-button if:true={showButton} label={ActionLabel} onclick={onClickOfAction} variant="brand" class="modalbtn slds-m-right_x-small"></lightning-button>
+                <lightning-button label="Close" onclick={handleCloseModal} class="modalbtn" ></lightning-button>
+              </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  
+  
+  
+  </template>

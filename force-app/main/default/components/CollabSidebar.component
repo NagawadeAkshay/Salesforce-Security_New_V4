@@ -1,0 +1,5 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ProfileViewCtrl" access="global" allowDML="true">
+ <apex:attribute name="userId1" description="Id of user" type="string" required="false" assignTo="{!userIdAttr}" access="global"/>
+
+</apex:component>

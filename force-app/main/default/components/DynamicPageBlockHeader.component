@@ -1,0 +1,14 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="DynamicPageBlockHeaderCtrl" access="global">
+	<apex:stylesheet value="{!URLFOR($Resource.GovGrants, '/Component/CSS/DynamicPageBlockHeader.css')}" />
+    <apex:attribute name="pageBlockId"
+        description="What is the page block record id from PageBlockConfig__c custom object?" type="String" required="true" access="global"/>
+
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false" access="global"/>
+    <apex:attribute name="pageBlockTitle"
+        description="What is the header title for page block?" type="String" required="false" access="global"/>
+    <apex:attribute name="helpText"
+        description="What is the help text for page block?" type="String" required="false" access="global"/>
+
+        
+</apex:component>

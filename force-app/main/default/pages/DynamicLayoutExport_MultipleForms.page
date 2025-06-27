@@ -1,0 +1,10 @@
+<!--
+  Created By: Amol Darekar
+  Created Date: 27th Aug 2018
+  Modified Date: 03rd Sup 2018
+  Purpose: Support records with multipe form for download and resolve 101 SOQL exception and CPU timelimit problem.
+ -->
+ <!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page controller="DynamicLayoutExportMultipleFormsCtrl" sidebar="false" showHeader="false">
+  
+</apex:page>

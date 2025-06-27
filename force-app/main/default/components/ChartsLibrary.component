@@ -1,0 +1,7 @@
+<!--
+Created by : Rahul
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component access="global" >
+
+</apex:component>

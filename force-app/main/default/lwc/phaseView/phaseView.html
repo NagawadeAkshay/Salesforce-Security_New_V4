@@ -1,0 +1,17 @@
+<template>
+	<div class="main-planning gov-generic-fonts">
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_12-of-12 ">
+				<template if:true={showTable}>
+					<template for:each={objectEntries} for:item="entry" for:index="index">
+						<div key={entry.key}>
+							<c-flex-Gridlwc data-tablename={entry.key} flex-grid-type={entry.value} name={entry.key}
+								list-parameters={listparam} string-parameters={stringParam}>
+							</c-flex-Gridlwc>
+						</div>
+					</template>
+				</template>
+			</div>
+		</div>
+	</div>
+</template>

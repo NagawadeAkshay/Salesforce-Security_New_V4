@@ -1,0 +1,11 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="NotesCtrl" allowDML="true" access="global">
+    <!--  List of attributes -->
+    <apex:attribute name="parentObject" description="This is the value of the parent object Id for which we are defining the notes and attchments list." type="String" required="true" access="global"/>
+    <apex:attribute name="title" description="This is the value for the title that will be displayed on the list." type="String" required="false" access="global"/>
+    <apex:attribute name="pbId" description="This is the value for the Id of the page block." type="String" required="false" access="global"/>
+    <apex:attribute name="isView"  description="This value will be used to Hide button on Edit mode" type="boolean" required="false" access="global" />
+    <apex:attribute name="isPreview" description="This value will be used to hide Add Attachment button" type="Boolean" required="false" access="global" />
+
+    
+</apex:component>

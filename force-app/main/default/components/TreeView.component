@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="TreeViewCtrl"  access="global">
+    <c:ExternalLibrary />
+    <apex:attribute name="objectName"  description="Name of the Object on which Tree View will be." type="String" access="global"/> 
+    <apex:attribute name="selfLookupField"  description="Name of the selflookup field onObject." type="String" access="global"/> 
+    <apex:attribute name="filterCriteria"  description="Name of the selflookup field onObject." type="String" access="global"/>
+    
+   
+</apex:component>

@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="CaptchaCtrl" access="global">
+    <apex:attribute name="fieldName" description="Field on object to set the Captcha Result" type="String"/>
+    <apex:attribute name="recordsId" description="recordId Name" type="String"/>
+
+    
+</apex:component>

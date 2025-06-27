@@ -1,0 +1,7 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="HeatMapBasicCtrl"  access="global">
+<apex:attribute name="chartName"  description="Heat Map Name" type="String" access="global"/>
+<apex:attribute name="chartHTMLId"  description="Heat Map html Id" type="String" required="true" access="global"/>
+<apex:attribute name="contextRecordId" assignTo="{!recordId}" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+Obsolete components
+</apex:component>

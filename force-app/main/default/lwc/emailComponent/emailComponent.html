@@ -1,0 +1,676 @@
+<template>    
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <div tabindex="-1"  onclick={blurtoggleVisibility}>
+            <template if:true={isLoading} >
+
+                <!--div class="spinner-overlay" -->
+    
+                    <c-spinner gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+    
+                <!--/div-->
+    
+                </template>
+            <div class="">
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <!--Send Email code start-->
+                <div class="slds-modal__content" id="modal-content-id-1">
+                    <div if:true={editMode} class="slds-card">
+                        <!-- Alert To Email Empty-->
+                        <div class="custom-card-inner">
+                        <div if:true={noEmailError} class="slds-notify slds-notify_alert slds-alert_error email-error" role="alert">
+                            <span class="slds-assistive-text">error</span>
+                            <!-- <span
+                                class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                                title="Description of icon when needed"
+                            >
+                                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                                </svg>
+                            </span> -->
+                            <lightning-icon icon-name="utility:close" size="x-small" class="emailIcon"></lightning-icon>
+                            <h2>
+                                {errorMessage}
+                            </h2>
+                            <div class="slds-notify__close">
+                                <!-- <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+                                    title="Close"
+                                >
+                                    <svg class="slds-button__icon" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button> -->
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Alert -->
+                        <!-- Alert Subject Empty-->
+                        <div class="custom-card-inner">
+                        <div if:true={invalidSubject} class="slds-notify slds-notify_alert slds-alert_error email-error" role="alert">
+                            <span class="slds-assistive-text">error</span>
+                            <!-- <span
+                                class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                                title="Description of icon when needed"
+                            >
+                                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                                </svg>
+                            </span> -->
+                            <lightning-icon icon-name="utility:close" size="x-small" class="emailIcon"></lightning-icon>
+                            <h2>
+                                {errorMessage}
+                            </h2>
+                            <div class="slds-notify__close">
+                                <!-- <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+                                    title="Close"
+                                >
+                                    <svg class="slds-button__icon" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button> -->
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Alert -->
+                        <!-- Alert Invalid Email-->
+                        <div if:true={invalidEmails} class="slds-notify slds-notify_alert slds-alert_error email-error" role="alert">
+                            <span class="slds-assistive-text">error</span>
+                            <!-- <span
+                                class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                                title="Description of icon when needed"
+                            >
+                                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                                </svg>
+                            </span> -->
+                            <lightning-icon icon-name="utility:close" size="x-small" class="emailIcon"></lightning-icon>
+                            <h2>
+                                Some of the emails added are invalid
+                            </h2>
+                            <div class="slds-notify__close">
+                                <!-- <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+                                    title="Close"
+                                >
+                                    <svg class="slds-button__icon" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button> -->
+                            </div>
+                        </div>
+                        <!-- Alert -->
+
+                       <!-- Alert fileLinkAdded-->
+                       <template if:true={fileLinkAdded}>
+                        <div class="slds-notify slds-notify_alert slds-alert-success send-success" role="alert">
+                            <span class="slds-assistive-text">Success</span>               
+                            <lightning-icon icon-name="utility:success" size="x-small" class="successmessageIconAtt"></lightning-icon>              
+                            <h2>File Link Added Successfully.</h2>
+                            <div class="slds-notify__close">
+                                <button class="message-close-success" title="close" onclick={closeMessage}>x</button>
+                                <!-- <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close" onclick={closeMessage}>
+                                    <svg class="slds-button__icon" aria-hidden="true"></svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button> -->
+                            </div>
+                        </div>
+                    </template> 
+                    <!-- Alert -->
+
+                        <div class="slds-card__body slds-card__body_inner">
+                            <!-- Body -->
+                            <div class="slds-form">
+                                <!-- <div class ="inputClass" if:false={isSelectFilesClick}> -->
+                                <div class ="inputClass">
+                                    <div class="slds-grid ">
+                                        <div if:false={isExternalUser} class="slds-col slds-size_1-of-6 slds-email-dropdown">
+                                            
+                                            <c-send-email-component options={opt}
+                                                onvaluechange={handleToOptionChangeFilter}
+                                                label="Search By">
+                                            </c-send-email-component>
+                                        </div>
+                                        <div if:false={isExternalUser} class="slds-col slds-size_5-of-6">
+                                            <label class="slds-form-element__label slds-custom-label" for="to"><strong>To</strong><span class="helpSpan"><lightning-helptext icon-name="utility:info" content="Please enter To email address - Use semicolon(;) to separate manual email addresses"></lightning-helptext><abbr class="slds-required" title="Required">* </abbr></span></label>
+                                            <div class="slds-form-element__control">
+                                                <div class={boxClassTO}>
+                                                    <div class="slds-combobox__form-element slds-has-focus slds-m-left_xx-small">
+                                                        <template for:each={selectedToValues} for:item="selectedToValue" for:index="index">
+                                                            <lightning-pill
+                                                                key={selectedToValue}
+                                                                label={selectedToValue}
+                                                                onremove={handleToRemove}
+                                                                data-index={index}
+                                                            ></lightning-pill>
+                                                            <!-- {selectedToValue} -->
+                                                        </template>
+                                                        <!-- sldsValidatorIgnoreNextLine -->
+                                                        <input
+                                                            type="text"
+                                                            id="to"
+                                                            data-name="to"
+                                                            class="input"
+                                                            required
+                                                            onkeyup={handletoInputChange}
+                                                            onkeypress={handleToKeyPress}
+                                                            
+                                                        />
+                                                    </div>
+                                                    <!-- List Start -->
+                                                    <div
+                                                        id="listbox-id-3"
+                                                        class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid"
+                                                        role="listbox"
+                                                        if:true={hasToItems}
+                                                    >
+                                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation" tabindex="0">
+                                                            <template for:each={toItems} for:item="item" for:index="index">
+                                                                <li
+                                                                    key={item.Id}
+                                                                    data-id={item.Id}
+                                                                    onclick={onToSelect}
+                                                                    onkeyup={handleEmailList}
+                                                                    role="presentation"
+                                                                    class="slds-listbox__item"
+                                                                    tabindex="0"
+                                                                >
+                                                                    <div
+                                                                        aria-selected="true"
+                                                                        class="
+                                                                            slds-media
+                                                                            slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta
+                                                                        "
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                    >
+                                                                        <!-- <span class="slds-media__figure slds-listbox__option-icon">
+                                                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                                                    <use
+                                                                                        xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"
+                                                                                    ></use>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </span> -->
+                                                                        <span class="slds-media__body">
+                                                                            <span class="media-icon">
+                                                                                <lightning-icon
+                                                                                icon-name="utility:user"
+                                                                                alternative-text="User"
+                                                                                title="User"
+                                                                                class="user"
+                                                                                size="xx-small"
+                                                                            >
+                                                                            </lightning-icon>
+                                                                        </span>
+                                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity"
+                                                                                >{item.Name}</span
+                                                                            >
+                                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity"
+                                                                                >{item.Email}</span
+                                                                            >
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </template>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- List End -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--External User To Start-->
+                                        <div if:true={isExternalUser} class="slds-col slds-size_6-of-6">
+                                            <label class="slds-form-element__label slds-custom-label" for="to"><strong>To</strong><span class="helpSpan"><lightning-helptext icon-name="utility:info" content="Please enter To email address - Use semicolon(;) to separate manual email addresses"></lightning-helptext><abbr class="slds-required" title="Required">* </abbr></span></label>
+                                            <div class="slds-form-element__control">
+                                                <div class={boxClassTO}>
+                                                    <div class="slds-combobox__form-element slds-has-focus slds-m-left_xx-small">
+                                                        
+                                                        
+                                                        <input
+                                                            type="text"
+                                                            id="toExt"
+                                                            data-name="toExt"
+                                                            class="input"
+                                                            required
+                                                            onkeyup={handletoInputChange}
+                                                            onkeypress={handleToKeyPress}
+                                                            value={searchTerm}
+                                                            
+                                                        />
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        </div>
+                        
+                                        <div class="slds-grid slds-m-top_small">
+                                            <div if:false={isExternalUser} class="slds-col slds-size_1-of-6 slds-email-dropdown">
+                                                <c-send-email-component options={opt}
+                                                    onvaluechange={handleCcOptionChangeFilter}
+                                                    label="Search By">
+                                                </c-send-email-component>
+                                            </div>
+                                        <div if:false={isExternalUser} class="slds-col slds-size_5-of-6">
+                                            <label class="slds-form-element__label slds-custom-label" for="cc"><strong>Cc</strong><span class="helpSpan"><lightning-helptext icon-name="utility:info" content="Please enter Cc email address - Use semicolon(;) to separate manual email addresses"></lightning-helptext></span></label>
+                                            <div class="slds-form-element__control">
+                                                <div class={boxClassCC}>
+                                                    <div class="slds-combobox__form-element slds-has-focus slds-m-left_xx-small">
+                                                        <template for:each={selectedCcValues} for:item="selectedCcValue" for:index="index">
+                                                            <lightning-pill
+                                                                key={selectedCcValue}
+                                                                label={selectedCcValue}
+                                                                onremove={handleCcRemove}
+                                                                data-index={index}
+                                                            ></lightning-pill>
+                                                        </template>
+                                                        <!-- sldsValidatorIgnoreNextLine -->
+                                                        <input
+                                                            type="text"
+                                                            id="cc"
+                                                            data-name="cc"
+                                                            class="inputCC"
+                                                            required
+                                                            onkeyup={handleccInputChange}
+                                                            onkeypress={handleCcKeyPress}
+                                                            
+                                                        />
+                                                    </div>
+                                                    <!-- List Start -->
+                                                    <div
+                                                        id="listbox-id-33"
+                                                        class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid"
+                                                        role="listbox"
+                                                        if:true={hasCcItems}
+                                                    >
+                                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation" tabindex="0">
+                                                            <template for:each={ccItems} for:item="item" for:index="index">
+                                                                <li
+                                                                    key={item.Id}
+                                                                    data-id={item.Id}
+                                                                    onclick={onCcSelect}
+                                                                    onkeyup={handleEmailListCc}
+                                                                    role="presentation"
+                                                                    class="slds-listbox__item"
+                                                                    tabindex="0"
+                                                                >
+                                                                    <div
+                                                                        aria-selected="true"
+                                                                        class="
+                                                                            slds-media
+                                                                            slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta
+                                                                        "
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                    >
+                                                                        <!-- <span class="slds-media__figure slds-listbox__option-icon">
+                                                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                                                    <use
+                                                                                        xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"
+                                                                                    ></use>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </span> -->
+                                                                        <span class="slds-media__body">
+                                                                            <span class="media-icon">
+                                                                                <lightning-icon
+                                                                                icon-name="utility:user"
+                                                                                alternative-text="User"
+                                                                                title="User"
+                                                                                class="user"
+                                                                                size="xx-small"
+                                                                            >
+                                                                            </lightning-icon>
+                                                                        </span>
+                                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{item.Name}</span>
+                                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">{item.Email}</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </template>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- List End -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Ext block cc-->
+                                        <div if:true={isExternalUser} class="slds-col slds-size_6-of-6">
+                                            <label class="slds-form-element__label slds-custom-label" for="cc"><strong>Cc</strong><span class="helpSpan"><lightning-helptext icon-name="utility:info" content="Please enter Cc email address - Use semicolon(;) to separate manual email addresses"></lightning-helptext></span></label>
+                                            <div class="slds-form-element__control">
+                                                <div class={boxClassCC}>
+                                                    <div class="slds-combobox__form-element slds-has-focus slds-m-left_xx-small">
+                                                       
+                                                        <input
+                                                            type="text"
+                                                            id="ccExt"
+                                                            data-name="ccExt"
+                                                            class="inputCC"
+                                                            required
+                                                            onkeyup={handleccInputChange}
+                                                            onkeypress={handleCcKeyPress}
+                                                            value={searchCCTerm}
+                                                            
+                                                        />
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        </div>
+                                        <!--send copy cc-->
+                                        <div class="slds-form-element slds-m-top_small">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-size_2-of-6">
+                                            <label class="slds-form-element__label" for="cc"><strong tabindex="0">Send Copy (Cc) to Me</strong><span class="helpSpan" tabindex="0"><lightning-helptext icon-name="utility:info" content="Enable this checkbox to include yourself in Cc"></lightning-helptext></span></label>
+                                            <div class="slds-form-element__control check-box">
+                                                <lightning-input type="checkbox" checked={sendACopyToMe} onchange={handleSendCopyChange} data-name="active" value={sendACopyToMe} name="sendCopy" ></lightning-input>
+                                            </div>
+                                           </div>
+                                           <div class="slds-col slds-size_4-of-6 slds-m-top_xx-small">
+                                           </div></div>
+                                        </div>
+                        
+                                        <div class="slds-form-element slds-m-top_small">
+                                            <label class="slds-form-element__label slds-text-align_left" for="subject"> <strong tabindex="0">Subject</strong><span class="helpSpan" tabindex="0"> <lightning-helptext icon-name="utility:info" content="Please enter subject"></lightning-helptext><abbr class="slds-required" title="Required">* </abbr></span></label>
+                                            
+                                            <div class="slds-form-element__control">
+                                                <input 
+                                                    type="text"
+                                                    name="subject"
+                                                    id="subject"
+                                                    required
+                                                    value={subject}
+                                                    
+                                                    class="slds-input slds-required"
+                                                    onchange={handleSubjectChange}
+                                                    onblur={handleSubjectValidations}
+                                                />
+                                            </div>
+                                        </div>
+                        
+                                        <div class="slds-form-element slds-m-top_small">
+                                            <label class="slds-form-element__label" for="cc" tabindex="0"><strong>Body Content</strong><span class="helpSpan"><lightning-helptext icon-name="utility:info" content="Enter email content here"></lightning-helptext></span></label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-input-rich-text value={body} class="resizeTextArea" onchange={handleBodyChange}></lightning-input-rich-text>
+                                            </div>
+                                        </div>
+                                </div>
+
+                               
+                                <!-- Custom Files Attachment block started -->
+                                <div if:false={isSelectFilesClick}>
+                                <div if:true={attachBlock} class="slds-col slds-size_12-of-12 slds-float_left slds-var-p-right_x-small slds-var-p-bottom_x-small bold-text slds-m-top_x-small slds-m-bottom_x-small">
+                                   
+                                    <div>
+                                        
+                                        
+                                        <div class="slds-form-element">
+                                            <span class="slds-form-element__label  slds-fnt-13 slds-pd-rt" tabindex="0" id="file-selector-primary-label-105"><strong>Attachments</strong></span> <span class="helpSpan" tabindex="0"><lightning-helptext icon-name="utility:info" content="File Attachment"></lightning-helptext></span>
+                                            <div class="custom-upload">
+                                                <lightning-input type="file" 
+                                                        label="" onchange={openfileUpload}>
+                                                    </lightning-input>
+                                              </div>
+                                          </div>
+                                          <div class="slds-text-color_error" tabindex="0">
+                                          *Collective max size of attached files should be 25MB. Single file size attachment limit is upto 1.5MB. Do not attach more than 10 Files. 
+                                          <!--For Table-->
+                                        </div>
+                                          <div if:true={attachBlock}>
+                                            <div class="slds-grid slds-grid_align-center ">
+                                                <div class="slds-col slds-size_8-of-12" tabindex="0">
+                                                    <b>0MB</b>
+                                                    <b class="pull-right">25MB</b>
+                                                    <div class="slds-progress-bar slds-progress-bar_large" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow={percentile} aria-label="Label of progress bar" role="progressbar">
+                                                        <span class="slds-progress-bar__value">
+                                                            <span class="slds-assistive-text" tabindex="0">Progress: {percentile}%</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-text-align_center" tabindex="0"><b >{filembSize} MB of 25MB</b></div>
+
+                                            <!-- Alert related to Files sizes-->
+                        <div if:true={attachmentSizeError} class="slds-notify slds-notify_alert slds-alert_error email-error" role="alert">
+                            <span class="slds-assistive-text">error</span>
+                            <!-- <span
+                                class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                                title="Description of icon when needed"
+                            >
+                                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                                </svg>
+                            </span> -->
+                            <lightning-icon icon-name="utility:close" size="x-small" class="emailIcon"></lightning-icon>
+                            <h2  class="slds-m-left_xxx-small">
+                                {errorMessage}
+                            </h2>
+                            <div class="slds-notify__close">
+                                <button class="message-close" title="close" onclick={closeMessage}>x</button>
+                                <!-- <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+                                    title="Close"
+                                >
+                                    <svg class="slds-button__icon" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button> -->
+                            </div>
+                        </div>
+                        <!-- Alert -->
+
+                                            <table if:true={fileData.length} class="slds-table slds-table_cell-buffer tableClass slds-border_left slds-border_right slds-m-top_x-small">
+                                                <thead>
+                                                <tr class="slds-line-height_reset">
+                                                    <th class="" scope="col">
+                                                        <span tabindex="0">Name</span>
+                                                    </th>
+                                                    <th class="" scope="col">
+                                                        <span tabindex="0">Action</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template for:each={fileData} for:item="itemName" >
+                                                    <tr class="slds-hint-parent" key = {itemName.filename}>
+                                                        <td data-label="Name">
+                                                            <div class="slds-cell-wrap" tabindex="0">{itemName.filename}</div>
+                                                        </td>
+                                                        <td data-label="Action" class="slds-td">
+                                                            <!-- <lightning-button variant="brand" data-id={itemName.filename}  class="slds-button" label='Remove' onclick={handleRemoveAttachmentFiles} >
+
+                                                            </lightning-button> -->
+                                                            <lightning-button   data-id={itemName.filename}  variant=""  onclick={handleRemoveAttachmentFiles} class="slds-button slds-button_icon slds-close"  title="Remove" label="×"></lightning-button>
+                                                            <!-- <lightning-icon icon-name="utility:offline_cached"  data-id={itemName.filename}  variant="bare"  class="slds-download" ></lightning-icon> -->
+
+                                                        </td>
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>   
+                                        </div>
+                                          <!--end of table-->
+                                        
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <!-- Files Attachment  block end -->
+                                
+
+                                <!-- Files link block started -->
+                                <div if:true={fileBlock} class="slds-col slds-size_12-of-12 slds-float_left slds-var-p-right_x-small slds-var-p-bottom_x-small bold-text slds-m-top_x-small slds-m-bottom_x-small">
+                                    <div if:false={isSelectFilesClick} tabindex="0">
+                                        Insert links to file(s) from the record <span class="helpSpan helpSpanInsrt"><lightning-helptext icon-name="utility:info" content="Select files to be attach as a link"></lightning-helptext></span><br/>
+                                        <lightning-button label="Select Files" variant="brand" title="Select Files" onclick={handleSelectFiles}></lightning-button>
+                                        
+                                    </div>
+                                    <div  if:true={isSelectFilesClick}>
+                                        <div if:true={returnSelectedFiles.length} tabindex="0">
+                                            Attached links will be removed if you add new links. Are you sure to continue?
+                                            <lightning-button label="OK"  variant="brand" title="OK" onclick={clearAddedLinks} class="slds-m-left_x-small"></lightning-button>
+                                            <lightning-button label="Cancel"  variant="brand" title="Cancel" onclick={cancelFilePopup} class="slds-m-left_xx-small"></lightning-button>
+                                        </div>
+                                        
+                                        <div if:false={returnSelectedFiles.length}>
+                                            <lightning-button label="Back To Email"  variant="brand" title="Back To Email" onclick={backToEmailFromFiles}></lightning-button>
+                                            <lightning-button label="Add To Email"  variant="brand" title="Add To Email" onclick={handleAddedFiles} class="slds-m-left_x-small"></lightning-button>
+                                            
+	                                        <div class="slds-m-top_x-small">
+                                                <slot name="task1">
+                                                    <c-flex-table-l-w-c record-id ={parentId} flex-grid-type="FlexTable" name={tableName}></c-flex-table-l-w-c>
+                                                </slot>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div if:false={isSelectFilesClick}>
+                                        
+                                        <table if:true={returnSelectedFiles.length} class="slds-table slds-table_cell-buffer tableClass slds-border_left slds-border_right slds-m-top_x-small">
+                                            <thead>
+                                            <tr class="slds-line-height_reset" >
+                                                <th class="" scope="col">
+                                                    <span tabindex="0">Name</span>
+                                                </th>
+                                                <th class="" scope="col">
+                                                    <span tabindex="0">Action</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+
+                                            <template for:each={returnSelectedFiles} for:item="itemName" >
+
+                                                
+                                                <tr class="slds-hint-parent" key = {itemName.id}>
+                                                    <td data-label="Name">
+                                                        <div class="slds-cell-wrap" tabindex="0">{itemName.title}</div>
+                                                    </td>
+                                                    <td data-label="Action" class="slds-td">
+                                                        <!-- <lightning-button variant="brand" data-id={itemName.id}  class="slds-button" label='Remove' onclick={handleRemoveFiles} >
+
+                                                        </lightning-button> -->
+
+                                                        <lightning-button   data-id={itemName.id}  variant=""  onclick={handleRemoveFiles}  class="slds-button slds-button_icon slds-close"  title="" label="×"></lightning-button>
+                                                            
+
+                                                        <!-- <input type="button" value="Remove" data-id={itemName.id} onclick={handleRemoveFiles} /> -->
+                                                    </td>
+                                                                    
+                                                </tr>
+                                                
+                   
+                                            </template>
+                                        </tbody>
+                                    </table>   
+                                    </div>
+                                </div>
+                                <!-- Files link block end -->
+                            </div><div if:false={isSelectFilesClick} class="slds-grid  slds-var-p-around_x-small slds-grid_align-end slds-float_right">
+                                <div class="slds-col slds-size_12-of-12">
+                                    <lightning-button label="Reset" variant="brand" title="Reset" onclick={handleReset} class=""></lightning-button>
+                                    <span class="">
+                                        <lightning-button
+                                            variant="brand"
+                                            label="Send"
+                                            title="Send"
+                                                onclick={handleSendEmail} class="slds-m-left_x-small"
+                                        ></lightning-button></span>
+                        
+                                </div>
+
+                                                    </div>
+
+                        </div><!-- end of slds-card__body-->
+
+                        
+                    </div>
+                    <div if:false={editMode} class="slds-card"> 
+                
+                        <!-- Alert -->
+                        <template if:true={emailSent}>
+                            <div class="slds-notify slds-notify_alert slds-alert-success send-success" role="alert">
+                                <span class="slds-assistive-text">Success</span>               
+                                <lightning-icon icon-name="utility:success" size="x-small" class="successmessageIconAtt"></lightning-icon>              
+                                <h2 tabindex="0">Email Sent Successfully.</h2>
+                                <div class="slds-notify__close">
+
+                                    <button class="message-close-success" title="close" onclick={closeMessage}>x</button>
+                                    <!-- <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close" onclick={closeMessage}>
+                                        <svg class="slds-button__icon" aria-hidden="true"></svg>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button> -->
+                                </div>
+                            </div>
+                        </template> 
+                        <!-- Alert -->
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div class="slds-form email-view">
+                        <div class="slds-float_right">
+                            <p if:true={returnMap.SentDate} class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Sent Date"></lightning-formatted-text></p>
+                            <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="" value={returnMap.SentDate}></lightning-formatted-text></p>
+                        </div>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="From"></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-text class="" value={returnMap.fromAddress}></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="To"></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_small slds-break-word" tabindex="0"><lightning-formatted-text class="" value={returnMap.formattedToAddress} ></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Cc"></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_small slds-break-word" tabindex="0"><lightning-formatted-text class="" value={returnMap.formattedCCAddress}></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Send Copy (Cc) To Me"></lightning-formatted-text></p>
+                       <lightning-input type="checkbox" tabindex="0" checked={checkboxVal} name="SendCopyToMeCC" id="checkbox-unique-id-81" disabled=""></lightning-input>
+                       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-text class="" value={returnMap.sendCopyToMe}></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold " value="Subject"></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-text class="" value={returnMap.subject}></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Body Content"></lightning-formatted-text></p>
+                       <p class="slds-m-bottom_small" tabindex="0"><lightning-formatted-rich-text class="" value={returnMap.body}></lightning-formatted-rich-text></p>
+                       <p if:true={contentData.length} class="slds-m-bottom_xx-small" tabindex="0"><lightning-formatted-text class="slds-titlebold" value="Attachment"></lightning-formatted-text></p>
+                       
+                       <table if:true={contentData.length} class="slds-table slds-table_cell-buffer tableClass slds-border_left slds-border_right slds-m-top_x-small">
+                        <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <span tabindex="0">Name</span>
+                            </th>
+                            <th class="" scope="col">
+                                <span tabindex="0">Action</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={contentData} for:item="itemName" >
+                            <tr class="slds-hint-parent" key = {itemName.Id}>
+                                <td data-label="Name">
+                                    <div tabindex="0" class="slds-cell-wrap">{itemName.Title}</div>
+                                </td>
+                                <td data-label="Action" class="slds-td">
+                                    <a tabindex="0" href={itemName.URL} download><lightning-icon icon-name="utility:offline_cached"  data-id={itemName.filename}  variant="bare"  class="slds-download" ></lightning-icon></a>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table> 
+                    </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- <div class="slds-backdrop slds-backdrop_open"></div> -->
+    </template>
+    
+</template>

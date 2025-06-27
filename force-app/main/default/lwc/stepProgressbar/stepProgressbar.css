@@ -1,0 +1,148 @@
+.tooltipcls {
+    display: inline-block;
+
+    bottom: 60px;
+    padding: 5px;
+
+    box-shadow: 0.25px 0.5px #888888;
+    color: #000;
+    font-family: FontAwesome;
+    font-size: 14px;
+    line-height: 1.5em;
+    position: relative;
+    background-color: #f3f2f2;
+    border: 0.1px solid #b0b0b0;
+    display: inline-block;
+    border-radius: 5px;
+
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+.tooltipcls::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #989898 transparent transparent transparent;
+}
+/* .slds-path__nav .slds-is-current:after,
+.slds-path__nav .slds-is-current:before {
+    background: #ff0000 !important;
+} */
+.progressBarWrap {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.progressIndicator {
+    margin-top: 200px;
+}
+.lgc-bg {
+    background-color: rgb(242, 242, 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22, 50, 92);
+}
+
+.errorStep .slds-path__link {
+    background-color: #E60000 !important;
+}
+
+.slds-path__nav .errorStep:before,
+.slds-path__nav .errorStep:after {
+    background-color: #E60000 !important;
+
+    background-image: none;
+}
+
+/*
+.test .slds-path__item :nth-of-type(2) .tooltipcls {
+left:0%;
+}
+*/
+
+.progressIndicator .slds-path__item:nth-last-of-type(1) {
+    margin-right: 0;
+    border-bottom-right-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+.progressIndicator .slds-path__item:nth-last-of-type(1):after,
+.progressIndicator .slds-path__item:nth-last-of-type(1):before {
+    right: 0.625rem;
+}
+
+.progressBarWrap .slds-popover {
+    color: #000;
+    font-family: FontAwesome;
+    font-size: 14px;
+    background-color: #f3f2f2;
+    position: absolute;
+    transform: translateX(-50%);
+    border: 1px solid #919191 !important;
+}
+.progressBarWrap .slds-nubbin_bottom:before,
+.progressBarWrap .slds-nubbin--bottom:before {
+    border-bottom: 1px solid #919191 !important;
+    border-right: 1px solid #919191 !important;
+}
+
+/* below CSS added by Mayur*/
+ 
+.container {
+    position: relative;
+  }
+
+  .buttonDiv{
+    top: 15px;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    /* background: rgba(0,0,0,0); */
+    z-index: 2;
+  }
+  
+  .progressBarWrap:hover .buttonDiv {
+    opacity: 1;
+    /* background: rgba(0,0,0)!important; */
+  }
+  
+  .previousButton {
+    right: 48px;
+    /* background-color: #000; */
+  }
+  
+  .nextButton {
+    right: 12px;
+    
+  }
+
+  .errorStepBackgrundColor{
+    background: #E60000 !important;
+  }
+  
+  .progressBarDiv {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+  }
+  .progressBarWrap{
+    margin-top: 15px;
+  }
+  /* .buttonDiv .blue-icon {
+    background-color: #fff!important;
+}
+.buttonDiv .blue-icon .slds-button_icon-brand  .slds-button_icon{
+   color: var(--slds-g-color-neutral-base-80, var(--lwc-brandDisabled,rgb(201, 199, 197)))!important;
+} */
+.prevbtn{
+  width:15px !important;
+}

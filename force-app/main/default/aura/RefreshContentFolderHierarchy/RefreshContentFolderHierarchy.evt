@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Application event to refresh the Content Folder Hierarchy">
+    
+</aura:event>

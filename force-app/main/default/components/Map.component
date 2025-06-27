@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="MapCtrl"  access="global">
+<apex:attribute name="chartName"  description="Pie chart Name" type="String" access="global" assignTo="{!chartUniqueName}"/>
+    <apex:attribute name="chartHTMLId"  description="Pie chart html Id" type="String" required="true" access="global"/>
+    <apex:attribute name="chartParameters"  description="chart parameters for Filter" assignTo="{!chartFilterParameters}"  type="String" required="false" access="global"/>
+    <apex:attribute name="contextRecordId" assignTo="{!recordId}" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+    
+       
+</apex:component>

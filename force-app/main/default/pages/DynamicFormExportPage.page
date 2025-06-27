@@ -1,0 +1,7 @@
+<!--
+ - Created by Atul on 10-02-2020.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page id="DynamicFormExportPage" applyBodyTag="false" controller="DynamicFormExportPageCtrl" readOnly="true" renderAs="pdf"  sidebar="false" showHeader="false"   standardStylesheets="false">
+   
+</apex:page>

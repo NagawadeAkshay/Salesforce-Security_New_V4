@@ -1,0 +1,544 @@
+<template>
+    <template lwc:if={showSpinner}>
+        <div class="slds-is-relative">
+            <c-spinner gov-grant-please-wait-icon={govGrantPleaseWaitIcon}></c-spinner>
+        </div>
+    </template>
+    <template lwc:else>
+        <template if:true={isView}> 
+            <lightning-record-view-form object-api-name={pageLayoutWrapper.objectName} record-id={pageLayoutWrapper.recordId} 
+            record-type-id={recordTypeId}>
+                <template lwc:if={pageBlocks} iterator:it={pageBlocks}>
+                    <div key={it.value.Id}>
+                        <template if:true={it.value.isFields}>
+                            <div class="slds-box slds-theme_default">
+                                <template if:true={showPageBlockTitle}>
+                                    <div class="slds-p-around_xx-small pageSectionTitle">
+                                        <lightning-icon
+                                            class="utility-icon toggleIcon pointer slds-p-left_x-small"
+                                            data-id={it.value.Id}
+                                            icon-name="utility:up"
+                                            alternative-text="Expanded"
+                                            tabindex="0"
+                                            onclick={handleCollapsed}
+                                        ></lightning-icon>
+                                        <lightning-icon
+                                            class="utility-icon hide toggleIcon pointer slds-p-left_x-small"
+                                            data-id={it.value.Id}
+                                            icon-name="utility:down"
+                                            alternative-text="Collapse"
+                                            tabindex="0"
+                                            onclick={handleCollapsed}
+                                        ></lightning-icon>
+                                        <span class="slds-text-heading_small slds-text-title_bold slds-m-right_xx-small pointer" tabindex="0" title={it.value.label}> {it.value.label}</span>
+                                        <lightning-helptext lwc:if={it.value.pageBlockHelpText} content={it.value.pageBlockHelpText} alternative-text="Pageblock Help Text Icon"></lightning-helptext>
+                                    </div>
+                                </template>
+                                <div class="page-block slds-p-top_x-small slds-p-bottom_x-small" data-id={it.value.Id}>
+                                    <template if:false={isCollapsed}>
+                                        <template if:true={it.value.pageBlockHeaderInstruction}>
+                                            <div class="slds-p-left_small">
+                                                <lightning-formatted-rich-text value={it.value.pageBlockHeaderInstruction} tabindex="0"></lightning-formatted-rich-text>
+                                            </div>
+                                        </template>
+                                        <!-- <template if:true={it.value.bannerMessages}>
+                                            <template for:each={it.value.bannerMessages} for:item="message">
+                                                <c-flex-layout-page-messages
+                                                    key={message}
+                                                    message-time-out={message.messageTimeOut}
+                                                    message-time-out-enabled={message.messageTimeOutEnabled}
+                                                    page-message-list={message.messageList}
+                                                tabindex="0"></c-flex-layout-page-messages>
+                                            </template>
+                                        </template> -->
+                                        <div class="slds-grid slds-wrap">
+                                            <template iterator:field={it.value.fieldConfigs}>
+                                                <div key={field.value.pageBlockDetailId} class={it.value.columns}>
+                                                    <template if:true={field.value.isBlankSpace}>
+                                                        <div></div>
+                                                    </template>
+                                                    <template if:true={field.value.isStaticText}>
+                                                        <lightning-formatted-rich-text value={field.value.staticText} tabindex="0"></lightning-formatted-rich-text>
+                                                    </template>
+                                                    <template if:false={field.value.isStaticText}>
+                                                        <template lwc:if={field.value.isRelationalField}>
+                                                            <template if:false={field.value.isMultiSelect}>
+                                                                <c-reference-field
+                                                                    field-details={field.value}
+                                                                    mode="view"
+                                                                    field-in-header={pageBlockInHeader}
+                                                                tabindex="0"></c-reference-field>
+                                                            </template>
+                                                            <template if:true={field.value.isMultiSelect}> 
+                                                                <template if:false={field.value.hideLabel}>
+                                                                    <template if:false={field.value.isLabelRichText}>
+                                                                        <label class="slds-text-title header-field-label" tabindex="0"> {field.value.label} </label>
+                                                                    </template>
+                                                                    <template if:true={field.value.isLabelRichText}>
+                                                                            <lightning-formatted-rich-text
+                                                                                value={field.value.label}
+                                                                            tabindex="0"></lightning-formatted-rich-text>
+                                                                    </template>
+                                                                </template>
+                                                                <template if:true={field.value.helpText}>
+                                                                    <lightning-helptext content={field.value.helpText} alternative-text="Field Help Text Icon"></lightning-helptext>
+                                                                </template>                                                           
+                                                                <ul class="slds-list_dotted">
+                                                                    <template for:each={field.value.multiselectValueList} for:item="values">
+                                                                        <li key={values.Id}>{values}</li>
+                                                                    </template>
+                                                                </ul>
+                                                        </template>    
+                                                        </template>
+                                                        <template lwc:else>
+                                                            <div data-field_api_name={field.value.fieldAPIName}>
+															<span if:true={field.value.requiredToSave} class="required-for-save slds-required">*</span>
+                                                            <span if:true={field.value.requiredToSubmit}>
+                                                                <lightning-icon
+                                                                    class="required-for-submit"
+                                                                    icon-name="utility:warning"
+                                                                    alternative-text="Warning!"
+                                                                    title="Warning"
+                                                                ></lightning-icon>
+                                                            </span>
+                                                            <template if:false={field.value.hideLabel}>
+                                                                <template if:false={field.value.isLabelRichText}>
+                                                                    <label class="slds-text-title header-field-label" tabindex="0"> {field.value.label} </label>
+                                                                </template>
+                                                                <template if:true={field.value.isLabelRichText}>
+                                                                        <lightning-formatted-rich-text
+                                                                            value={field.value.label}
+                                                                        tabindex="0"></lightning-formatted-rich-text>
+                                                                </template>
+                                                            </template>
+                                                            <template if:true={field.value.helpText}>
+                                                                <lightning-helptext content={field.value.helpText} alternative-text="Field Help Text Icon"></lightning-helptext>
+                                                            </template>
+                                                            <template if:true={field.value.isAltRendering}>
+                                                                        <c-alternate-rendering
+                                                                                        field-api-name={field.value.fieldAPIName}
+                                                                                        field-details={field.value}
+                                                                                        type={field.value.altRenderFieldType}
+                                                                                        options={field.value.altRenderDisplayValue}
+                                                                                        value={it.value.AltRenderFieldvalueMapStr}
+                                                                                        mode ={isView}
+                                                                                        onselectvalue={handleAlternateSelectValue}>
+                                                                        </c-alternate-rendering>
+                                                            </template>
+                                                            <template if:false={field.value.isAltRendering}>                                                            
+                                                                <template lwc:if={field.value.showAsRichText}>
+                                                                    <lightning-formatted-rich-text
+                                                                        value={field.value.fieldValue}
+                                                                        tabindex="0"
+                                                                    ></lightning-formatted-rich-text>
+                                                                </template>
+                                                                <template lwc:else>
+                                                                    <template if:false={field.value.isMultiSelect}>
+                                                                        <lightning-output-field
+                                                                            variant="label-hidden"
+                                                                            id={field.value.fieldAPIName}
+                                                                            field-name={field.value.fieldAPIName}
+                                                                            tabindex="0"
+                                                                        ></lightning-output-field>
+                                                                    </template>
+                                                                    <template if:true={field.value.isMultiSelect}>                                                            
+                                                                        <ul class="slds-list_dotted">
+                                                                            <template for:each={field.value.multiselectValueList} for:item="values">
+                                                                                <li key={values.Id}>{values}</li>
+                                                                            </template>
+                                                                        </ul>
+                                                                    </template>    
+                                                                </template>
+                                                                <template if:true={field.value.helpTextPost}>
+                                                                    <label class="slds-text-title helpTextPost" tabindex="0"> {field.value.helpTextPost} </label>
+																</template>
+                                                            </template>
+                                                            </div>
+                                                        </template>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:true={it.value.flexTableName}>
+                            <c-flex-gridlwc
+                                parent-record-id={pageLayoutWrapper.recordId}
+                                flex-grid-type="FlexTable"
+                                name={it.value.flexTableName}
+                                string-parameters={pageLayoutWrapper.keyValueMap}
+                                list-parameters={pageLayoutWrapper.listValueMap}
+                                page-block-id={it.value.Id}
+                                data-blockid={it.value.Id}
+                                mode ={mode}
+                            ></c-flex-gridlwc>
+                        </template>
+                        <template if:true={it.value.flexGridName}>
+                            <c-flex-gridlwc
+                                parent-record-id={pageLayoutWrapper.recordId}
+                                flex-grid-type="FlexGrid"
+                                name={it.value.flexGridName}
+                                string-parameters={pageLayoutWrapper.keyValueMap}
+                                list-parameters={pageLayoutWrapper.listValueMap}
+                                page-block-id={it.value.Id}
+                                data-blockid={it.value.Id}
+                                mode ={mode}
+                            ></c-flex-gridlwc>
+                        </template>
+                        <template if:true={it.value.isSnapshot}>
+                            <c-snapshot-history pb-title={it.value.label} parent-id={pageLayoutWrapper.recordId}></c-snapshot-history>
+                        </template>
+                        <template if:true={it.value.isApprovalHistory}>
+                            <c-approval-history record-id={pageLayoutWrapper.recordId}></c-approval-history>
+                        </template>
+                        <template if:true={it.value.isAttachment}>
+                            <c-attachment pb-title="Attachments" parent-id={pageLayoutWrapper.recordId} pblock-id={it.value.Id}></c-attachment>
+                        </template>
+                        <template if:true={it.value.isNotes}>
+                            <c-notes record-id={pageLayoutWrapper.recordId} pblock-id={it.value.Id}></c-notes>
+                        </template>
+                        <template if:true={showPendingTask}>
+                            <p>Component not available</p>
+                        </template>
+                    </div>
+                </template>
+            </lightning-record-view-form>
+        </template>
+        <template if:false={isView}>
+            <lightning-record-edit-form
+                            object-api-name={pageLayoutWrapper.objectName}
+                            record-id={recordEditFormId}
+                            onsuccess={handleSuccess}
+                            onerror={handleError}
+                            onload={handleOnLoad}
+                            record-type-id={recordTypeId}
+                        >
+                <template lwc:if={pageBlocks} iterator:it={pageBlocks}>
+                        <div key={it.value.Id}>
+                            <template if:true={it.value.isFields}>
+                                
+                                <div class="slds-box slds-theme_default pageSection pageSectionEdit">
+                                    <div class="slds-p-around_xx-small pageSectionTitle">
+                                        <lightning-icon
+                                            class="utility-icon toggleIcon pointer slds-p-left_x-small"
+                                            data-id={it.value.Id}
+                                            icon-name="utility:up"
+                                            alternative-text="Expanded"
+                                            tabindex="0"
+                                            onclick={handleCollapsed}
+                                        ></lightning-icon>
+                                        <lightning-icon
+                                            class="utility-icon hide toggleIcon pointer slds-p-left_x-small"
+                                            data-id={it.value.Id}
+                                            icon-name="utility:down"
+                                            alternative-text="Collapse"
+                                            tabindex="0"
+                                            onclick={handleCollapsed}
+                                        ></lightning-icon>
+                                        <span class="slds-text-heading_small slds-text-title_bold slds-m-right_xx-small pointer" title={it.value.label}> {it.value.label}</span>
+                                        <lightning-helptext lwc:if={it.value.pageBlockHelpText} content={it.value.pageBlockHelpText} alternative-text="Pageblock Help Text Icon"></lightning-helptext>
+                                    </div>
+                                    <div class="page-block" data-id={it.value.Id}>
+                                        <template if:false={isCollapsed}>
+                                            <template if:true={it.value.pageBlockHeaderInstruction}>
+                                                <div class="slds-p-left_small slds-p-top_small">
+                                                    <lightning-formatted-rich-text value={it.value.pageBlockHeaderInstruction} tabindex="0"></lightning-formatted-rich-text>
+                                                </div>
+                                            </template>
+                                        <!-- <template if:true={it.value.bannerMessages}>
+                                                <template for:each={it.value.bannerMessages} for:item="message">
+                                                    <c-flex-layout-page-messages
+                                                        key={message}
+                                                        message-time-out={message.messageTimeOut}
+                                                        message-time-out-enabled={message.messageTimeOutEnabled}
+                                                        page-message-list={message.messageList}
+                                                    tabindex="0"></c-flex-layout-page-messages>
+                                                </template>
+                                            </template> -->
+                                            <div class="slds-grid slds-wrap">
+                                                <template iterator:field={it.value.fieldConfigs}>
+                                                    <div key={field.value.pageBlockDetailId} class={it.value.columns}>
+                                                    <template if:true={field.value.isBlankSpace}>
+                                                        <div></div>
+                                                    </template>
+                                                        <template if:true={field.value.isStaticText}>
+                                                            <lightning-formatted-rich-text value={field.value.staticText} tabindex="0"></lightning-formatted-rich-text>
+                                                        </template>
+                                                        <template if:false={field.value.isStaticText}>
+                                                            <template lwc:if={field.value.isRelationalField}>
+                                                                <c-reference-field
+                                                                    field-details={field.value}
+                                                                    mode="view"
+                                                                    field-in-header={pageBlockInHeader}
+                                                                tabindex="0"></c-reference-field>
+                                                            </template>
+                                                            <template lwc:else>
+                                                            <div data-field_api_name={field.value.fieldAPIName}>
+															<span if:true={field.value.requiredToSave} class="required-for-save slds-required">*</span>
+                                                            <span if:true={field.value.requiredToSubmit}>
+                                                                <lightning-icon
+                                                                    class="required-for-submit"
+                                                                    icon-name="utility:warning"
+                                                                    alternative-text="Warning!"
+                                                                    title="Warning"
+                                                                ></lightning-icon>
+                                                            </span>
+                                                            <template if:false={field.value.hideLabel}>
+                                                                <template if:false={field.value.isLabelRichText}>
+                                                                    <label class="slds-text-title header-field-label" tabindex="0"> {field.value.label} </label>
+                                                                </template>
+                                                                <template if:true={field.value.isLabelRichText}>
+                                                                            <lightning-formatted-rich-text
+                                                                                value={field.value.label}
+                                                                           tabindex="0" ></lightning-formatted-rich-text>
+                                                                </template>
+                                                            </template>
+                                                            <template if:true={field.value.helpText}>
+                                                                <lightning-helptext content={field.value.helpText} alternative-text="Field Help Text Icon"></lightning-helptext>
+                                                            </template>
+                                                            <template lwc:if={field.value.readOnly}>
+                                                                <template lwc:if={field.value.isAltRendering}>
+                                                                    <c-alternate-rendering
+                                                                                    field-api-name={field.value.fieldAPIName}
+                                                                                    field-details={field.value}
+                                                                                    type={field.value.altRenderFieldType}
+                                                                                    options={field.value.altRenderDisplayValue}
+                                                                                    value={it.value.AltRenderFieldvalueMapStr}
+                                                                                    mode ="true"
+                                                                                    onselectvalue={handleAlternateSelectValue}>
+                                                                    </c-alternate-rendering>
+                                                                </template>
+                                                                <template lwc:else>
+                                                                    <template lwc:if={isGuest}>
+                                                                        <lightning-input-field
+                                                                            variant="label-hidden"
+                                                                            id={field.value.fieldAPIName}
+                                                                            data-field_api_name={field.value.fieldAPIName}
+                                                                            field-name={field.value.fieldAPIName}
+                                                                            value={field.value.fieldValue}
+                                                                            disabled={field.value.readOnly}
+                                                                            tabindex="0" >
+                                                                        </lightning-input-field>
+                                                                    </template>
+                                                                    <template lwc:else>
+                                                                        <lightning-output-field
+                                                                            variant="label-hidden"
+                                                                            id={field.value.fieldAPIName}
+                                                                            data-field_api_name={field.value.fieldAPIName}
+                                                                            field-name={field.value.fieldAPIName}
+                                                                            tabindex="0" >
+                                                                        </lightning-output-field>
+                                                                    </template>
+																</template>
+                                                            </template>
+                                                            <template lwc:else>
+                                                             <template if:true={field.value.isAltRendering}> <!-- field Name Change-->
+                                                                     <c-alternate-rendering
+                                                                                    field-api-name={field.value.fieldAPIName}
+                                                                                    field-details={field.value} 
+                                                                                    type={field.value.altRenderFieldType}
+                                                                                    options={field.value.altRenderDisplayValue}
+                                                                                    hide-select-all ={field.value.hideSelectAll}
+                                                                                    value={it.value.AltRenderFieldvalueMapStr}
+                                                                                    mode ={isView}
+                                                                                    onselectvalue={handleAlternateSelectValue}>
+                                                                    </c-alternate-rendering> 
+                                                                    <lightning-input-field data-field_api_name={field.value.fieldAPIName} field-name={field.value.fieldAPIName} type="Text"  data-hide_fields_json={field.value.hideFieldsJSON} onchange={handleFieldValueChange}  data-id={field.value.pageBlockDetailId} data-recid={field.value.fieldAPIName} class="slds-hide" ></lightning-input-field>
+                                                                </template>
+                                                                <template if:false={field.value.isAltRendering}> 
+                                                                <template lwc:if={field.value.isLookUpField}>
+                                                                    <c-custom-lookup-lwc
+                                                                        fields-name={field.value.lookupDisplayFields}
+                                                                        s-object-api-name={pageLayoutWrapper.objectName}
+                                                                        lookupfield-name={field.value.fieldAPIName}
+                                                                        placeholder="Search..."
+                                                                        filter-clause={field.value.filterCriteria}
+                                                                        available-record-id={field.value.fieldValue}
+                                                                        page-block-detail-id={field.value.pageBlockDetailId}
+                                                                        string-parameters={pageLayoutWrapper.keyValueMap}
+                                                                        list-parameters={pageLayoutWrapper.listValueMap}
+                                                                        onselectedrecord={handlelookupvalue}
+                                                                    tabindex="0"></c-custom-lookup-lwc>
+                                                                    <div class="custom-lookup-lwc slds-hide">
+                                                                        <lightning-input-field
+                                                                            data-label={field.value.label}
+                                                                            data-save={field.value.requiredToSave}
+                                                                            data-submit={field.value.requiredToSubmit}
+                                                                            data-field_api_name={field.value.fieldAPIName}
+                                                                            variant="label-hidden"
+                                                                            id={field.value.fieldAPIName}
+                                                                            field-name={field.value.fieldAPIName}
+                                                                            value={field.value.fieldValue}
+                                                                        tabindex="0"></lightning-input-field>
+                                                                    </div>
+                                                                </template>
+                                                                <template lwc:else>
+                                                                    <template if:false={field.value.isRichTextFieldType}>
+																		<template if:false={field.value.isPhoneField}>
+                                                                            <template lwc:if={isGuest}>
+                                                                                <lightning-input-field
+                                                                                    data-label={field.value.label}
+                                                                                    data-save={field.value.requiredToSave}
+                                                                                    data-submit={field.value.requiredToSubmit}
+                                                                                    data-field_api_name={field.value.fieldAPIName}
+                                                                                    data-id={field.value.pageBlockDetailId}
+                                                                                    data-hide_fields_json={field.value.hideFieldsJSON}
+                                                                                    data-url_type={field.value.isUrlTypeField}
+                                                                                    variant="label-hidden"
+                                                                                    field-name={field.value.fieldAPIName}
+                                                                                    value={field.value.fieldValue}
+                                                                                    disabled={field.value.isDisabled}
+                                                                                    onchange={handleFieldValueChange}>
+                                                                                </lightning-input-field>
+                                                                            </template>
+                                                                            <template lwc:else>
+                                                                                <lightning-input-field
+                                                                                    data-label={field.value.label}
+                                                                                    data-save={field.value.requiredToSave}
+                                                                                    data-submit={field.value.requiredToSubmit}
+                                                                                    data-field_api_name={field.value.fieldAPIName}
+                                                                                    data-id={field.value.pageBlockDetailId}
+                                                                                    data-hide_fields_json={field.value.hideFieldsJSON}
+                                                                                    data-url_type={field.value.isUrlTypeField}
+                                                                                    variant="label-hidden"
+                                                                                    field-name={field.value.fieldAPIName}
+                                                                                    disabled={field.value.isDisabled}
+                                                                                    onchange={handleFieldValueChange}>
+                                                                                </lightning-input-field>
+                                                                            </template>
+																		</template>
+																		<template if:true={field.value.isPhoneField}>
+																			<template if:true={showPhoneField}>
+																				<lightning-input-field
+																					data-label={field.value.label}
+																					data-save={field.value.requiredToSave}
+																					data-submit={field.value.requiredToSubmit}
+																					data-field_api_name={field.value.fieldAPIName}
+																					data-id={field.value.pageBlockDetailId}
+																					data-phone={field.value.isPhoneField}
+																					data-hide_fields_json={field.value.hideFieldsJSON}
+																					value={field.value.fieldValue}
+																					variant="label-hidden"
+																					field-name={field.value.fieldAPIName}
+																					disabled={field.value.isDisabled}
+																					onchange={handleFieldValueChange}>
+                                                                                </lightning-input-field>
+                                                                            </template>
+                                                                        </template>
+                                                                    </template>
+                                                                   <!-- <span class="slds-form-element slds-form-element_stacked"></span>-->
+                                                                    <template if:true={field.value.isRichTextFieldType}>
+                                                                                <template lwc:if={field.value.showAsRichText}>
+                                                                        <template if:true={field.value.render}>
+                                                                            <lightning-input-rich-text
+                                                                                            data-id={field.value.pageBlockDetailId}
+                                                                                value={field.value.fieldValue}
+                                                                                formats={pageLayoutWrapper.richTextFormats}
+                                                                                onchange={handleRichText}
+                                                                            tabindex="0">
+                                                                            </lightning-input-rich-text>
+                                                                        </template>
+
+                                                                                    <template if:true={pageLayoutWrapper.showCharLimit}>
+                                                                                        <span data-id={field.value.pageBlockDetailId} data-chars="true">
+                                                                                            Characters: {field.value.charLength}, Characters Left:
+                                                                                            {field.value.charactersLeft}
+                                                                                        </span>
+                                                                                    </template>
+                                                                                    <template if:true={pageLayoutWrapper.showWordLimit}>
+                                                                                        <span data-id={field.value.pageBlockDetailId} data-words="true">
+                                                                                            Words: {field.value.wordLength}, Words Left: {field.value.wordsLeft}
+                                                                                        </span>
+                                                                                    </template>
+                                                                                </template>
+                                                                                <template lwc:else>
+                                                                                    <div class="lonTextArea">
+                                                                                    <lightning-textarea
+                                                                                        data-id={field.value.pageBlockDetailId}
+                                                                                        label=""
+                                                                                        value={field.value.fieldValue}
+                                                                                        onchange={handleChangeInTextArea}
+                                                                                   tabindex="0" ></lightning-textarea>
+                                                                                </div>
+                                                                                </template>
+                                                                        <div class="slds-hide">
+                                                                            <lightning-input-field
+                                                                                data-id={field.value.pageBlockDetailId}
+                                                                                data-field_api_name={field.value.fieldAPIName}
+                                                                                data-label={field.value.label}
+                                                                                data-save={field.value.requiredToSave}
+                                                                                data-submit={field.value.requiredToSubmit}
+                                                                                variant="label-hidden"
+                                                                                id={field.value.fieldAPIName}
+                                                                                field-name={field.value.fieldAPIName}
+                                                                                value={field.value.fieldValue}
+                                                                            tabindex="0">
+                                                                            </lightning-input-field>
+                                                                        </div>
+                                                                    </template>
+                                                                   </template>
+                                                                </template>
+                                                            </template>
+                                                            <template if:true={field.value.helpTextPost}>
+                                                                <label class="slds-text-title helpTextPost"> {field.value.helpTextPost} </label>
+                                                            </template>
+                                                                </div>
+                                                        </template>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                            <template if:true={it.value.flexTableName}>
+                                <c-flex-gridlwc
+                                    parent-record-id={pageLayoutWrapper.recordId}
+                                    flex-grid-type="FlexTable"
+                                    name={it.value.flexTableName}
+                                    string-parameters={pageLayoutWrapper.keyValueMap}
+                                    list-parameters={pageLayoutWrapper.listValueMap}
+                                    page-block-id={it.value.Id}
+                                    data-blockid={it.value.Id}
+                                    mode ={mode}
+                                ></c-flex-gridlwc>
+                            </template>
+                            <template if:true={it.value.flexGridName}>
+                                <c-flex-gridlwc
+                                    parent-record-id={pageLayoutWrapper.recordId}
+                                    flex-grid-type="FlexGrid"
+                                    name={it.value.flexGridName}
+                                    string-parameters={pageLayoutWrapper.keyValueMap}
+                                    list-parameters={pageLayoutWrapper.listValueMap}
+                                    page-block-id={it.value.Id}
+                                	data-blockid={it.value.Id}
+                                    mode ={mode}
+                                ></c-flex-gridlwc>
+                            </template>
+                            <template if:true={it.value.isSnapshot}>
+                                <c-snapshot-history pb-title={it.value.label} parent-id={pageLayoutWrapper.recordId}></c-snapshot-history>
+                            </template>
+                            <template if:true={it.value.isApprovalHistory}>
+                                <c-approval-history record-id={pageLayoutWrapper.recordId}></c-approval-history>
+                            </template>
+                            <template if:true={it.value.isAttachment}>
+                                <c-attachment pb-title="Attachments" parent-id={pageLayoutWrapper.recordId} pblock-id={it.value.Id}></c-attachment>
+                            </template>
+                            <template if:true={it.value.isNotes}>
+                                <c-notes record-id={pageLayoutWrapper.recordId} pblock-id={it.value.Id}></c-notes>
+                            </template>
+                            <template if:true={showPendingTask}>
+                                <p>Component not available</p>
+                            </template>
+                        </div>
+                </template>        
+            </lightning-record-edit-form>    
+        </template>
+    </template>
+    <template lwc:if={showConfigError}>
+        <lightning-card title="Oops...! Something went wrong, Please contact administrator"> </lightning-card>
+    </template>
+</template>

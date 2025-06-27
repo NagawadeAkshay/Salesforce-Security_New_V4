@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : Shubham Pawar
+  @group             : 
+  @last modified on  : 02-24-2022
+  @last modified by  : Shubham Pawar
+  @Adding XSS generic fix with the help of DOMPurify  02/16/2023
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FlexTableCtrl" access="global" >
+    <!--   <c:ExternalLibrary />  -->
+    <!-- List of attributes -->
+    <apex:attribute name="FlexTableName" assignTo="{!dataTableConfigName}" description="This is the value for the object name which decides the list to be displayed." type="String" access="global"/>
+    <apex:attribute name="TableId" description="Dynamic ID for the table. It is same string as the flexTableName." type="String" required="true" access="global"/>
+    <apex:attribute name="searchText" description="Search Term to be searched" type="String" assignTo="{!searchTerm}" access="global"/>
+    <apex:attribute name="gridSearchText" description="Search Term to be searched" type="String" access="global" />
+    <apex:attribute name="isN2GGridSearch" description="Search Term to be searched" type="String" access="global" assignTo="{!isN2GSearch}"/>
+    <apex:attribute name="filterClauseGridSearch" description="Search Term to be searched" type="String" access="global"  assignTo="{!filterClauseN2GSearch}"/>
+    <apex:attribute name="searchObject" description="Sobject to obtain search results" type="String" assignTo="{!objectName}" access="global" />
+    <apex:attribute name="phaseName" description="Phase under which search is to be performed" type="String" assignTo="{!phase}" access="global" />
+    <apex:attribute name="flexTableParameters" description="Map containing key value pairs for merge fields" type="string" required="false" assignTo="{!keyValueMap}" access="global"/>
+    <apex:attribute name="pBlockId" description="Map containing key value pairs for merge fields" type="string" required="false" assignTo="{!pbId}" access="global"/>
+    <apex:attribute name="listParams" description="Map containing key value pairs for merge fields" type="String" required="false" assignTo="{!listKeyValueMap}" access="global"/>
+    <apex:attribute name="flexTableProp" description="Controller object that holds the flex table properties" type="String" required="false" assignTo="{!flexTablePropInfo}" access="global"/>
+    <apex:attribute name="flexTableHeader" description="Header title for the flex table" type="String" required="false" assignTo="{!flexTableHeaderTitle}" access="global"/>
+    <apex:attribute name="headerDescription" description="Header Description for the flex table" type="String" required="false" assignTo="{!flexHeaderDescription}" access="global"/>
+    <apex:attribute name="isPreview" description="Is preview?" default="false" type="boolean" required="false" access="global"/>
+    <apex:attribute name="insideDynamicLayout" description="Is it rendered inside dynamic layout?" default="false" type="boolean" required="false" access="global"/>
+    <apex:attribute name="sObjectOfFieldHistory" description="Sobject of Field History" type="String"  access="global" />
+    <apex:attribute name="isFieldHistoryFlexTable" description="Sobject of Field History" default="false"  type="boolean" access="global" />
+    <apex:attribute name="parentRecord" description="Record id of the parent record"  type="String" access="global" assignTo="{!parentRecordId}"/>
+    <apex:attribute name="pgLayoutName"  description="Associated page layout name, for flex table refresh"  type="String" access="global"/>
+    <apex:attribute name="singleRecordSelection"  description="User can select only one record"  type="Boolean" access="global"/>
+    <apex:attribute name="isModalWindow" description="Indicates flextable open in modal window" type="Boolean" access="global"/>
+    <apex:attribute name="skipNavTabName"  description="Associated Tab name, for 508 skip navigation  "  type="String" access="global"/>
+    
+    <apex:attribute name="mode" description="In which context flextable is" type="String" access="global"/>
+    <apex:attribute name="pageBlockSize" description="What is the size of page block?" type="Integer" required="false" access="global"/>
+    
+</apex:component>

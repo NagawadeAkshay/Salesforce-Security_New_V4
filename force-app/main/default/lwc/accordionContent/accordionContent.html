@@ -1,0 +1,23 @@
+<template>
+	<ul id={content.id} class="slds-accordion content">
+	    <li class="slds-accordion__list-item bgcolor accordian-content" title={content.name}>
+	        <template if:true={enableLwc}>
+	            <template lwc:if={content.isLightningURL}>
+	                <section class="slds-accordion__section content-wrap">                                               
+	                    <a data-item={content.id} data-newwindow={content.isNewWindow} data-recordtype={content.RecordType} onclick={RedirectionURL} data-url={content.lightningUrl} data-target={content.NewWindow}>{content.name}</a>
+	                    </section>
+	            </template>
+	            <template lwc:else>
+	                <section class="slds-accordion__section content-wrap" >                                                
+						<a target={content.NewWindow} data-tablename={content.tableName}  data-recordtype={content.RecordType} data-item={content.id} data-stringparam={content.FlexTableParameters} onclick={RedirectionTabletype} data-newwindow={content.isNewWindow} data-target={content.NewWindow}>{content.name}</a>
+					</section>
+	            </template>
+	        </template>
+	        <template if:false={enableLwc}>
+	            <section class="slds-accordion__section content-wrap">                                               
+	                 <label onclick={handleRedirection}  data-url={content.url}  data-target={content.NewWindow}>{content.name}</label>
+	            </section>
+	        </template>
+	    </li>
+	</ul>  
+</template>

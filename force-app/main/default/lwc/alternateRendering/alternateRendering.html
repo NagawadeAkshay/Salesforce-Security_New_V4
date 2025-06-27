@@ -1,0 +1,44 @@
+<template>
+    <template if:true={mode}>
+        <template if:true={isCheckbox}>
+            <lightning-checkbox-group 
+                                    options={checkBoxOption}
+                                    data-recid="CheckBox"
+                                    value={selectedValues}
+                                    onchange={handleChange}
+                                    disabled
+                                    >
+            </lightning-checkbox-group>
+        </template>
+        <template if:true={isRadio}>
+                <lightning-radio-group      
+                        variant ="label-hidden"
+                        options={radioOption} 
+                        value={radioValueSelect} 
+                        type="radio"
+                        disabled>
+                </lightning-radio-group>
+        </template>
+    </template>
+    <template if:false={mode}>
+        <template if:true={isCheckbox}>
+            <lightning-checkbox-group 
+                    options={checkBoxOption}
+                    data-recid="CheckBox"
+                    value={selectedValues}
+                    onchange={handleChange}>
+            </lightning-checkbox-group>
+        </template>
+        <template if:true={isRadio}>
+            <lightning-radio-group      
+                    variant ="label-hidden"
+                    options={radioOption} 
+                    value={radioValueSelect} 
+                    type="radio"
+                    onchange={handleRadioChange}>
+            </lightning-radio-group>
+        </template>
+
+    </template>
+    
+</template>

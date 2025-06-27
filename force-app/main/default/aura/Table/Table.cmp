@@ -1,0 +1,4 @@
+<!-- Deprecated component-->
+<aura:component extends="c:Utility" access="global">
+	
+</aura:component>

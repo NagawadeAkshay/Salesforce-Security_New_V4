@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event fired whenever an item is dropped on a pipeline">
+	<aura:attribute type="String" name="contentVersionId"></aura:attribute>
+    
+   
+</aura:event>

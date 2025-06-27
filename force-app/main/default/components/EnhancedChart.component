@@ -1,0 +1,13 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="EnhancedChartCtrl" access="global">
+   
+    
+    <apex:attribute name="chartName"  description="Bar chart Name" type="String"  access="global" assignTo="{!chartUniqueName}"/>
+    <apex:attribute name="recordId"  description="Bar chart Name" type="String"  access="global" assignTo="{!recId}"/>
+    <apex:attribute name="isEnhancedView"  description="Enhanced chart View" type="Boolean" access="global" default="true" />
+    <apex:attribute name="chartHTMLId"  description="Bar chart html Id" type="String" required="true" assignTo="{!chartId}" access="global"/>
+    <apex:attribute name="chartParameters"  description="chart parameters for Filter" type="String" required="false" access="global"/>
+    <apex:attribute name="contextRecordId" type="String" description="Context record id to fetch values of merge fields present if any in query" access="global"/>
+
+    
+</apex:component>

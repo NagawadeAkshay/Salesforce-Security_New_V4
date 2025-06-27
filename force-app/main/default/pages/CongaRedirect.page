@@ -1,0 +1,13 @@
+<!-- 
+       #####################################################################################
+       Redirect page for Conga Composer. Configure with below info (Example for Award) - 
+       Flex Table Actions Config
+       'Action URL' '/apex/CongaRedirect?id={!GGD__Award__c.Id}&redirectType=Award' 'Open in overlay'
+       #####################################################################################
+       08/26/2015                 Xiang               Initial version
+       #####################################################################################
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page controller="CongaRedirectCtrl" >
+       
+</apex:page>

@@ -1,0 +1,12 @@
+<design:component label="Custom Phase Template">
+    <flexipage:template>
+        <flexipage:region label="Navigator"   name="sidebar"	defaultWidth="SMALL" />
+        <flexipage:region label="Phase Table" name="phaseTable" defaultWidth="SMALL" />
+        <flexipage:region label="Dashboard" name="dashboard1" defaultWidth="SMALL" />
+        <flexipage:region label="Dashboard" name="dashboard2" defaultWidth="SMALL" />
+    </flexipage:template>
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+</design:component>

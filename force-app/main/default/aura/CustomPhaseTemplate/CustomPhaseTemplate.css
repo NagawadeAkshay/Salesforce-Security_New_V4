@@ -1,0 +1,38 @@
+.THIS .btn-collpase .slds-text-selected, .THIS .btn-collpase .slds-text-selected-focus, .THIS .btn-collpase .slds-text-not-selected{
+    width: 22px;
+    writing-mode: vertical-lr;
+    transform: rotate(360deg);
+    padding: 8px 0px;
+    background-color: #00396B;
+    color: white;  
+    font-size: 13px;
+    font-weight:500;
+    align-items: center;
+    height: 100px;
+    letter-spacing: 1.5px;  
+    border-radius:0.25rem;
+}
+
+.THIS .slds-hide {
+    display: none !important;
+}
+
+.THIS .right-panel.slds-size_12-of-12{
+    width: 99.3%;
+}
+
+.THIS .left-panel.slds-size_2-of-12{
+    width:16%;
+}
+
+.THIS .btn-collpase .slds-text-selected .slds-button__icon_left, .THIS .btn-collpase .slds-text-selected-focus .slds-button__icon_left, .THIS .btn-collpase .slds-text-not-selected .slds-button__icon_left{
+
+    bottom: 0;
+    position: absolute;
+    top:80px;
+    left:2px;
+    color: red;
+    width: 18px;
+    height: 18px;
+
+}

@@ -1,0 +1,4 @@
+<!-- Deprecated component-->
+<aura:component controller="MassEmailCtrl" extends="c:LightningUtility" implements ="lightning:isUrlAddressable,flexipage:availableForAllPageTypes" access="global">
+   
+</aura:component>

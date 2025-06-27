@@ -1,0 +1,8 @@
+<!--
+ - Depreciated
+ - Created by Ravindra on 09-06-2022.
+ -->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page id="SendEmailLWC" docType="html-5.0" applyBodyTag="false" standardStylesheets="false"  showHeader="false" sidebar="false">
+
+</apex:page>

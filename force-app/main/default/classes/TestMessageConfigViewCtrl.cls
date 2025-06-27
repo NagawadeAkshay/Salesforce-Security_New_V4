@@ -1,0 +1,3 @@
+@isTest
+public class TestMessageConfigViewCtrl {
+}

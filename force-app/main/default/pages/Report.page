@@ -1,0 +1,11 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-25-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="ReportCtrl">
+
+</apex:page>

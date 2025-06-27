@@ -1,0 +1,8 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="FormatCurrencyCtrl" access="global">
+  <apex:attribute name="fieldDecimalScale" description="field config" type="Integer" assignTo="{!decimalScale}"  access="global"/>
+  <apex:attribute name="fieldValue" description="field config" type="Double" assignTo="{!val}"  access="global" />
+  <apex:attribute name="isCurrency" description="field is currency" type="Boolean" assignTo="{!isCurrencyField}"  access="global" />
+  <apex:attribute name="dataTypeVal" description="Field Type" type="String" assignTo="{!dataType}" access="global" />
+  
+</apex:component>

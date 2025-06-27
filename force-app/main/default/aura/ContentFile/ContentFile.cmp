@@ -1,0 +1,4 @@
+<!-- Deprecated component-->
+<aura:component controller="FileUploadCtrl" extends="c:LightningUtility">
+   
+</aura:component>

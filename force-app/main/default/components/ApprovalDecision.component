@@ -1,0 +1,9 @@
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component controller="ApprovalDecisionCtrl" allowDML="true" access="global">
+     <apex:attribute name="parentId" description="record Id for the approval process" type="string" required="false" access="global"/>
+     <apex:attribute name="layoutType" description="type of the page layout" type="string" required="false" access="global" />
+     <apex:attribute name="tmplateName" assignTo="{!templateName}" description="name of the template to be used to create snapshot" type="string" required="false" access="global"/>
+     <apex:attribute name="flexTableParameters" assignTo="{!flexTableParam}" description="name of the template to be used to create snapshot" type="string" required="false" access="global"/>
+     <apex:attribute name="listParameters" assignTo="{!listParam}" description="name of the template to be used to create snapshot" type="string" required="false" access="global"/>
+    
+</apex:component>

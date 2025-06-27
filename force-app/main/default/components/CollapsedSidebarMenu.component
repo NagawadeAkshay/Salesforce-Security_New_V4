@@ -1,0 +1,26 @@
+<!--
+* Date                Name                Comment
+* =========================================================
+* 10/21/2015          Shrawan Raina       Created
+-->
+<!-- Deprecated VF Pages/components migrated to Lightning  -->
+<apex:component layout="block" controller="SidebarMenuCtrl" access="global">
+    <apex:attribute name="phaseName"
+        description="This is the value for the tab for which accordion need to be shown."
+        type="String" required="true" assignTo="{!tabId}" access="global" />
+    <apex:attribute name="parameters"
+        description="Map containing values of Param to be replaced in URL"
+        type="string" required="false" assignTo="{!parameterMap}" access="global" />
+    <apex:attribute name="HeaderType"
+        description="Accordion Type whether Task/Activity" 
+        type="string" required="false" assignTo="{!type}" access="global" />
+    <apex:attribute name="iconCSS" 
+        description="Icon CSS style for displaying closed Sidebar"
+        type="string" required="false" assignTo="{!icon}" access="global" />
+    <apex:attribute name="sidebarHidden" 
+        description="Collapsed/Expanded Sidebar check" 
+        type="String" required="true" assignTo="{!hideSidebar}" access="global" />
+    
+    
+
+</apex:component>

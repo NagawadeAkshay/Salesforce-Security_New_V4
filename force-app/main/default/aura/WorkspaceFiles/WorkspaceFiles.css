@@ -1,0 +1,12 @@
+.THIS .slds-p-around_x-small {
+    background: transparent;
+}
+.THIS .slds-is-active .slds-tabs_scoped__link{
+    font-weight: bold;
+}
+.THIS#WorkspaceFiles, .THIS .slds-tabs_scoped__content{
+    background: transparent;
+}
+.THIS .slds-welcome-mat__tile-body{
+    border-left: none;
+}
